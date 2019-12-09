@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectLoanMapper">
+  <sql id="Base_Column_List">
+    id, contract_no, debtor_name, loan_no, loan_date, loan_type, loan_money, has_refund_money,
+    should_settle_date, is_settle, is_personal_loan, money_source, delete_status, create_by,
+    create_time, update_by, update_time
+  </sql>
+  <select id="getLoanList" resultType="com.zhjs.scfcloud.model.vo.lzProject.LzProjectLoanListVO">
+    select id, contract_no, debtor_name, loan_no, loan_date, loan_type,
+    loan_money, has_refund_money,should_settle_date, is_settle,  money_source
+    from lz_project_loan lpl
+    where lpl.delete_status = 0
+    and lpl.contract_no = #{contractNo}
+    and lpl.is_personal_loan =  #{isPersonal}
+  </select>
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectBasicInfoMapper">
+  <sql id="Base_Column_List">
+    id, contract_no , project_name, branch_company, business_manager, submit_time, plan_commence_date,
+    plan_complete_date, actual_commence_date, actual_complete_date, project_status, business_model,
+    project_address, project_type, project_cost, building_type, building_area, progress_payment_ratio,
+    engineering_type, first_party_full_name, first_party_address, second_party_full_name, 
+    second_party_address, delete_status, create_by, create_time, update_by, update_time
+  </sql>
+  <select id="list" resultType="com.zhjs.scfcloud.model.vo.lzProject.LzProjectListVO">
+    select id, contract_no contractNo,project_name projectName, business_manager businessManager,
+     plan_commence_date planCommenceDate,project_status projectStatus, business_model businessModel,
+     project_type projectType,  first_party_full_name firstPartyFullName,  second_party_full_name secondPartyFullName
+    from lz_project_basic_info lpbi
+    where lpbi.delete_status != 1
+    <if test="contractNo != null and contractNo != ''">
+      and lpbi.contract_no = #{contractNo}
+    </if>
+    <if test="projectName != null and projectName != ''">
+      and lpbi.project_name like '%${projectName}%'
+    </if>
+    <if test="businessManager != null and businessManager != ''">
+      and lpbi.business_manager like '%${businessManager}%'
+    </if>
+    <if test="projectStatus != null and projectStatus != ''">
+      and lpbi.project_status like '%${projectStatus}%'
+    </if>
+    order by lpbi.plan_commence_date desc
+  </select>
+</mapper>

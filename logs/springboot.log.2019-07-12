@@ -1,0 +1,643 @@
+2019-07-12 14:17:51,728  INFO Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2019-07-12 14:17:52,215  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cab28acc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:52,335  INFO ConfigServicePropertySourceLocator:207 - Fetching config from server at : http://localhost:19000
+2019-07-12 14:17:52,454  INFO ConfigServicePropertySourceLocator:151 - Located environment: name=scfcloud-cfg,util-cfg,redis-cfg, profiles=[default], label=master, version=null, state=null
+2019-07-12 14:17:52,454  INFO PropertySourceBootstrapConfiguration:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='file:F:/config/dev/redis-cfg.yml'}, MapPropertySource {name='file:F:/config/dev/util-cfg.properties'}, MapPropertySource {name='file:F:/config/dev/scfcloud-cfg.yml'}]}
+2019-07-12 14:17:52,457  INFO ScfcloudApplication:675 - No active profile set, falling back to default profiles: default
+2019-07-12 14:17:52,977  INFO RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-12 14:17:52,979  INFO RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-12 14:17:53,070  INFO RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 83ms. Found 0 repository interfaces.
+2019-07-12 14:17:53,225  INFO GenericScope:295 - BeanFactory id=69dbcb73-235a-3930-89cb-d9306cdb9d55
+2019-07-12 14:17:53,237  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.ApiFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,238  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.BusinessFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,239  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CommentFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,239  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CompanyFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,240  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditApplyFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,241  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditRecordFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,242  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditTicketApplyFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,242  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditUseFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,243  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.DepartmentFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,244  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.FileFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,244  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.OperateLogFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,245  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.RoleFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,245  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.SystemFunctionFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,246  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.UserFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,301  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [com.zhjs.scfcloud.config.ShiroConfig$$EnhancerBySpringCGLIB$$8af67d40] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,426  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'default.com.zhjs.scfcloud.ScfcloudApplication.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,427  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'api.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,427  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'business.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,428  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'comment.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,428  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'company.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,429  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditApply.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,430  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditRecord.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,430  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditTicketApply.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,430  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditUse.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,431  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dept.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,432  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'file.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,432  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'operateLog.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,432  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'role.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,433  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'system-function.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,433  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'user.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,434  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.FeignAutoConfiguration' of type [org.springframework.cloud.openfeign.FeignAutoConfiguration$$EnhancerBySpringCGLIB$$b6dc2c51] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,436  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignContext' of type [org.springframework.cloud.openfeign.FeignContext] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,515  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feign.client-org.springframework.cloud.openfeign.FeignClientProperties' of type [org.springframework.cloud.openfeign.FeignClientProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,518  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.ribbon.FeignRibbonClientAutoConfiguration' of type [org.springframework.cloud.openfeign.ribbon.FeignRibbonClientAutoConfiguration$$EnhancerBySpringCGLIB$$4be96eda] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,520  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignRequestOptions' of type [feign.Request$Options] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,522  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.ribbon.DefaultFeignLoadBalancedConfiguration' of type [org.springframework.cloud.openfeign.ribbon.DefaultFeignLoadBalancedConfiguration$$EnhancerBySpringCGLIB$$7e08849b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,525  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'default.org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration.RibbonClientSpecification' of type [org.springframework.cloud.netflix.ribbon.RibbonClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,525  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'default.org.springframework.cloud.netflix.ribbon.eureka.RibbonEurekaAutoConfiguration.RibbonClientSpecification' of type [org.springframework.cloud.netflix.ribbon.RibbonClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,527  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'ribbon.eager-load-org.springframework.cloud.netflix.ribbon.RibbonEagerLoadProperties' of type [org.springframework.cloud.netflix.ribbon.RibbonEagerLoadProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,527  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration' of type [org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration$$EnhancerBySpringCGLIB$$abe4e7a9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,530  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'springClientFactory' of type [org.springframework.cloud.netflix.ribbon.SpringClientFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,531  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'cachingLBClientFactory' of type [org.springframework.cloud.openfeign.ribbon.CachingSpringLoadBalancerFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,533  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignClient' of type [org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,535  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.FeignAutoConfiguration$HystrixFeignTargeterConfiguration' of type [org.springframework.cloud.openfeign.FeignAutoConfiguration$HystrixFeignTargeterConfiguration$$EnhancerBySpringCGLIB$$f065dbc3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,536  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignTargeter' of type [org.springframework.cloud.openfeign.HystrixTargeter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,561  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.UserFeignService' of type [com.sun.proxy.$Proxy97] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,562  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'myShiroRealm' of type [com.zhjs.scfcloud.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,564  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisManager' of type [org.crazycake.shiro.RedisManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,565  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisCacheManager' of type [org.crazycake.shiro.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,568  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisSessionDAO' of type [com.zhjs.scfcloud.config.MyRedisSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,569  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'sessionManager' of type [com.zhjs.scfcloud.config.MySessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,571  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,575  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,586  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cab28acc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:17:53,811  INFO TomcatWebServer:90 - Tomcat initialized with port(s): 21000 (http)
+2019-07-12 14:17:53,944  INFO ContextLoader:296 - Root WebApplicationContext: initialization completed in 1477 ms
+2019-07-12 14:17:54,454  INFO AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.zhjs.scfcloud.util.util.PropertiesUtil.env
+2019-07-12 14:17:54,463  WARN URLConfigurationSource:121 - No URLs will be polled as dynamic configuration sources.
+2019-07-12 14:17:54,463  INFO URLConfigurationSource:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-12 14:17:54,466  WARN URLConfigurationSource:121 - No URLs will be polled as dynamic configuration sources.
+2019-07-12 14:17:54,466  INFO URLConfigurationSource:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-12 14:17:54,587  INFO ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-12 14:17:55,025  INFO InstanceInfoFactory:72 - Setting initial instance status as: STARTING
+2019-07-12 14:17:55,047  INFO DiscoveryClient:349 - Initializing Eureka in region us-east-1
+2019-07-12 14:17:55,100  INFO DiscoveryJerseyProvider:70 - Using JSON encoding codec LegacyJacksonJson
+2019-07-12 14:17:55,100  INFO DiscoveryJerseyProvider:71 - Using JSON decoding codec LegacyJacksonJson
+2019-07-12 14:17:55,173  INFO DiscoveryJerseyProvider:80 - Using XML encoding codec XStreamXml
+2019-07-12 14:17:55,173  INFO DiscoveryJerseyProvider:81 - Using XML decoding codec XStreamXml
+2019-07-12 14:17:55,317  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-12 14:17:55,347  INFO DiscoveryClient:958 - Disable delta property : false
+2019-07-12 14:17:55,347  INFO DiscoveryClient:959 - Single vip registry refresh property : null
+2019-07-12 14:17:55,347  INFO DiscoveryClient:960 - Force full registry fetch : false
+2019-07-12 14:17:55,347  INFO DiscoveryClient:961 - Application is null : false
+2019-07-12 14:17:55,347  INFO DiscoveryClient:962 - Registered Applications size is zero : true
+2019-07-12 14:17:55,347  INFO DiscoveryClient:964 - Application version is -1: true
+2019-07-12 14:17:55,347  INFO DiscoveryClient:1047 - Getting all instance registry info from the eureka server
+2019-07-12 14:17:55,406  INFO DiscoveryClient:1056 - The response status is 200
+2019-07-12 14:17:55,408  INFO DiscoveryClient:1270 - Starting heartbeat executor: renew interval is: 30
+2019-07-12 14:17:55,410  INFO InstanceInfoReplicator:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-12 14:17:55,412  INFO DiscoveryClient:449 - Discovery Client initialized at timestamp 1562912275411 with initial instances count: 0
+2019-07-12 14:17:55,414  INFO EurekaServiceRegistry:41 - Registering application SCFCLOUD with eureka with status UP
+2019-07-12 14:17:55,414  INFO DiscoveryClient:1305 - Saw local status change event StatusChangeEvent [timestamp=1562912275414, current=UP, previous=STARTING]
+2019-07-12 14:17:55,415  INFO DiscoveryClient:826 - DiscoveryClient_SCFCLOUD/PC-20190528OEHK:scfcloud:21000: registering service...
+2019-07-12 14:17:55,437  INFO DiscoveryClient:835 - DiscoveryClient_SCFCLOUD/PC-20190528OEHK:scfcloud:21000 - registration status: 204
+2019-07-12 14:17:55,438  INFO TomcatWebServer:204 - Tomcat started on port(s): 21000 (http) with context path ''
+2019-07-12 14:17:55,439  INFO EurekaAutoServiceRegistration:143 - Updating port to 21000
+2019-07-12 14:17:55,440  INFO ScfcloudApplication:59 - Started ScfcloudApplication in 3.835 seconds (JVM running for 4.302)
+2019-07-12 14:18:11,294  INFO DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-07-12 14:18:11,300  INFO DispatcherServlet:546 - Completed initialization in 6 ms
+2019-07-12 14:18:11,441  INFO AbstractValidatingSessionManager:233 - Enabling session validation scheduler...
+2019-07-12 14:18:11,442  INFO MySessionManager:45 - id:223f2a50-2f3e-4875-9fc5-b4018dda56c6
+2019-07-12 14:18:25,410  INFO DiscoveryClient:958 - Disable delta property : false
+2019-07-12 14:18:25,411  INFO DiscoveryClient:959 - Single vip registry refresh property : null
+2019-07-12 14:18:25,411  INFO DiscoveryClient:960 - Force full registry fetch : false
+2019-07-12 14:18:25,411  INFO DiscoveryClient:961 - Application is null : false
+2019-07-12 14:18:25,411  INFO DiscoveryClient:962 - Registered Applications size is zero : true
+2019-07-12 14:18:25,411  INFO DiscoveryClient:964 - Application version is -1: false
+2019-07-12 14:18:25,411  INFO DiscoveryClient:1047 - Getting all instance registry info from the eureka server
+2019-07-12 14:18:25,444  INFO DiscoveryClient:1056 - The response status is 200
+2019-07-12 14:22:55,400  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-12 14:26:14,921  INFO MySessionManager:45 - id:e9160654-a4a3-43a8-9adf-9c8a588d74f7
+2019-07-12 14:27:55,413  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-12 14:29:44,854  INFO MySessionManager:45 - id:null
+2019-07-12 14:29:44,870  INFO MySessionManager:45 - id:null
+2019-07-12 14:31:04,234  INFO MySessionManager:45 - id:null
+2019-07-12 14:31:04,293  INFO LoginController:37 - 登录参数：{"loginAccount":"lzskcloud@qq.com","password":"123456"}
+2019-07-12 14:31:04,576  INFO ChainedDynamicProperty:115 - Flipping property: scfcloud-system.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-12 14:31:04,592  INFO ShutdownEnabledTimer:58 - Shutdown hook installed for: NFLoadBalancer-PingTimer-scfcloud-system
+2019-07-12 14:31:04,604  INFO BaseLoadBalancer:197 - Client: scfcloud-system instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=scfcloud-system,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-12 14:31:04,607  INFO DynamicServerListLoadBalancer:222 - Using serverListUpdater PollingServerListUpdater
+2019-07-12 14:31:04,620  INFO ChainedDynamicProperty:115 - Flipping property: scfcloud-system.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-12 14:31:04,621  INFO DynamicServerListLoadBalancer:150 - DynamicServerListLoadBalancer for client scfcloud-system initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=scfcloud-system,current list of Servers=[PC-20190528OEHK:22000],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:PC-20190528OEHK:22000;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@391c25b4
+2019-07-12 14:31:05,055  WARN AbstractAuthenticator:216 - Authentication failed for token submission [com.zhjs.scfcloud.config.MyUsernamePasswordToken - lzskcloud@qq.com, rememberMe=false].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+java.lang.NullPointerException
+	at com.zhjs.scfcloud.config.MyShiroRealm.doGetAuthenticationInfo(MyShiroRealm.java:83)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:568)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.zhjs.scfcloud.controller.LoginController.login(LoginController.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-07-12 14:31:05,057 ERROR LoginController:47 - 用户名或密码错误:Authentication failed for token submission [com.zhjs.scfcloud.config.MyUsernamePasswordToken - lzskcloud@qq.com, rememberMe=false].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+2019-07-12 14:31:05,609  INFO ChainedDynamicProperty:115 - Flipping property: scfcloud-system.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-12 14:32:55,426  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-12 14:38:03,175  INFO Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2019-07-12 14:38:03,676  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$adc7b00a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:03,801  INFO ConfigServicePropertySourceLocator:207 - Fetching config from server at : http://localhost:19000
+2019-07-12 14:38:04,013  INFO ConfigServicePropertySourceLocator:151 - Located environment: name=scfcloud-cfg,util-cfg,redis-cfg, profiles=[default], label=master, version=null, state=null
+2019-07-12 14:38:04,013  INFO PropertySourceBootstrapConfiguration:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='file:F:/config/dev/redis-cfg.yml'}, MapPropertySource {name='file:F:/config/dev/util-cfg.properties'}, MapPropertySource {name='file:F:/config/dev/scfcloud-cfg.yml'}]}
+2019-07-12 14:38:04,017  INFO ScfcloudApplication:675 - No active profile set, falling back to default profiles: default
+2019-07-12 14:38:04,630  INFO RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-12 14:38:04,633  INFO RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-12 14:38:04,700  INFO RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 59ms. Found 0 repository interfaces.
+2019-07-12 14:38:04,855  INFO GenericScope:295 - BeanFactory id=e23fe8b1-e658-30ab-a090-f4ec00c7b3d4
+2019-07-12 14:38:04,870  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.ApiFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,871  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.BusinessFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,872  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CommentFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,872  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CompanyFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,873  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditApplyFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,873  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditRecordFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,877  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditTicketApplyFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,877  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditUseFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,878  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.DepartmentFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,879  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.FileFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,879  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.OperateLogFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,880  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.RoleFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,880  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.SystemFunctionFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,881  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.UserFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:04,926  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [com.zhjs.scfcloud.config.ShiroConfig$$EnhancerBySpringCGLIB$$6e0ba27e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,066  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'default.com.zhjs.scfcloud.ScfcloudApplication.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,067  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'api.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,067  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'business.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,068  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'comment.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,068  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'company.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,069  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditApply.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,070  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditRecord.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,071  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditTicketApply.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,071  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditUse.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,072  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dept.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,072  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'file.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,073  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'operateLog.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,073  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'role.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,074  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'system-function.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,074  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'user.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,075  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.FeignAutoConfiguration' of type [org.springframework.cloud.openfeign.FeignAutoConfiguration$$EnhancerBySpringCGLIB$$99f1518f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,078  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignContext' of type [org.springframework.cloud.openfeign.FeignContext] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,133  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feign.client-org.springframework.cloud.openfeign.FeignClientProperties' of type [org.springframework.cloud.openfeign.FeignClientProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,136  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.ribbon.FeignRibbonClientAutoConfiguration' of type [org.springframework.cloud.openfeign.ribbon.FeignRibbonClientAutoConfiguration$$EnhancerBySpringCGLIB$$2efe9418] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,140  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignRequestOptions' of type [feign.Request$Options] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,144  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.ribbon.DefaultFeignLoadBalancedConfiguration' of type [org.springframework.cloud.openfeign.ribbon.DefaultFeignLoadBalancedConfiguration$$EnhancerBySpringCGLIB$$611da9d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,147  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'default.org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration.RibbonClientSpecification' of type [org.springframework.cloud.netflix.ribbon.RibbonClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,147  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'default.org.springframework.cloud.netflix.ribbon.eureka.RibbonEurekaAutoConfiguration.RibbonClientSpecification' of type [org.springframework.cloud.netflix.ribbon.RibbonClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,149  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'ribbon.eager-load-org.springframework.cloud.netflix.ribbon.RibbonEagerLoadProperties' of type [org.springframework.cloud.netflix.ribbon.RibbonEagerLoadProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,150  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration' of type [org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration$$EnhancerBySpringCGLIB$$8efa0ce7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,153  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'springClientFactory' of type [org.springframework.cloud.netflix.ribbon.SpringClientFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,154  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'cachingLBClientFactory' of type [org.springframework.cloud.openfeign.ribbon.CachingSpringLoadBalancerFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,156  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignClient' of type [org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,158  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.FeignAutoConfiguration$HystrixFeignTargeterConfiguration' of type [org.springframework.cloud.openfeign.FeignAutoConfiguration$HystrixFeignTargeterConfiguration$$EnhancerBySpringCGLIB$$d37b0101] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,160  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignTargeter' of type [org.springframework.cloud.openfeign.HystrixTargeter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,187  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.UserFeignService' of type [com.sun.proxy.$Proxy97] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,188  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'myShiroRealm' of type [com.zhjs.scfcloud.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,191  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisManager' of type [org.crazycake.shiro.RedisManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,192  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisCacheManager' of type [org.crazycake.shiro.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,195  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisSessionDAO' of type [com.zhjs.scfcloud.config.MyRedisSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,198  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'sessionManager' of type [com.zhjs.scfcloud.config.MySessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,199  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,205  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,223  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$adc7b00a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:05,511  INFO TomcatWebServer:90 - Tomcat initialized with port(s): 21000 (http)
+2019-07-12 14:38:05,646  INFO ContextLoader:296 - Root WebApplicationContext: initialization completed in 1619 ms
+2019-07-12 14:38:06,175  INFO AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.zhjs.scfcloud.util.util.PropertiesUtil.env
+2019-07-12 14:38:06,184  WARN URLConfigurationSource:121 - No URLs will be polled as dynamic configuration sources.
+2019-07-12 14:38:06,185  INFO URLConfigurationSource:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-12 14:38:06,188  WARN URLConfigurationSource:121 - No URLs will be polled as dynamic configuration sources.
+2019-07-12 14:38:06,188  INFO URLConfigurationSource:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-12 14:38:06,347  INFO ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-12 14:38:06,905  INFO InstanceInfoFactory:72 - Setting initial instance status as: STARTING
+2019-07-12 14:38:06,937  INFO DiscoveryClient:349 - Initializing Eureka in region us-east-1
+2019-07-12 14:38:07,001  INFO DiscoveryJerseyProvider:70 - Using JSON encoding codec LegacyJacksonJson
+2019-07-12 14:38:07,001  INFO DiscoveryJerseyProvider:71 - Using JSON decoding codec LegacyJacksonJson
+2019-07-12 14:38:07,100  INFO DiscoveryJerseyProvider:80 - Using XML encoding codec XStreamXml
+2019-07-12 14:38:07,101  INFO DiscoveryJerseyProvider:81 - Using XML decoding codec XStreamXml
+2019-07-12 14:38:07,308  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-12 14:38:07,345  INFO DiscoveryClient:958 - Disable delta property : false
+2019-07-12 14:38:07,345  INFO DiscoveryClient:959 - Single vip registry refresh property : null
+2019-07-12 14:38:07,345  INFO DiscoveryClient:960 - Force full registry fetch : false
+2019-07-12 14:38:07,345  INFO DiscoveryClient:961 - Application is null : false
+2019-07-12 14:38:07,346  INFO DiscoveryClient:962 - Registered Applications size is zero : true
+2019-07-12 14:38:07,346  INFO DiscoveryClient:964 - Application version is -1: true
+2019-07-12 14:38:07,346  INFO DiscoveryClient:1047 - Getting all instance registry info from the eureka server
+2019-07-12 14:38:07,508  INFO DiscoveryClient:1056 - The response status is 200
+2019-07-12 14:38:07,511  INFO DiscoveryClient:1270 - Starting heartbeat executor: renew interval is: 30
+2019-07-12 14:38:07,514  INFO InstanceInfoReplicator:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-12 14:38:07,518  INFO DiscoveryClient:449 - Discovery Client initialized at timestamp 1562913487517 with initial instances count: 0
+2019-07-12 14:38:07,520  INFO EurekaServiceRegistry:41 - Registering application SCFCLOUD with eureka with status UP
+2019-07-12 14:38:07,520  INFO DiscoveryClient:1305 - Saw local status change event StatusChangeEvent [timestamp=1562913487520, current=UP, previous=STARTING]
+2019-07-12 14:38:07,522  INFO DiscoveryClient:826 - DiscoveryClient_SCFCLOUD/PC-20190528OEHK:scfcloud:21000: registering service...
+2019-07-12 14:38:07,555  INFO TomcatWebServer:204 - Tomcat started on port(s): 21000 (http) with context path ''
+2019-07-12 14:38:07,556  INFO EurekaAutoServiceRegistration:143 - Updating port to 21000
+2019-07-12 14:38:07,558  INFO ScfcloudApplication:59 - Started ScfcloudApplication in 4.488 seconds (JVM running for 4.97)
+2019-07-12 14:38:07,579  INFO DiscoveryClient:835 - DiscoveryClient_SCFCLOUD/PC-20190528OEHK:scfcloud:21000 - registration status: 204
+2019-07-12 14:38:32,245  INFO DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-07-12 14:38:32,250  INFO DispatcherServlet:546 - Completed initialization in 5 ms
+2019-07-12 14:38:32,269  INFO AbstractValidatingSessionManager:233 - Enabling session validation scheduler...
+2019-07-12 14:38:32,270  INFO MySessionManager:45 - id:null
+2019-07-12 14:38:32,307  INFO LoginController:37 - 登录参数：{"loginAccount":"lzskcloud@qq.com","password":"123456"}
+2019-07-12 14:38:32,428  INFO ChainedDynamicProperty:115 - Flipping property: scfcloud-system.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-12 14:38:32,444  INFO ShutdownEnabledTimer:58 - Shutdown hook installed for: NFLoadBalancer-PingTimer-scfcloud-system
+2019-07-12 14:38:32,446  INFO BaseLoadBalancer:197 - Client: scfcloud-system instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=scfcloud-system,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-12 14:38:32,449  INFO DynamicServerListLoadBalancer:222 - Using serverListUpdater PollingServerListUpdater
+2019-07-12 14:38:32,451  INFO DynamicServerListLoadBalancer:150 - DynamicServerListLoadBalancer for client scfcloud-system initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=scfcloud-system,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@72831361
+2019-07-12 14:38:32,626  WARN AbstractAuthenticator:216 - Authentication failed for token submission [com.zhjs.scfcloud.config.MyUsernamePasswordToken - lzskcloud@qq.com, rememberMe=false].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+java.lang.RuntimeException: com.netflix.client.ClientException: Load balancer does not have available server for client: scfcloud-system
+	at org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient.execute(LoadBalancerFeignClient.java:90)
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:108)
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:78)
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:103)
+	at com.sun.proxy.$Proxy97.getUserByEmail(Unknown Source)
+	at com.zhjs.scfcloud.config.MyShiroRealm.doGetAuthenticationInfo(MyShiroRealm.java:65)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:568)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.zhjs.scfcloud.controller.LoginController.login(LoginController.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.netflix.client.ClientException: Load balancer does not have available server for client: scfcloud-system
+	at com.netflix.loadbalancer.LoadBalancerContext.getServerFromLoadBalancer(LoadBalancerContext.java:483)
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:184)
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:180)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:94)
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:42)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber$1.call(OperatorRetryWithPredicate.java:127)
+	at rx.internal.schedulers.TrampolineScheduler$InnerCurrentThreadScheduler.enqueue(TrampolineScheduler.java:73)
+	at rx.internal.schedulers.TrampolineScheduler$InnerCurrentThreadScheduler.schedule(TrampolineScheduler.java:52)
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber.onNext(OperatorRetryWithPredicate.java:79)
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber.onNext(OperatorRetryWithPredicate.java:45)
+	at rx.internal.util.ScalarSynchronousObservable$WeakSingleProducer.request(ScalarSynchronousObservable.java:276)
+	at rx.Subscriber.setProducer(Subscriber.java:209)
+	at rx.internal.util.ScalarSynchronousObservable$JustOnSubscribe.call(ScalarSynchronousObservable.java:138)
+	at rx.internal.util.ScalarSynchronousObservable$JustOnSubscribe.call(ScalarSynchronousObservable.java:129)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.subscribe(Observable.java:10423)
+	at rx.Observable.subscribe(Observable.java:10390)
+	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:443)
+	at rx.observables.BlockingObservable.single(BlockingObservable.java:340)
+	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112)
+	at org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient.execute(LoadBalancerFeignClient.java:83)
+	... 85 more
+2019-07-12 14:38:32,634 ERROR LoginController:47 - 用户名或密码错误:Authentication failed for token submission [com.zhjs.scfcloud.config.MyUsernamePasswordToken - lzskcloud@qq.com, rememberMe=false].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+2019-07-12 14:38:37,512  INFO DiscoveryClient:958 - Disable delta property : false
+2019-07-12 14:38:37,513  INFO DiscoveryClient:959 - Single vip registry refresh property : null
+2019-07-12 14:38:37,513  INFO DiscoveryClient:960 - Force full registry fetch : false
+2019-07-12 14:38:37,513  INFO DiscoveryClient:961 - Application is null : false
+2019-07-12 14:38:37,513  INFO DiscoveryClient:962 - Registered Applications size is zero : true
+2019-07-12 14:38:37,513  INFO DiscoveryClient:964 - Application version is -1: false
+2019-07-12 14:38:37,513  INFO DiscoveryClient:1047 - Getting all instance registry info from the eureka server
+2019-07-12 14:38:37,545  INFO DiscoveryClient:1056 - The response status is 200
+2019-07-12 14:38:50,309  INFO Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2019-07-12 14:38:50,768  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1ea62a7d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:50,880  INFO ConfigServicePropertySourceLocator:207 - Fetching config from server at : http://localhost:19000
+2019-07-12 14:38:50,989  INFO ConfigServicePropertySourceLocator:151 - Located environment: name=scfcloud-cfg,util-cfg,redis-cfg, profiles=[default], label=master, version=null, state=null
+2019-07-12 14:38:50,989  INFO PropertySourceBootstrapConfiguration:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='file:F:/config/dev/redis-cfg.yml'}, MapPropertySource {name='file:F:/config/dev/util-cfg.properties'}, MapPropertySource {name='file:F:/config/dev/scfcloud-cfg.yml'}]}
+2019-07-12 14:38:50,992  INFO ScfcloudApplication:675 - No active profile set, falling back to default profiles: default
+2019-07-12 14:38:51,496  INFO RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-12 14:38:51,498  INFO RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-12 14:38:51,562  INFO RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 57ms. Found 0 repository interfaces.
+2019-07-12 14:38:51,711  INFO GenericScope:295 - BeanFactory id=e23fe8b1-e658-30ab-a090-f4ec00c7b3d4
+2019-07-12 14:38:51,722  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.ApiFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,723  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.BusinessFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,724  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CommentFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,724  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CompanyFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,725  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditApplyFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,726  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditRecordFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,727  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditTicketApplyFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,727  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.CreditUseFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,728  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.DepartmentFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,728  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.FileFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,729  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.OperateLogFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,730  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.RoleFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,730  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.SystemFunctionFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,731  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.UserFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,771  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [com.zhjs.scfcloud.config.ShiroConfig$$EnhancerBySpringCGLIB$$deea1cf1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,893  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'default.com.zhjs.scfcloud.ScfcloudApplication.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,894  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'api.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,894  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'business.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,895  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'comment.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,895  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'company.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,896  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditApply.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,896  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditRecord.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,896  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditTicketApply.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,897  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'creditUse.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,897  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dept.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,898  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'file.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,898  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'operateLog.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,899  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'role.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,899  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'system-function.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,899  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'user.FeignClientSpecification' of type [org.springframework.cloud.openfeign.FeignClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,900  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.FeignAutoConfiguration' of type [org.springframework.cloud.openfeign.FeignAutoConfiguration$$EnhancerBySpringCGLIB$$acfcc02] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,902  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignContext' of type [org.springframework.cloud.openfeign.FeignContext] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,951  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feign.client-org.springframework.cloud.openfeign.FeignClientProperties' of type [org.springframework.cloud.openfeign.FeignClientProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,954  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.ribbon.FeignRibbonClientAutoConfiguration' of type [org.springframework.cloud.openfeign.ribbon.FeignRibbonClientAutoConfiguration$$EnhancerBySpringCGLIB$$9fdd0e8b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,956  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignRequestOptions' of type [feign.Request$Options] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,958  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.ribbon.DefaultFeignLoadBalancedConfiguration' of type [org.springframework.cloud.openfeign.ribbon.DefaultFeignLoadBalancedConfiguration$$EnhancerBySpringCGLIB$$d1fc244c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,961  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'default.org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration.RibbonClientSpecification' of type [org.springframework.cloud.netflix.ribbon.RibbonClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,961  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'default.org.springframework.cloud.netflix.ribbon.eureka.RibbonEurekaAutoConfiguration.RibbonClientSpecification' of type [org.springframework.cloud.netflix.ribbon.RibbonClientSpecification] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,963  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'ribbon.eager-load-org.springframework.cloud.netflix.ribbon.RibbonEagerLoadProperties' of type [org.springframework.cloud.netflix.ribbon.RibbonEagerLoadProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,963  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration' of type [org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration$$EnhancerBySpringCGLIB$$ffd8875a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,966  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'springClientFactory' of type [org.springframework.cloud.netflix.ribbon.SpringClientFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,967  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'cachingLBClientFactory' of type [org.springframework.cloud.openfeign.ribbon.CachingSpringLoadBalancerFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,969  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignClient' of type [org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,970  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.openfeign.FeignAutoConfiguration$HystrixFeignTargeterConfiguration' of type [org.springframework.cloud.openfeign.FeignAutoConfiguration$HystrixFeignTargeterConfiguration$$EnhancerBySpringCGLIB$$44597b74] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,972  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'feignTargeter' of type [org.springframework.cloud.openfeign.HystrixTargeter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,997  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.zhjs.scfcloud.feign.UserFeignService' of type [com.sun.proxy.$Proxy97] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:51,997  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'myShiroRealm' of type [com.zhjs.scfcloud.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:52,000  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisManager' of type [org.crazycake.shiro.RedisManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:52,000  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisCacheManager' of type [org.crazycake.shiro.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:52,003  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisSessionDAO' of type [com.zhjs.scfcloud.config.MyRedisSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:52,006  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'sessionManager' of type [com.zhjs.scfcloud.config.MySessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:52,007  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:52,011  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:52,022  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1ea62a7d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-12 14:38:52,238  INFO TomcatWebServer:90 - Tomcat initialized with port(s): 21000 (http)
+2019-07-12 14:38:52,357  INFO ContextLoader:296 - Root WebApplicationContext: initialization completed in 1357 ms
+2019-07-12 14:38:52,833  INFO AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.zhjs.scfcloud.util.util.PropertiesUtil.env
+2019-07-12 14:38:52,840  WARN URLConfigurationSource:121 - No URLs will be polled as dynamic configuration sources.
+2019-07-12 14:38:52,840  INFO URLConfigurationSource:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-12 14:38:52,844  WARN URLConfigurationSource:121 - No URLs will be polled as dynamic configuration sources.
+2019-07-12 14:38:52,844  INFO URLConfigurationSource:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-12 14:38:52,965  INFO ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-12 14:38:53,380  INFO InstanceInfoFactory:72 - Setting initial instance status as: STARTING
+2019-07-12 14:38:53,402  INFO DiscoveryClient:349 - Initializing Eureka in region us-east-1
+2019-07-12 14:38:53,452  INFO DiscoveryJerseyProvider:70 - Using JSON encoding codec LegacyJacksonJson
+2019-07-12 14:38:53,452  INFO DiscoveryJerseyProvider:71 - Using JSON decoding codec LegacyJacksonJson
+2019-07-12 14:38:53,520  INFO DiscoveryJerseyProvider:80 - Using XML encoding codec XStreamXml
+2019-07-12 14:38:53,520  INFO DiscoveryJerseyProvider:81 - Using XML decoding codec XStreamXml
+2019-07-12 14:38:53,659  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-12 14:38:53,687  INFO DiscoveryClient:958 - Disable delta property : false
+2019-07-12 14:38:53,688  INFO DiscoveryClient:959 - Single vip registry refresh property : null
+2019-07-12 14:38:53,688  INFO DiscoveryClient:960 - Force full registry fetch : false
+2019-07-12 14:38:53,688  INFO DiscoveryClient:961 - Application is null : false
+2019-07-12 14:38:53,688  INFO DiscoveryClient:962 - Registered Applications size is zero : true
+2019-07-12 14:38:53,688  INFO DiscoveryClient:964 - Application version is -1: true
+2019-07-12 14:38:53,688  INFO DiscoveryClient:1047 - Getting all instance registry info from the eureka server
+2019-07-12 14:38:53,760  INFO DiscoveryClient:1056 - The response status is 200
+2019-07-12 14:38:53,763  INFO DiscoveryClient:1270 - Starting heartbeat executor: renew interval is: 30
+2019-07-12 14:38:53,764  INFO InstanceInfoReplicator:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-12 14:38:53,767  INFO DiscoveryClient:449 - Discovery Client initialized at timestamp 1562913533766 with initial instances count: 2
+2019-07-12 14:38:53,768  INFO EurekaServiceRegistry:41 - Registering application SCFCLOUD with eureka with status UP
+2019-07-12 14:38:53,768  INFO DiscoveryClient:1305 - Saw local status change event StatusChangeEvent [timestamp=1562913533768, current=UP, previous=STARTING]
+2019-07-12 14:38:53,769  INFO DiscoveryClient:826 - DiscoveryClient_SCFCLOUD/PC-20190528OEHK:scfcloud:21000: registering service...
+2019-07-12 14:38:53,790  INFO DiscoveryClient:835 - DiscoveryClient_SCFCLOUD/PC-20190528OEHK:scfcloud:21000 - registration status: 204
+2019-07-12 14:38:53,792  INFO TomcatWebServer:204 - Tomcat started on port(s): 21000 (http) with context path ''
+2019-07-12 14:38:53,793  INFO EurekaAutoServiceRegistration:143 - Updating port to 21000
+2019-07-12 14:38:53,794  INFO ScfcloudApplication:59 - Started ScfcloudApplication in 3.594 seconds (JVM running for 4.042)
+2019-07-12 14:38:59,755  INFO DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-07-12 14:38:59,766  INFO DispatcherServlet:546 - Completed initialization in 11 ms
+2019-07-12 14:38:59,797  INFO AbstractValidatingSessionManager:233 - Enabling session validation scheduler...
+2019-07-12 14:38:59,798  INFO MySessionManager:45 - id:null
+2019-07-12 14:38:59,824  INFO LoginController:37 - 登录参数：{"loginAccount":"lzskcloud@qq.com","password":"123456"}
+2019-07-12 14:38:59,930  INFO ChainedDynamicProperty:115 - Flipping property: scfcloud-system.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-12 14:38:59,946  INFO ShutdownEnabledTimer:58 - Shutdown hook installed for: NFLoadBalancer-PingTimer-scfcloud-system
+2019-07-12 14:38:59,949  INFO BaseLoadBalancer:197 - Client: scfcloud-system instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=scfcloud-system,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-12 14:38:59,951  INFO DynamicServerListLoadBalancer:222 - Using serverListUpdater PollingServerListUpdater
+2019-07-12 14:39:00,056  INFO ChainedDynamicProperty:115 - Flipping property: scfcloud-system.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-12 14:39:00,058  INFO DynamicServerListLoadBalancer:150 - DynamicServerListLoadBalancer for client scfcloud-system initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=scfcloud-system,current list of Servers=[PC-20190528OEHK:22000],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:PC-20190528OEHK:22000;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@4d394491
+2019-07-12 14:39:00,955  INFO ChainedDynamicProperty:115 - Flipping property: scfcloud-system.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-12 14:39:00,994  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:01,024  INFO CompanyController:100 - user.getCompanyId()=1
+2019-07-12 14:39:07,064  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:07,092  INFO CreditUseController:50 - 获取我的用信申请列表{}CreditUseApplyListQueryDTO(applyUserName=, userId=null, creditId=null, businessTypeId=2, creditItemName=, status=null)
+2019-07-12 14:39:09,901  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:09,915  INFO CreditUseController:50 - 获取我的用信申请列表{}CreditUseApplyListQueryDTO(applyUserName=, userId=null, creditId=null, businessTypeId=2, creditItemName=, status=null)
+2019-07-12 14:39:16,353  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:16,353  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:16,386  INFO BusinessController:81 - subject:获取业务的流程状态集合,dto:{"businessTypeId":1}
+2019-07-12 14:39:16,468  INFO CreditApplyController:126 - subject:所有申请,creditApplyFileSaveDTO:{"current":1,"customerName":"","flowCode":"","itemName":"","pages":0,"records":[],"size":10,"total":0}
+2019-07-12 14:39:16,520  INFO EpollProvider:68 - Starting without optional epoll library
+2019-07-12 14:39:16,522  INFO KqueueProvider:70 - Starting without optional kqueue library
+2019-07-12 14:39:20,465  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:20,477  INFO BusinessController:81 - subject:获取业务的流程状态集合,dto:{"businessTypeId":1}
+2019-07-12 14:39:20,516  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:20,561  INFO CreditApplyController:96 - subject:我的申请,creditApplyFileSaveDTO:{"current":1,"customerName":"","flowCode":"","isWait":"true","itemName":"","pages":0,"records":[],"size":10,"total":0}
+2019-07-12 14:39:22,422  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:22,442  INFO BusinessController:61 - subject:查询业务属性字段配置信息,dto:{"businessType":"申请授信","businessTypeId":1,"queryType":"create"}
+2019-07-12 14:39:26,434  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:26,434  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:26,445  INFO BusinessController:81 - subject:获取业务的流程状态集合,dto:{"businessTypeId":1}
+2019-07-12 14:39:26,458  INFO CreditApplyController:174 - subject:授信审批列表,creditApplyAuditListQueryDTO:{"current":1,"customerName":"","flowCode":"","isWait":"true","itemName":"","pages":0,"records":[],"size":10,"total":0}
+2019-07-12 14:39:29,286  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:29,313  INFO CreditRecordController:53 - subject:所有授信,creditRecordMyListQueryDTO:{"applyId":"","creditEndDateEnd":"","creditEndDateStart":"","creditStartDateEnd":"","creditStartDateStart":"","current":1,"customerName":"","itemName":"","pages":0,"records":[],"size":10,"total":0}
+2019-07-12 14:39:31,347  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:31,367  INFO CreditRecordController:39 - subject:我的授信,creditRecordMyListQueryDTO:{"applyId":"","client":"app","creditEndDateEnd":"","creditEndDateStart":"","creditStartDateEnd":"","creditStartDateStart":"","current":1,"customerName":"","itemName":"","pages":0,"records":[],"size":10,"total":0}
+2019-07-12 14:39:38,386  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:38,395  INFO CreditUseController:58 - 获取所有用信申请列表{}CreditUseApplyListQueryDTO(applyUserName=, userId=null, creditId=null, businessTypeId=2, creditItemName=, status=null)
+2019-07-12 14:39:39,578  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:39,587  INFO CreditUseController:50 - 获取我的用信申请列表{}CreditUseApplyListQueryDTO(applyUserName=, userId=null, creditId=null, businessTypeId=2, creditItemName=, status=null)
+2019-07-12 14:39:40,997  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:41,012  INFO CreditUseController:65 - 获取用信审批列表{}CreditUseAuditListQueryDTO(applyUserName=null, creditId=null, businessTypeId=, creditItemName=, flowCode=null, companyId=null, userId=null, roleIds=null, permissionType=null, permissionOrgIds=null)
+2019-07-12 14:39:42,439  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:42,453  INFO CreditUseController:107 - subject:所有用信列表,CreditUseMyListWebDTO:CreditUseAllListWebDTO(permissionType=null, permissionOrgIds=null, userId=null)
+2019-07-12 14:39:43,777  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:43,794  INFO CreditUseController:95 - subject:我的用信列表,CreditUseMyListWebDTO:CreditUseMyListWebDTO(companyId=null, idCard=null, applyUserName=, itemName=, useApplyId=null, useBeginDateBegin=, useBeginDateEnd=, shouldRefundDateBegin=, shouldRefundDateEnd=)
+2019-07-12 14:39:45,211  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:45,225  INFO CreditUseController:145 - subject:商票列表,CreditUseMyListWebDTO:CreditTicketListWebDTO(creditUseId=null, ticketGiveCompany=null, acceptorCompany=null, ticketStartBegin=null, ticketStartEnd=null, ticketEndBegin=null, ticketEndEnd=null, companyId=null, userId=null, permissionType=null, permissionOrgIds=null)
+2019-07-12 14:39:46,922  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:46,983  INFO CreditTicketApplyController:44 - 查询开票申请流程相关信息:{"businessTypeId":2,"flowCode":"ticket1","queryType":"create"}
+2019-07-12 14:39:50,865  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:50,876  INFO CreditRecordController:39 - subject:我的授信,creditRecordMyListQueryDTO:{"applyId":"","client":"app","creditEndDateEnd":"","creditEndDateStart":"","creditStartDateEnd":"","creditStartDateStart":"","current":1,"customerName":"","itemName":"","pages":0,"records":[],"size":10,"total":0}
+2019-07-12 14:39:53,613  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:53,623  INFO CreditRecordController:53 - subject:所有授信,creditRecordMyListQueryDTO:{"applyId":"","creditEndDateEnd":"","creditEndDateStart":"","creditStartDateEnd":"","creditStartDateStart":"","current":1,"customerName":"","itemName":"","pages":0,"records":[],"size":10,"total":0}
+2019-07-12 14:39:54,977  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:54,978  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:54,986  INFO BusinessController:81 - subject:获取业务的流程状态集合,dto:{"businessTypeId":1}
+2019-07-12 14:39:54,990  INFO CreditApplyController:174 - subject:授信审批列表,creditApplyAuditListQueryDTO:{"current":1,"customerName":"","flowCode":"","isWait":"true","itemName":"","pages":0,"records":[],"size":10,"total":0}
+2019-07-12 14:39:58,385  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:58,385  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:58,385  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:58,386  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:39:58,398  INFO CommentController:39 - 查询评论列表
+2019-07-12 14:39:58,415  INFO CreditApplyController:141 - subject:审核页面信息查询（授信详情、审核配置）,dto:{"businessTypeId":1,"companyId":1,"creditApplyId":1,"flowCode":"credit6","queryType":"audit"}
+2019-07-12 14:39:58,431  INFO CreditApplyController:165 - subject:操作日志,findOperateLogList:OperateLogDTO(companyId=1, businessTypeId=1, businessId=1, operatObject=null)
+2019-07-12 14:39:58,431  INFO CreditApplyController:157 - subject:授信审核日记,AuditLogListDTO:AuditLogListDTO(companyId=1, businessTypeId=1, businessId=1)
+2019-07-12 14:41:21,894  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:41:21,913  INFO CreditApplyController:106 - subject:授信审核提交,CreditAuditCommitDTO:{"afterFlow":"credit7","beforeFlow":"credit6","businessTypeId":1,"commentContent":"","companyId":1,"creditApplyId":1,"disposeRoleIds":"2","disposeUserIds":"1,3","fileList":[{"fileCode":"idcard-face","fileSize":"352B","fileType":"image","fileUrl":"/usr/local/upload/78c241de-c1ca-410a-8a44-73d7d8ad1df6.png","newFileName":"78c241de-c1ca-410a-8a44-73d7d8ad1df6.png","originalFileName":"arrow.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"689B","fileType":"image","fileUrl":"/usr/local/upload/3e873884-e9c7-479b-8772-d6f35dd441a9.png","newFileName":"3e873884-e9c7-479b-8772-d6f35dd441a9.png","originalFileName":"crown.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"214B","fileType":"image","fileUrl":"/usr/local/upload/f3addced-052f-43fc-b3cb-ac1381b0f758.png","newFileName":"f3addced-052f-43fc-b3cb-ac1381b0f758.png","originalFileName":"arrow-right.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"5.51KB","fileType":"image","fileUrl":"/usr/local/upload/6b1ccd6a-128d-47d0-af06-8086dee79a30.png","newFileName":"6b1ccd6a-128d-47d0-af06-8086dee79a30.png","originalFileName":"hongbao.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"6.17KB","fileType":"image","fileUrl":"/usr/local/upload/675bdbec-464b-4da5-97d3-6ddc906f3e00.png","newFileName":"675bdbec-464b-4da5-97d3-6ddc906f3e00.png","originalFileName":"get.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"446B","fileType":"image","fileUrl":"/usr/local/upload/073b2785-77f5-4257-9b7b-d0b220182bac.png","newFileName":"073b2785-77f5-4257-9b7b-d0b220182bac.png","originalFileName":"red-arrow-right.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"686B","fileType":"image","fileUrl":"/usr/local/upload/90f7d37f-4a0f-4eb6-802a-313fb66eefec.png","newFileName":"90f7d37f-4a0f-4eb6-802a-313fb66eefec.png","originalFileName":"left-shadow.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"669B","fileType":"image","fileUrl":"/usr/local/upload/6fc5ecd5-e8e4-43a3-8707-598789f8e039.png","newFileName":"6fc5ecd5-e8e4-43a3-8707-598789f8e039.png","originalFileName":"right-shadow.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"2.65KB","fileType":"image","fileUrl":"/usr/local/upload/afd38c64-977a-4e0f-ada3-36dbfabf9fe2.png","newFileName":"afd38c64-977a-4e0f-ada3-36dbfabf9fe2.png","originalFileName":"tipone.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/fb1476df-0f59-4839-aaa6-0483dfa7cd5e.png","newFileName":"fb1476df-0f59-4839-aaa6-0483dfa7cd5e.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"idcard-back","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/a8c5c830-9aed-42a4-81b0-3b57e1141913.png","newFileName":"a8c5c830-9aed-42a4-81b0-3b57e1141913.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"household-register","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/35137912-ebec-4377-8c89-ba3317de3cb6.png","newFileName":"35137912-ebec-4377-8c89-ba3317de3cb6.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"spouse-idcard-face","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/ac223e34-0ead-4cfd-94c6-87708ae764fe.png","newFileName":"ac223e34-0ead-4cfd-94c6-87708ae764fe.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"spouse-idcard-back","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/b5637eb1-3408-40b9-a208-2fc29f13ae68.png","newFileName":"b5637eb1-3408-40b9-a208-2fc29f13ae68.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"spouse-household-register","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/c1c0bebb-4401-4e0a-be29-8a720ad3f2f3.png","newFileName":"c1c0bebb-4401-4e0a-be29-8a720ad3f2f3.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"marriage-certificate","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/b0dcd36f-5d2e-4dd2-a84d-ad94e6f02d7d.png","newFileName":"b0dcd36f-5d2e-4dd2-a84d-ad94e6f02d7d.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"credit-report","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/eb9fe2b0-13ed-4703-b8a5-2e8e54358ed8.png","newFileName":"eb9fe2b0-13ed-4703-b8a5-2e8e54358ed8.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"spouse-credit-report","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/d649db9c-fa50-4b4f-8227-c134b5cbfb60.png","newFileName":"d649db9c-fa50-4b4f-8227-c134b5cbfb60.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"premises-permit","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/729a8ac4-7401-46fb-8ab1-9f05db29cf8a.png","newFileName":"729a8ac4-7401-46fb-8ab1-9f05db29cf8a.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"driving-license","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/b7e7ba1d-fc3a-4f6c-b72b-3807296dea4b.png","newFileName":"b7e7ba1d-fc3a-4f6c-b72b-3807296dea4b.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"bank-statement-6","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/821a2ebf-dea0-4ee4-9ded-ccd118629fcd.png","newFileName":"821a2ebf-dea0-4ee4-9ded-ccd118629fcd.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"spouse-bank-statement-6","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/50c3377d-13e6-4770-863b-508af9012317.png","newFileName":"50c3377d-13e6-4770-863b-508af9012317.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"other-the-related-subjects","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/f42c7876-30d2-4d0d-9f81-049022474b27.png","newFileName":"f42c7876-30d2-4d0d-9f81-049022474b27.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"business_apply_table","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/42259b1a-8eb2-47f2-b1c1-9dd1b571ee86.png","newFileName":"42259b1a-8eb2-47f2-b1c1-9dd1b571ee86.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"project-contract","fileSize":"6.17KB","fileType":"image","fileUrl":"/usr/local/upload/bc458052-6441-40d4-8306-a70046f907e3.png","newFileName":"bc458052-6441-40d4-8306-a70046f907e3.png","originalFileName":"get.png","suffix":".png"},{"fileCode":"project-standing-book","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/5f7c0a9b-174f-4b25-aac3-d984411ae3b5.png","newFileName":"5f7c0a9b-174f-4b25-aac3-d984411ae3b5.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"prepare-data-other","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/46bb3c27-735f-46ec-adab-a546ee46477f.png","newFileName":"46bb3c27-735f-46ec-adab-a546ee46477f.png","originalFileName":"tiptwo.png","suffix":".png"}],"flowDesc":"状态: 由“准备资料”修改为“客户经理审核”","flowId":6,"formDataList":[{"columnCh":"","columnName":"creditRisk_riskCredit14","columnValue":"72","projectId":1}],"statusDesc":"在状态[准备资料]","uploadDeleteFileDesc":"本人身份证（正面）: arrow.png 上传;本人身份证（正面）: crown.png 上传;本人身份证（正面）: arrow-right.png 上传;本人身份证（正面）: hongbao.png 上传;本人身份证（正面）: get.png 上传;本人身份证（正面）: red-arrow-right.png 上传;本人身份证（正面）: left-shadow.png 上传;本人身份证（正面）: right-shadow.png 上传;本人身份证（正面）: tipone.png 上传;本人身份证（正面）: tiptwo.png 上传;本人身份证（反面）: tiptwo.png 上传;本人户口本: tiptwo.png 上传;配偶身份证（正面）: tiptwo.png 上传;配偶身份证（反面）: tiptwo.png 上传;配偶户口本: tiptwo.png 上传;结婚证: tiptwo.png 上传;本人人行征信报告: tiptwo.png 上传;配偶人行征信报告: tiptwo.png 上传;本人及配偶名下房产证: tiptwo.png 上传;本人及名下车辆行驶证: tiptwo.png 上传;本人主要结算银行近6个月银行流水: tiptwo.png 上传;配偶主要结算银行近6个月银行流水: tiptwo.png 上传;其他借款人、保证人附件: tiptwo.png 上传;授信申请书: tiptwo.png 上传;项目合同: get.png 上传;项目台账: tiptwo.png 上传;准备资料-其他附件: tiptwo.png 上传"}
+2019-07-12 14:41:57,016  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:41:57,023  INFO CreditApplyController:106 - subject:授信审核提交,CreditAuditCommitDTO:{"afterFlow":"credit7","beforeFlow":"credit6","businessTypeId":1,"commentContent":"","companyId":1,"creditApplyId":1,"disposeRoleIds":"2","disposeUserIds":"1,3","fileList":[{"fileCode":"idcard-face","fileSize":"352B","fileType":"image","fileUrl":"/usr/local/upload/78c241de-c1ca-410a-8a44-73d7d8ad1df6.png","newFileName":"78c241de-c1ca-410a-8a44-73d7d8ad1df6.png","originalFileName":"arrow.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"689B","fileType":"image","fileUrl":"/usr/local/upload/3e873884-e9c7-479b-8772-d6f35dd441a9.png","newFileName":"3e873884-e9c7-479b-8772-d6f35dd441a9.png","originalFileName":"crown.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"214B","fileType":"image","fileUrl":"/usr/local/upload/f3addced-052f-43fc-b3cb-ac1381b0f758.png","newFileName":"f3addced-052f-43fc-b3cb-ac1381b0f758.png","originalFileName":"arrow-right.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"5.51KB","fileType":"image","fileUrl":"/usr/local/upload/6b1ccd6a-128d-47d0-af06-8086dee79a30.png","newFileName":"6b1ccd6a-128d-47d0-af06-8086dee79a30.png","originalFileName":"hongbao.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"6.17KB","fileType":"image","fileUrl":"/usr/local/upload/675bdbec-464b-4da5-97d3-6ddc906f3e00.png","newFileName":"675bdbec-464b-4da5-97d3-6ddc906f3e00.png","originalFileName":"get.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"446B","fileType":"image","fileUrl":"/usr/local/upload/073b2785-77f5-4257-9b7b-d0b220182bac.png","newFileName":"073b2785-77f5-4257-9b7b-d0b220182bac.png","originalFileName":"red-arrow-right.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"686B","fileType":"image","fileUrl":"/usr/local/upload/90f7d37f-4a0f-4eb6-802a-313fb66eefec.png","newFileName":"90f7d37f-4a0f-4eb6-802a-313fb66eefec.png","originalFileName":"left-shadow.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"669B","fileType":"image","fileUrl":"/usr/local/upload/6fc5ecd5-e8e4-43a3-8707-598789f8e039.png","newFileName":"6fc5ecd5-e8e4-43a3-8707-598789f8e039.png","originalFileName":"right-shadow.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"2.65KB","fileType":"image","fileUrl":"/usr/local/upload/afd38c64-977a-4e0f-ada3-36dbfabf9fe2.png","newFileName":"afd38c64-977a-4e0f-ada3-36dbfabf9fe2.png","originalFileName":"tipone.png","suffix":".png"},{"fileCode":"idcard-face","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/fb1476df-0f59-4839-aaa6-0483dfa7cd5e.png","newFileName":"fb1476df-0f59-4839-aaa6-0483dfa7cd5e.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"idcard-back","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/a8c5c830-9aed-42a4-81b0-3b57e1141913.png","newFileName":"a8c5c830-9aed-42a4-81b0-3b57e1141913.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"household-register","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/35137912-ebec-4377-8c89-ba3317de3cb6.png","newFileName":"35137912-ebec-4377-8c89-ba3317de3cb6.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"spouse-idcard-face","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/ac223e34-0ead-4cfd-94c6-87708ae764fe.png","newFileName":"ac223e34-0ead-4cfd-94c6-87708ae764fe.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"spouse-idcard-back","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/b5637eb1-3408-40b9-a208-2fc29f13ae68.png","newFileName":"b5637eb1-3408-40b9-a208-2fc29f13ae68.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"spouse-household-register","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/c1c0bebb-4401-4e0a-be29-8a720ad3f2f3.png","newFileName":"c1c0bebb-4401-4e0a-be29-8a720ad3f2f3.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"marriage-certificate","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/b0dcd36f-5d2e-4dd2-a84d-ad94e6f02d7d.png","newFileName":"b0dcd36f-5d2e-4dd2-a84d-ad94e6f02d7d.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"credit-report","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/eb9fe2b0-13ed-4703-b8a5-2e8e54358ed8.png","newFileName":"eb9fe2b0-13ed-4703-b8a5-2e8e54358ed8.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"spouse-credit-report","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/d649db9c-fa50-4b4f-8227-c134b5cbfb60.png","newFileName":"d649db9c-fa50-4b4f-8227-c134b5cbfb60.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"premises-permit","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/729a8ac4-7401-46fb-8ab1-9f05db29cf8a.png","newFileName":"729a8ac4-7401-46fb-8ab1-9f05db29cf8a.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"driving-license","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/b7e7ba1d-fc3a-4f6c-b72b-3807296dea4b.png","newFileName":"b7e7ba1d-fc3a-4f6c-b72b-3807296dea4b.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"bank-statement-6","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/821a2ebf-dea0-4ee4-9ded-ccd118629fcd.png","newFileName":"821a2ebf-dea0-4ee4-9ded-ccd118629fcd.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"spouse-bank-statement-6","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/50c3377d-13e6-4770-863b-508af9012317.png","newFileName":"50c3377d-13e6-4770-863b-508af9012317.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"other-the-related-subjects","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/f42c7876-30d2-4d0d-9f81-049022474b27.png","newFileName":"f42c7876-30d2-4d0d-9f81-049022474b27.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"business_apply_table","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/42259b1a-8eb2-47f2-b1c1-9dd1b571ee86.png","newFileName":"42259b1a-8eb2-47f2-b1c1-9dd1b571ee86.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"project-contract","fileSize":"6.17KB","fileType":"image","fileUrl":"/usr/local/upload/bc458052-6441-40d4-8306-a70046f907e3.png","newFileName":"bc458052-6441-40d4-8306-a70046f907e3.png","originalFileName":"get.png","suffix":".png"},{"fileCode":"project-standing-book","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/5f7c0a9b-174f-4b25-aac3-d984411ae3b5.png","newFileName":"5f7c0a9b-174f-4b25-aac3-d984411ae3b5.png","originalFileName":"tiptwo.png","suffix":".png"},{"fileCode":"prepare-data-other","fileSize":"2.67KB","fileType":"image","fileUrl":"/usr/local/upload/46bb3c27-735f-46ec-adab-a546ee46477f.png","newFileName":"46bb3c27-735f-46ec-adab-a546ee46477f.png","originalFileName":"tiptwo.png","suffix":".png"}],"flowDesc":"状态: 由“准备资料”修改为“客户经理审核”","flowId":6,"formDataList":[{"columnCh":"","columnName":"creditRisk_riskCredit14","columnValue":"72","projectId":1}],"statusDesc":"在状态[准备资料]","uploadDeleteFileDesc":"本人身份证（正面）: arrow.png 上传;本人身份证（正面）: crown.png 上传;本人身份证（正面）: arrow-right.png 上传;本人身份证（正面）: hongbao.png 上传;本人身份证（正面）: get.png 上传;本人身份证（正面）: red-arrow-right.png 上传;本人身份证（正面）: left-shadow.png 上传;本人身份证（正面）: right-shadow.png 上传;本人身份证（正面）: tipone.png 上传;本人身份证（正面）: tiptwo.png 上传;本人身份证（反面）: tiptwo.png 上传;本人户口本: tiptwo.png 上传;配偶身份证（正面）: tiptwo.png 上传;配偶身份证（反面）: tiptwo.png 上传;配偶户口本: tiptwo.png 上传;结婚证: tiptwo.png 上传;本人人行征信报告: tiptwo.png 上传;配偶人行征信报告: tiptwo.png 上传;本人及配偶名下房产证: tiptwo.png 上传;本人及名下车辆行驶证: tiptwo.png 上传;本人主要结算银行近6个月银行流水: tiptwo.png 上传;配偶主要结算银行近6个月银行流水: tiptwo.png 上传;其他借款人、保证人附件: tiptwo.png 上传;授信申请书: tiptwo.png 上传;项目合同: get.png 上传;项目台账: tiptwo.png 上传;准备资料-其他附件: tiptwo.png 上传"}
+2019-07-12 14:43:53,701  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-12 14:44:40,840  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:44:40,851  INFO CreditApplyController:126 - subject:所有申请,creditApplyFileSaveDTO:{"current":1,"customerName":"","flowCode":"","itemName":"","pages":0,"records":[],"size":10,"total":0}
+2019-07-12 14:44:40,851  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:44:40,858  INFO BusinessController:81 - subject:获取业务的流程状态集合,dto:{"businessTypeId":1}
+2019-07-12 14:44:46,048  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:44:46,056  INFO BusinessController:61 - subject:查询业务属性字段配置信息,dto:{"businessType":"申请授信","businessTypeId":1,"queryType":"create"}
+2019-07-12 14:46:26,842  INFO MySessionManager:45 - id:null
+2019-07-12 14:46:26,843  INFO LoginController:37 - 登录参数：{"loginAccount":"lzskcloud@qq.com","password":"123456"}
+2019-07-12 14:46:26,989  INFO MySessionManager:45 - id:d65525e0-a61a-4f5f-89d7-7a5252e9af4a
+2019-07-12 14:46:26,993  INFO CompanyController:100 - user.getCompanyId()=1
+2019-07-12 14:47:15,375  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:47:15,390  INFO CreditApplyController:51 - subject:授信申请存草稿,creditApplyDraftSaveDTO:{"businessTypeId":1,"index":-1,"tableName":"creditApply_maritalStatus","value":"3"}
+2019-07-12 14:48:53,714  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-12 14:53:53,727  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-12 14:54:38,441  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:54:38,948  INFO BusinessController:61 - subject:查询业务属性字段配置信息,dto:{"businessType":"申请授信","businessTypeId":1,"queryType":"create"}
+2019-07-12 14:57:07,203  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:57:07,710  INFO BusinessController:61 - subject:查询业务属性字段配置信息,dto:{"businessType":"申请授信","businessTypeId":1,"queryType":"create"}
+2019-07-12 14:58:06,285  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:58:06,293  INFO BusinessController:61 - subject:查询业务属性字段配置信息,dto:{"businessType":"申请授信","businessTypeId":1,"queryType":"create"}
+2019-07-12 14:58:42,354  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 14:58:42,362  INFO BusinessController:61 - subject:查询业务属性字段配置信息,dto:{"businessType":"申请授信","businessTypeId":1,"queryType":"create"}
+2019-07-12 14:58:53,739  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-12 15:00:41,248  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 15:00:41,253  INFO BusinessController:61 - subject:查询业务属性字段配置信息,dto:{"businessType":"申请授信","businessTypeId":1,"queryType":"create"}
+2019-07-12 15:01:14,712  INFO MySessionManager:45 - id:d2bb6217-05ad-424e-83d2-95254a288450
+2019-07-12 15:01:14,719  INFO BusinessController:61 - subject:查询业务属性字段配置信息,dto:{"businessType":"申请授信","businessTypeId":1,"queryType":"create"}

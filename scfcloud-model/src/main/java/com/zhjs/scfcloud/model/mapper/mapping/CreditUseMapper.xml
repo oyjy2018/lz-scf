@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CreditUseMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.CreditUse">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="credit_apply_id" jdbcType="BIGINT" property="creditApplyId" />
+    <result column="credit_id" jdbcType="BIGINT" property="creditId" />
+    <result column="item_id" jdbcType="BIGINT" property="itemId" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="use_type" jdbcType="INTEGER" property="useType" />
+    <result column="use_apply_id" jdbcType="BIGINT" property="useApplyId" />
+    <result column="apply_user_id_card" jdbcType="VARCHAR" property="applyUserIdCard" />
+    <result column="apply_user_name" jdbcType="VARCHAR" property="applyUserName" />
+    <result column="use_money" jdbcType="DECIMAL" property="useMoney" />
+    <result column="use_begin_date" jdbcType="DATE" property="useBeginDate" />
+    <result column="should_refund_date" jdbcType="DATE" property="shouldRefundDate" />
+    <result column="refund_status" jdbcType="INTEGER" property="refundStatus" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_id, credit_apply_id, credit_id, item_id, item_name, use_type, use_apply_id, 
+    apply_user_id_card, apply_user_name, use_money, use_begin_date, should_refund_date, 
+    refund_status, create_by, create_time, update_time, update_by, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scf_credit_use
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_credit_use
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.CreditUse" useGeneratedKeys="true">
+    insert into scf_credit_use (company_id, credit_apply_id, credit_id, 
+      item_id, item_name, use_type, 
+      use_apply_id, apply_user_id_card, apply_user_name, 
+      use_money, use_begin_date, should_refund_date, 
+      refund_status, create_by, create_time, 
+      update_time, update_by, status
+      )
+    values (#{companyId,jdbcType=BIGINT}, #{creditApplyId,jdbcType=BIGINT}, #{creditId,jdbcType=BIGINT}, 
+      #{itemId,jdbcType=BIGINT}, #{itemName,jdbcType=VARCHAR}, #{useType,jdbcType=INTEGER}, 
+      #{useApplyId,jdbcType=BIGINT}, #{applyUserIdCard,jdbcType=VARCHAR}, #{applyUserName,jdbcType=VARCHAR}, 
+      #{useMoney,jdbcType=DECIMAL}, #{useBeginDate,jdbcType=DATE}, #{shouldRefundDate,jdbcType=DATE}, 
+      #{refundStatus,jdbcType=INTEGER}, #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.CreditUse" useGeneratedKeys="true">
+    insert into scf_credit_use
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="creditApplyId != null">
+        credit_apply_id,
+      </if>
+      <if test="creditId != null">
+        credit_id,
+      </if>
+      <if test="itemId != null">
+        item_id,
+      </if>
+      <if test="itemName != null">
+        item_name,
+      </if>
+      <if test="useType != null">
+        use_type,
+      </if>
+      <if test="useApplyId != null">
+        use_apply_id,
+      </if>
+      <if test="applyUserIdCard != null">
+        apply_user_id_card,
+      </if>
+      <if test="applyUserName != null">
+        apply_user_name,
+      </if>
+      <if test="useMoney != null">
+        use_money,
+      </if>
+      <if test="useBeginDate != null">
+        use_begin_date,
+      </if>
+      <if test="shouldRefundDate != null">
+        should_refund_date,
+      </if>
+      <if test="refundStatus != null">
+        refund_status,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="creditApplyId != null">
+        #{creditApplyId,jdbcType=BIGINT},
+      </if>
+      <if test="creditId != null">
+        #{creditId,jdbcType=BIGINT},
+      </if>
+      <if test="itemId != null">
+        #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="itemName != null">
+        #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="useType != null">
+        #{useType,jdbcType=INTEGER},
+      </if>
+      <if test="useApplyId != null">
+        #{useApplyId,jdbcType=BIGINT},
+      </if>
+      <if test="applyUserIdCard != null">
+        #{applyUserIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="applyUserName != null">
+        #{applyUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="useMoney != null">
+        #{useMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="useBeginDate != null">
+        #{useBeginDate,jdbcType=DATE},
+      </if>
+      <if test="shouldRefundDate != null">
+        #{shouldRefundDate,jdbcType=DATE},
+      </if>
+      <if test="refundStatus != null">
+        #{refundStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.CreditUse">
+    update scf_credit_use
+    <set>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="creditApplyId != null">
+        credit_apply_id = #{creditApplyId,jdbcType=BIGINT},
+      </if>
+      <if test="creditId != null">
+        credit_id = #{creditId,jdbcType=BIGINT},
+      </if>
+      <if test="itemId != null">
+        item_id = #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="itemName != null">
+        item_name = #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="useType != null">
+        use_type = #{useType,jdbcType=INTEGER},
+      </if>
+      <if test="useApplyId != null">
+        use_apply_id = #{useApplyId,jdbcType=BIGINT},
+      </if>
+      <if test="applyUserIdCard != null">
+        apply_user_id_card = #{applyUserIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="applyUserName != null">
+        apply_user_name = #{applyUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="useMoney != null">
+        use_money = #{useMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="useBeginDate != null">
+        use_begin_date = #{useBeginDate,jdbcType=DATE},
+      </if>
+      <if test="shouldRefundDate != null">
+        should_refund_date = #{shouldRefundDate,jdbcType=DATE},
+      </if>
+      <if test="refundStatus != null">
+        refund_status = #{refundStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.CreditUse">
+    update scf_credit_use
+    set company_id = #{companyId,jdbcType=BIGINT},
+      credit_apply_id = #{creditApplyId,jdbcType=BIGINT},
+      credit_id = #{creditId,jdbcType=BIGINT},
+      item_id = #{itemId,jdbcType=BIGINT},
+      item_name = #{itemName,jdbcType=VARCHAR},
+      use_type = #{useType,jdbcType=INTEGER},
+      use_apply_id = #{useApplyId,jdbcType=BIGINT},
+      apply_user_id_card = #{applyUserIdCard,jdbcType=VARCHAR},
+      apply_user_name = #{applyUserName,jdbcType=VARCHAR},
+      use_money = #{useMoney,jdbcType=DECIMAL},
+      use_begin_date = #{useBeginDate,jdbcType=DATE},
+      should_refund_date = #{shouldRefundDate,jdbcType=DATE},
+      refund_status = #{refundStatus,jdbcType=INTEGER},
+      create_by = #{createBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="getMyListAppVOList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditUseMyListAppVO">
+    select
+      scu.id, scu.item_name itemName, scu.refund_status refundStatus, scu.should_refund_date shouldRefundDate, scu.use_money shouldRefundMoney
+    from scf_credit_use scu
+    where scu.company_id = #{companyId} and scu.apply_user_id_card = #{idCard}
+  </select>
+
+  <select id="getMyListWebVOList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditUseMyListWebVO">
+    select
+      scu.id, scu.company_id companyId,
+      scu.use_type useType,scu.item_name itemName,scu.apply_user_name applyUserName,
+      scu.refund_status refundStatus,scu.use_begin_date useBeginDate,
+      scu.should_refund_date shouldRefundDate, scu.use_money useMoney,
+      scu.credit_apply_id creditApplyId, scu.credit_id creditId, scu.use_apply_id useApplyId
+    from scf_credit_use scu
+    where scu.company_id = #{companyId} and scu.apply_user_id_card = #{idCard}
+    <if test="applyUserName != null and applyUserName != ''">
+      and scu.apply_user_name like CONCAT('%',#{applyUserName},'%')
+    </if>
+    <if test="itemName != null and itemName != ''">
+      and scu.item_name like CONCAT('%',#{itemName},'%')
+    </if>
+    <if test="id != null and id != ''">
+      and scu.id = #{id}
+    </if>
+    <if test="useApplyId != null and useApplyId != ''">
+      and scu.use_apply_id = #{useApplyId}
+    </if>
+    <if test="useBeginDateBegin != null and useBeginDateBegin != ''">
+      and scu.use_begin_date >= #{useBeginDateBegin}
+    </if>
+    <if test="useBeginDateEnd != null and useBeginDateEnd != ''">
+      and #{useBeginDateEnd} >= scu.use_begin_date
+    </if>
+    <if test="shouldRefundDateBegin != null and shouldRefundDateBegin != ''">
+      and scu.should_refund_date >= #{shouldRefundDateBegin}
+    </if>
+    <if test="shouldRefundDateEnd != null and shouldRefundDateEnd != ''">
+      and #{shouldRefundDateEnd} >= scu.should_refund_date
+    </if>
+    order by scu.create_time desc
+  </select>
+
+  <select id="getAllListWebVOList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditUseMyListWebVO">
+    select
+      scu.id, scu.company_id companyId,
+      scu.use_type useType,scu.item_name itemName,scu.apply_user_name applyUserName,
+      scu.refund_status refundStatus,scu.use_begin_date useBeginDate,
+      scu.should_refund_date shouldRefundDate, scu.use_money useMoney,
+      scu.credit_apply_id creditApplyId, scu.credit_id creditId, scu.use_apply_id useApplyId
+    from scf_credit_use scu
+    where (
+    (scu.company_id = #{companyId} and scu.create_by = #{userId})
+    <if test="permissionType == 2 and permissionOrgIds != null and permissionOrgIds != ''">
+      or is_mixed(scu.company_id,#{permissionOrgIds})
+    </if>
+    )
+    <if test="itemName != null and itemName != ''">
+      and scu.item_name like CONCAT('%',#{itemName},'%')
+    </if>
+    <if test="applyUserName != null and applyUserName != ''">
+      and scu.apply_user_name like CONCAT('%',#{applyUserName},'%')
+    </if>
+    <if test="id != null and id != ''">
+      and scu.id = #{id}
+    </if>
+    <if test="useApplyId != null and useApplyId != ''">
+      and scu.use_apply_id = #{useApplyId}
+    </if>
+    <if test="creditId != null and creditId != ''">
+      and scu.credit_id = #{creditId}
+    </if>
+    <if test="useBeginDateBegin != null and useBeginDateBegin != ''">
+      and scu.use_begin_date >= #{useBeginDateBegin}
+    </if>
+    <if test="useBeginDateEnd != null and useBeginDateEnd != ''">
+      and #{useBeginDateEnd} >= scu.use_begin_date
+    </if>
+    <if test="shouldRefundDateBegin != null and shouldRefundDateBegin != ''">
+      and scu.should_refund_date >= #{shouldRefundDateBegin}
+    </if>
+    <if test="shouldRefundDateEnd != null and shouldRefundDateEnd != ''">
+      and #{shouldRefundDateEnd} >= scu.should_refund_date
+    </if>
+    order by scu.create_time desc
+  </select>
+
+  <select id="getWebDetail" resultType="com.zhjs.scfcloud.model.vo.credit.CreditUseDetail4TicketWebVO">
+    select
+      scu.id creditUseId, scu.credit_id creditId,scu.use_type useType,
+      sct.ticket_start ticketStart, sct.ticket_end ticketEnd,sct.ticket_no ticketNo,
+      sct.ticket_money ticketMoney, sct.is_transfer isTransfer,sct.trade_contract_no tradeContractNo,
+      sct.ticket_give_company ticketGiveCompany,sct.ticket_get_company ticketGetCompany,
+      sct.acceptor_company acceptorCompany, sct.acceptor_account acceptorAccount,
+      sct.acceptor_bank acceptorBank, sct.acceptor_bank_no acceptorBankNo,
+      sct.acceptor_bank_province_code acceptorBankProvinceCode, sct.acceptor_bank_city_code acceptorBankCityCode,
+      sct.acceptor_bank_branch acceptorBankBranch,sct.ticket_front_img_url ticketFrontImgUrl,sct.ticket_back_img_url ticketBackImgUrl
+    from scf_credit_use scu
+    left join scf_credit_ticket sct on sct.credit_use_id = scu.id
+    where scu.id = #{id} and scu.use_type = #{useType}
+    limit 1
+  </select>
+
+</mapper>

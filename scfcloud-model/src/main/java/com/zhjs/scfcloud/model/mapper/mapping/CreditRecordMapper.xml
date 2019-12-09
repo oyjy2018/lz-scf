@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CreditRecordMapper">
+  <sql id="Base_Column_List">
+    id, company_id, credit_apply_id, id_card, customer_name, project_id, project_name, 
+    credit_amount, used_credit_amount, credit_start, credit_end, relate_project_id, if_import, 
+    delete_status, create_by, create_time
+  </sql>
+  <select id="getMyListAppVOList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditRecordMyListAppVO">
+    select
+        scr.id,
+        scr.credit_amount creditAmount,
+        scr.used_credit_amount useCreditAmount,
+        (scr.credit_amount - scr.used_credit_amount) remainCreditAmount,
+        scr.credit_start creditStart,
+        scr.credit_end creditEnd,
+        scr.project_name itemName,
+        sca.flow_code flowCode,
+        sca.business_type_id businessTypeId
+    from scf_credit_record scr
+    left join scf_credit_apply sca on scr.credit_apply_id = sca.id
+    where scr.id_card = #{idCard} and scr.company_id = #{companyId} and scr.delete_status = 0
+    order by remainCreditAmount desc
+  </select>
+  <select id="getMyListWebVOList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditRecordMyListWebVO">
+    select
+    scr.id,
+    scr.company_id companyId,
+    scr.credit_amount creditAmount,
+    scr.used_credit_amount usedCreditAmount,
+    scr.credit_start creditStart,
+    scr.credit_end creditEnd,
+    scr.customer_name customerName,
+    scr.credit_apply_id applyId,
+    scr.project_name itemName,
+    scr.if_import ifImport,
+    sca.flow_code flowCode,
+    sca.business_type_id businessTypeId
+    from scf_credit_record scr
+    left join scf_credit_apply sca on scr.credit_apply_id = sca.id
+    where scr.delete_status = 0 and scr.id_card = #{idCard} and scr.company_id = #{companyId}
+    <if test="id != null and id != ''">
+      and scr.id = #{id}
+    </if>
+    <if test="applyId != null and applyId != ''">
+      and scr.credit_apply_id = #{applyId}
+    </if>
+    <if test="customerName != null and customerName != ''">
+      and scr.customer_name LIKE CONCAT('%',#{customerName},'%')
+    </if>
+    <if test="itemName != null and itemName != ''">
+      and scr.project_name LIKE CONCAT('%',#{itemName},'%')
+    </if>
+    <if test="creditStartDateStart != null and creditStartDateStart != ''">
+      and scr.credit_start >= #{creditStartDateStart,jdbcType=TIMESTAMP}
+    </if>
+    <if test="creditStartDateEnd != null and creditStartDateEnd != ''">
+      and  #{creditStartDateEnd,jdbcType=TIMESTAMP} >= scr.credit_start
+    </if>
+    <if test="creditEndDateStart != null and creditEndDateStart != ''">
+      and scr.credit_end >= #{creditEndDateStart}
+    </if>
+    <if test="creditEndDateEnd != null and creditEndDateEnd != ''">
+      and #{creditEndDateEnd} >= scr.credit_end
+    </if>
+    order by scr.create_time desc
+  </select>
+  <select id="getAllListVOList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditRecordAllListWebVO">
+    select
+    scr.id,
+    scr.company_id companyId,
+    scr.credit_amount creditAmount,
+    scr.used_credit_amount usedCreditAmount,
+    scr.credit_start creditStart,
+    scr.credit_end creditEnd,
+    scr.customer_name customerName,
+    scr.credit_apply_id applyId,
+    scr.project_name itemName,
+    scr.if_import ifImport,
+    sca.flow_code flowCode,
+    sca.business_type_id businessTypeId
+    from scf_credit_record scr
+    left join scf_credit_apply sca on scr.credit_apply_id = sca.id
+    where scr.delete_status = 0
+     and (scr.id_card = #{idCard}
+    <if test="permissionType == 2 and permissionOrgIds != null and permissionOrgIds != ''">
+      or find_in_set(scr.company_id,#{permissionOrgIds})
+    </if>
+    )
+    <if test="id != null and id != ''">
+      and scr.id = #{id}
+    </if>
+    <if test="applyId != null and applyId != ''">
+      and scr.credit_apply_id = #{applyId}
+    </if>
+    <if test="customerName != null and customerName != ''">
+      and scr.customer_name = #{customerName}
+    </if>
+    <if test="itemName != null and itemName != ''">
+      and scr.project_name LIKE CONCAT('%',#{itemName},'%')
+    </if>
+    <if test="creditStartDateStart != null and creditStartDateStart != ''">
+      and scr.credit_start >= #{creditStartDateStart,jdbcType=TIMESTAMP}
+    </if>
+    <if test="creditStartDateEnd != null and creditStartDateEnd != ''">
+      and  #{creditStartDateEnd,jdbcType=TIMESTAMP} >= scr.credit_start
+    </if>
+    <if test="creditEndDateStart != null and creditEndDateStart != ''">
+      and scr.credit_end >= #{creditEndDateStart}
+    </if>
+    <if test="creditEndDateEnd != null and creditEndDateEnd != ''">
+      and #{creditEndDateEnd} >= scr.credit_end
+    </if>
+    order by scr.create_time desc
+  </select>
+
+  <select id="findPersonalCreditList" resultType="com.zhjs.scfcloud.model.vo.credit.PersonalCreditVO">
+    SELECT
+      scr.id,
+      scr.credit_apply_id creditApplyId,
+      sci.company_id companyId,
+      scr.customer_name customerName,
+      scr.id_card idCard,
+      sci.id itemId,
+      sci.item_name itemName
+    FROM scf_credit_record scr
+    LEFT JOIN scf_credit_item sci ON sci.id = scr.project_id
+    WHERE scr.id_card = #{idCard,jdbcType=VARCHAR}
+    AND sci.company_id = #{companyId,jdbcType=BIGINT}
+    ORDER BY scr.id
+  </select>
+  <select id="findPersonalCredit" parameterType="java.lang.Long" resultType="com.zhjs.scfcloud.model.vo.credit.PersonalCreditVO">
+    SELECT
+      scr.id,
+      scr.credit_apply_id creditApplyId,
+      sci.company_id companyId,
+      scr.customer_name customerName,
+      scr.id_card idCard,
+      sci.id itemId,
+      sci.item_name itemName
+    FROM scf_credit_record scr
+    LEFT JOIN scf_credit_item sci ON sci.id = scr.project_id
+    WHERE scr.id = #{creditRecordId,jdbcType=BIGINT}
+  </select>
+  <select id="getMixedRecordCount" resultType = "java.lang.Integer">
+    SELECT
+    count(scr.id)
+    FROM scf_credit_record scr
+    where scr.delete_status != 1 and scr.company_id = #{companyId}
+    and (scr.project_name = #{projectName}
+    <if test="relateProjectId != null and relateProjectId != ''">
+      or scr.relate_project_id = #{relateProjectId}
+    </if>
+    )
+    and (
+    (#{creditStartDate} >= scr.credit_start and scr.credit_end > #{creditStartDate})
+    or (#{creditEndDate} >= scr.credit_start and scr.credit_end > #{creditEndDate})
+    )
+  </select>
+</mapper>

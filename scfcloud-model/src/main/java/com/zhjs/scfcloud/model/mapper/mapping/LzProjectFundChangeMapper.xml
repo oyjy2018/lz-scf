@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectFundChangeMapper">
+  <sql id="Base_Column_List">
+    id, contract_no, total_gather, total_loan, total_margins_and_pledge, total_balance,
+    total_payment, bill_receivable, invoice_balance, materials_advance, material_inventory,
+    expiration_date, delete_status, create_by, create_time, update_by, update_time
+  </sql>
+
+  <select id="findProjectAsset" resultType="com.zhjs.scfcloud.model.entity.LzProjectFundChange">
+    SELECT * FROM (
+      SELECT
+        id, contract_no contractNo, total_gather totalGather, total_loan totalLoan, total_margins_and_pledge totalMarginsAndPledge,
+        total_balance totalBalance, total_payment totalPayment, bill_receivable billReceivable, invoice_balance invoiceBalance,
+        materials_advance materialsAdvance, material_inventory materialInventory,
+        expiration_date expirationDate, delete_status deleteStatus, create_by createBy, create_time createTime, update_by updateBy, update_time updateTime
+      FROM lz_project_fund_change lpfc
+      WHERE lpfc.contract_no = #{contractNo}
+      AND DATE_FORMAT(lpfc.expiration_date, '%Y-%m') IN(
+        <foreach collection="days" item="day" separator=",">
+          DATE_FORMAT(#{day}, '%Y-%m')
+        </foreach>
+      )
+      AND lpfc.delete_status = 0
+      ORDER BY lpfc.expiration_date DESC
+      LIMIT 100000
+    ) t GROUP BY DATE_FORMAT(t.expirationDate, '%Y-%m') ORDER BY t.expirationDate
+  </select>
+</mapper>

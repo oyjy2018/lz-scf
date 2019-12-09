@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessTicketBannerMapper">
+  <sql id="Base_Column_List">
+    id, banner_name, jump_url, sort, banner_file_url, use_status, delete_status, create_by, 
+    create_time, update_by, update_time
+  </sql>
+  <select id="list" resultType="com.zhjs.scfcloud.model.vo.banner.BannerListVO">
+    select id, banner_name, jump_url, sort, banner_file_url, use_status,  create_time
+    from scf_business_ticket_banner sbtb
+    where sbtb.delete_status != 1
+    <if test="bannerName != null and bannerName != ''">
+      and sbtb.banner_name like '%${bannerName}%'
+    </if>
+    <if test="useStatus != null and useStatus != ''">
+      and sbtb.use_status = #{useStatus}
+    </if>
+    order by sbtb.sort
+  </select>
+  <update id="updateGeSort">
+    update scf_business_ticket_banner sbtb set sbtb.sort = sbtb.sort-1 where sbtb.sort > #{sort}
+  </update>
+  <update id="updateAddSort">
+    update scf_business_ticket_banner sbtb set sbtb.sort = sbtb.sort + 1
+    where sbtb.sort >= #{beginSort}
+    and #{endSort} > sbtb.sort
+  </update>
+  <update id="updateSubtractSort">
+    update scf_business_ticket_banner sbtb set sbtb.sort = sbtb.sort - 1
+    where sbtb.sort > #{beginSort}
+    and #{endSort} >= sbtb.sort
+  </update>
+</mapper>

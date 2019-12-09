@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectPurchaseLogisticsMapper">
+  <sql id="Base_Column_List">
+    id, purchase_contract_no, shipments_no, shipper, shipments_date, consignee, consignee_phone_no, 
+    consignee_address, delete_status, create_by, create_time, update_by, update_time
+  </sql>
+  <select id="getListByContractNo" resultType="com.zhjs.scfcloud.model.vo.lzProject.LzProjectPurchaseLogisticsListVO">
+    select pl.id, pl.purchase_contract_no, pl.shipments_no, pl.shipper,
+    pl.shipments_date, pl.consignee,pl.consignee_address
+    from lz_project_purchase_logistics pl
+    left join lz_project_contract_sub cs on pl.purchase_contract_no = cs.sub_contract_no
+    where cs.contract_no = #{contractNo} and pl.delete_status != 1
+    order by pl.shipments_date
+  </select>
+</mapper>

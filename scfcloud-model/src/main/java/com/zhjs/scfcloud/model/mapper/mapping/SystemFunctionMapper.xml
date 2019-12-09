@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhjs.scfcloud.model.mapper.SystemFunctionMapper">
+
+
+    <select id="findFuncListByRoleIds" resultType="com.zhjs.scfcloud.model.entity.SystemFunction">
+        SELECT DISTINCT scyf.*
+        FROM scf_cfg_system_function scyf
+        JOIN scf_cfg_role_function scrf ON scyf.func_code = scrf.funct_code
+        WHERE scrf.role_id IN( ${roleIds})
+    </select>
+
+    <select id="selectCodesByFileMenu" resultType="java.lang.String">
+        SELECT DISTINCT
+            rf.funct_code
+        FROM
+            scf_cfg_role_function rf
+        WHERE
+            rf.role_id IN (${roleIds})
+            AND rf.funct_code IN (
+                SELECT
+                    sf.func_code
+                FROM
+                    scf_cfg_system_function sf INNER JOIN scf_menu sm ON sf.menu_id = sm.id
+                WHERE
+                    sm.menu_name = '文件资料附件' )
+    </select>
+</mapper>

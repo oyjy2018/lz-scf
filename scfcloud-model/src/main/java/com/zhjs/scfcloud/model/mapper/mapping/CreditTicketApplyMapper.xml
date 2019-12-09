@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CreditTicketApplyMapper">
+  <sql id="Base_Column_List">
+    id, company_id, business_type_id, credit_id, credit_apply_id, flow_code, apply_user_id_card, 
+    apply_user_name, credit_item_id, credit_item_name, apply_business, apply_purpose, 
+    apply_purpose_other, apply_money, apply_deadline, refund_plan, ticket_get_name, ticket_get_bank_account, 
+    ticket_get_bank, ticket_get_bank_province, ticket_get_bank_city, ticket_get_bank_branch, 
+    dispose_role_ids, dispose_user_ids, has_use, apply_time, update_time, update_by, 
+    create_time, create_by, status
+  </sql>
+    <!-- 我的用信申请列表 -->
+    <select id="findCreditUseApplyMyList"
+            resultType="com.zhjs.scfcloud.model.vo.credit.CreditUseApplyListWebVO">
+        SELECT
+        scta.id, scta.company_id companyId, scta.business_type_id businessTypeId, scta.credit_id creditId,
+        scta.credit_apply_id creditApplyId,scta.flow_code flowCode,scta.apply_user_name applyUserName,
+        scta.credit_item_name creditItemName, '开商票' applyBusiness,scta.apply_money applyMoney,
+        (SELECT scbav.value_ch from scf_cfg_business_attr_val scbav where scta.apply_deadline = scbav.id) applyDeadline,
+        scta.apply_time createTime, scr.credit_amount AS creditMoney,
+        (select scbf.flow_name from scf_cfg_business_flow scbf where scta.flow_code = scbf.flow_code and  scta.company_id = scbf.company_id ) flowName,
+        sctad.risk_manager_head_audit_money auditMoney,
+        (SELECT scbav.value_ch from scf_cfg_business_attr_val scbav where sctad.risk_manager_head_audit_deadline = scbav.id) auditDeadline
+        FROM `scf_credit_ticket_apply` scta
+        LEFT JOIN scf_credit_record scr ON scr.id = scta.credit_id
+        LEFT JOIN scf_credit_ticket_audit_data sctad on sctad.business_id = scta.id
+        <where>
+            <if test="userId != null">
+                AND scta.create_by = #{userId}
+            </if>
+            <if test="applyUserName != null">
+                AND scta.apply_user_name like  concat('%',#{applyUserName},'%')
+            </if>
+            <if test="id != null and id != ''">
+                AND scta.id = #{id}
+            </if>
+            <if test="creditId != null and creditId != ''">
+                AND scta.credit_id = #{creditId}
+            </if>
+            <if test="creditApplyId != null and creditApplyId != ''">
+                AND scta.credit_apply_id = #{creditApplyId}
+            </if>
+            <if test="creditItemName != null and creditItemName!=''">
+                AND scta.credit_item_name LIKE '%' #{creditItemName} '%'
+            </if>
+            <if test="flowCode != null and flowCode != ''">
+                AND scta.flow_code = #{flowCode}
+            </if>
+        </where>
+        ORDER BY scta.create_time DESC
+    </select>
+
+    <!-- 所有用信申请列表 -->
+    <select id="findCreditUseApplyAllList" parameterType="com.zhjs.scfcloud.model.dto.credit.CreditUseApplyAllListQueryDTO"
+            resultType="com.zhjs.scfcloud.model.vo.credit.CreditUseApplyListWebVO">
+        SELECT
+        scta.id, scta.company_id companyId, scta.business_type_id businessTypeId, scta.credit_id creditId,
+        scta.credit_apply_id creditApplyId,scta.flow_code flowCode,scta.apply_user_name applyUserName,
+        scta.credit_item_name creditItemName, '开商票' applyBusiness,scta.apply_money applyMoney,
+        (SELECT scbav.value_ch from scf_cfg_business_attr_val scbav where scta.apply_deadline = scbav.id) applyDeadline,
+        scta.apply_time createTime,scta.has_use hasUse,
+        scr.credit_amount AS creditMoney,
+        (select scbf.flow_name from scf_cfg_business_flow scbf where scta.flow_code = scbf.flow_code and  scta.company_id = scbf.company_id ) flowName,
+        sctad.risk_manager_head_audit_money auditMoney,
+        (select scu.use_money from scf_credit_use scu where scu.use_apply_id = scta.id order by scu.create_time limit 1) useMoney,
+        (SELECT scbav.value_ch from scf_cfg_business_attr_val scbav where sctad.risk_manager_head_audit_deadline = scbav.id) auditDeadline,
+        (select group_concat(u.user_name) from scf_user u where find_in_set (u.id,scta.dispose_user_ids)) disposeUserNames,
+        (select group_concat(r.role_name) from scf_cfg_role r where find_in_set( r.id,scta.dispose_role_ids)) disposeRoleNames
+        FROM scf_credit_ticket_apply scta
+        LEFT JOIN scf_credit_record scr ON scr.id = scta.credit_id
+        LEFT JOIN scf_credit_ticket_audit_data sctad on sctad.business_id = scta.id
+        where
+        (
+        scta.create_by = #{userId}
+        or find_in_set(#{userId},scta.dispose_user_ids)
+        or is_mixed(scta.dispose_role_ids,#{roleIds})
+        <if test="permissionType == 2 and permissionOrgIds != null and permissionOrgIds != ''">
+            or find_in_set(scta.company_id,#{permissionOrgIds})
+        </if>
+        )
+        <if test="applyUserName != null">
+            AND scta.apply_user_name like  concat('%',#{applyUserName},'%')
+        </if>
+        <if test="id != null and id != ''">
+            AND scta.id = #{id}
+        </if>
+        <if test="creditId != null and creditId != ''">
+            AND scta.credit_id = #{creditId}
+        </if>
+        <if test="creditApplyId != null and creditApplyId != ''">
+            AND scta.credit_apply_id = #{creditApplyId}
+        </if>
+        <if test="creditItemName != null and creditItemName!=''">
+            AND scta.credit_item_name LIKE '%' #{creditItemName} '%'
+        </if>
+        <if test="flowCode != null and flowCode!=''">
+            AND scta.flow_code = #{flowCode}
+        </if>
+        ORDER BY scta.create_time DESC
+    </select>
+
+    <!-- 用信审批列表 -->
+    <select id="getAuditList"
+            resultType="com.zhjs.scfcloud.model.vo.credit.CreditUseApplyListWebVO">
+        SELECT
+        scta.id, scta.company_id companyId, scta.business_type_id businessTypeId, scta.credit_id creditId,
+        scta.credit_apply_id creditApplyId,scta.flow_code flowCode,scta.apply_user_name applyUserName,
+        scta.credit_item_name creditItemName, '开商票' applyBusiness,scta.apply_money applyMoney,
+        (SELECT scbav.value_ch from scf_cfg_business_attr_val scbav where scta.apply_deadline = scbav.id) applyDeadline,
+        scr.credit_amount AS creditMoney,
+        (select group_concat(u.user_name) from scf_user u where find_in_set (u.id,scta.dispose_user_ids)) disposeUserNames,
+        (select group_concat(r.role_name) from scf_cfg_role r where find_in_set( r.id,scta.dispose_role_ids)) disposeRoleNames,
+        scbf.flow_name flowName
+        FROM `scf_credit_ticket_apply` scta
+        LEFT JOIN scf_cfg_business_flow scbf ON scbf.flow_code = scta.flow_code AND scbf.company_id = scta.company_id AND scbf.business_type_id = scta.business_type_id
+        LEFT JOIN scf_credit_record scr ON scr.id = scta.credit_id
+        where
+        (
+        (scta.dispose_user_ids IS NULL
+        and scta.dispose_role_ids IS NULL
+        and #{permissionType} = 2
+        and find_in_set(scta.company_id,#{permissionOrgIds})
+        )
+        or find_in_set(#{userId},scta.dispose_user_ids)
+        or is_mixed(scta.dispose_role_ids,#{roleIds})
+        )
+        and scta.status = 1 and (scbf.flow_type = 1 or scbf.flow_type = 2)
+        <if test="applyUserName != null and applyUserName != ''">
+            AND scta.apply_user_name like  concat('%',#{applyUserName},'%')
+        </if>
+        <if test="id != null and id != ''">
+            AND scta.id = #{id}
+        </if>
+        <if test="creditId != null and creditId != ''">
+            AND scta.credit_id = #{creditId}
+        </if>
+        <if test="creditItemName != null and creditItemName!=''">
+            AND scta.credit_item_name LIKE '%' #{creditItemName} '%'
+        </if>
+        <if test="flowCode != null and flowCode!=''">
+            AND scta.flow_code = #{flowCode}
+        </if>
+        ORDER BY scta.create_time DESC
+    </select>
+
+
+    <select id="findCreditTicketApplyDetails" parameterType="java.lang.Long" resultType="java.util.Map">
+    SELECT
+      scta.id creditTicketApplyId,
+      scta.company_id companyId,
+      scta.business_type_id businessTypeId,
+      scta.apply_business businessTypeName,
+      scta.flow_code flowCode,
+      scta.apply_user_id_card applyUserIdCard,
+      scta.apply_user_name applyUserName,
+      scta.credit_item_id creditItemId,
+      scta.credit_item_name creditItemName,
+      concat('',scta.apply_purpose) creditTicketApply_applyPurpose,
+      scta.apply_purpose_other creditTicketApply_applyPurposeOther,
+      concat('',scta.apply_money) creditTicketApply_applyMoney,
+      concat('',scta.apply_deadline) creditTicketApply_applyDeadline,
+      scta.refund_plan creditTicketApply_refundPlan,
+      scta.ticket_get_name creditTicketApply_ticketGetName,
+      scta.ticket_get_bank_account creditTicketApply_ticketGetBankAccount,
+      concat('',scta.ticket_get_bank) creditTicketApply_ticketGetBank,
+      concat('',scta.ticket_get_bank_province) creditTicketApply_ticketGetBankProvince,
+      concat('',scta.ticket_get_bank_city) creditTicketApply_ticketGetBankCity,
+      scta.ticket_get_bank_branch creditTicketApply_ticketGetBankBranch
+    FROM scf_credit_ticket_apply scta
+    WHERE scta.status = 1
+    AND scta.id = #{creditTicketApplyId,jdbcType=BIGINT}
+  </select>
+
+    <!-- 用信申请审批完成列表 -->
+    <select id="getAuditFinishList"  resultType="com.zhjs.scfcloud.model.vo.credit.CreditUseApplyAuditFinishListVO">
+        SELECT
+        scta.id,scta.company_id companyId,scta.business_type_id businessTypeId, scta.credit_id creditId,
+        scta.credit_apply_id creditApplyId, scta.flow_code flowCode,
+        scta.apply_user_name applyUserName,scta.credit_item_name creditItemName, '0' useType,'开商票' applyBusiness,
+        scta.apply_money applyMoney,
+        (SELECT scbav.value_ch from scf_cfg_business_attr_val scbav where scta.apply_deadline = scbav.id) applyDeadline,
+        scta.apply_time applyTime,
+        scr.credit_amount AS creditMoney,
+        sctad.risk_manager_head_audit_money auditMoney,
+        (select scu.use_money from scf_credit_use scu where scu.credit_apply_id = scta.id order by scu.create_time limit 1) useMoney,
+        (SELECT scbav.value_ch from scf_cfg_business_attr_val scbav where sctad.risk_manager_head_audit_deadline = scbav.id) auditDeadline
+        FROM scf_credit_ticket_apply scta
+        LEFT JOIN scf_credit_record scr ON scr.id = scta.credit_id
+        LEFT JOIN scf_credit_ticket_audit_data sctad on sctad.business_id = scta.id
+        where
+        (scta.create_by = #{userId}
+        <if test="permissionType == 2 and permissionOrgIds != null and permissionOrgIds != ''">
+            or find_in_set(scta.company_id,#{permissionOrgIds})
+        </if>
+        )
+        and scta.flow_code = 'ticket99' AND scta.has_use = #{hasUse}
+        <if test="id != null and id != ''">
+            AND scta.id = #{id}
+        </if>
+        <if test="creditId != null and creditId != ''">
+            AND scta.credit_id = #{creditId}
+        </if>
+        <if test="creditItemName != null and creditItemName!=''">
+            AND scta.credit_item_name LIKE '%' #{creditItemName} '%'
+        </if>
+        <if test="applyDateBegin != null and applyDateBegin!=''">
+            AND scta.apply_time > #{applyDateBegin}
+        </if>
+         <if test="applyDateEnd != null and applyDateEnd!=''">
+            AND #{applyDateEnd} > scta.apply_time
+        </if>
+        ORDER BY scta.create_time DESC
+    </select>
+</mapper>

@@ -1,0 +1,146 @@
+- | [] | [20190716 17:08:43.345] | [INFO] | [PC-20190528OEHK] | [main] | [c.z.s.s.ScfcloudSystemApplication] | --> No active profile set, falling back to default profiles: default|
+- | [] | [20190716 17:08:44.661] | [INFO] | [PC-20190528OEHK] | [main] | [o.a.coyote.http11.Http11NioProtocol] | --> Initializing ProtocolHandler ["http-nio-22000"]|
+- | [] | [20190716 17:08:44.666] | [INFO] | [PC-20190528OEHK] | [main] | [o.a.catalina.core.StandardService] | --> Starting service [Tomcat]|
+- | [] | [20190716 17:08:44.666] | [INFO] | [PC-20190528OEHK] | [main] | [o.a.catalina.core.StandardEngine] | --> Starting Servlet engine: [Apache Tomcat/9.0.17]|
+- | [] | [20190716 17:08:44.766] | [INFO] | [PC-20190528OEHK] | [main] | [o.a.c.c.C.[Tomcat].[localhost].[/]] | --> Initializing Spring embedded WebApplicationContext|
+- | [] | [20190716 17:08:45.094] | [INFO] | [PC-20190528OEHK] | [main] | [c.a.d.s.b.a.DruidDataSourceAutoConfigure] | --> Init DruidDataSource|
+- | [] | [20190716 17:08:45.282] | [INFO] | [PC-20190528OEHK] | [main] | [c.alibaba.druid.pool.DruidDataSource] | --> {dataSource-1} inited|
+- | [] | [20190716 17:08:47.039] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.PropertySourcedRequestMappingHandlerMapping] | --> Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]|
+- | [] | [20190716 17:08:47.057] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.c.sources.URLConfigurationSource] | --> To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.|
+- | [] | [20190716 17:08:47.061] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.c.sources.URLConfigurationSource] | --> To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.|
+- | [] | [20190716 17:08:47.731] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Initializing Eureka in region us-east-1|
+- | [] | [20190716 17:08:48.004] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.d.p.DiscoveryJerseyProvider] | --> Using JSON encoding codec LegacyJacksonJson|
+- | [] | [20190716 17:08:48.004] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.d.p.DiscoveryJerseyProvider] | --> Using JSON decoding codec LegacyJacksonJson|
+- | [] | [20190716 17:08:48.077] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.d.p.DiscoveryJerseyProvider] | --> Using XML encoding codec XStreamXml|
+- | [] | [20190716 17:08:48.077] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.d.p.DiscoveryJerseyProvider] | --> Using XML decoding codec XStreamXml|
+- | [] | [20190716 17:08:48.223] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 17:08:48.251] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Disable delta property : false|
+- | [] | [20190716 17:08:48.251] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Single vip registry refresh property : null|
+- | [] | [20190716 17:08:48.251] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Force full registry fetch : false|
+- | [] | [20190716 17:08:48.251] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Application is null : false|
+- | [] | [20190716 17:08:48.251] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Registered Applications size is zero : true|
+- | [] | [20190716 17:08:48.251] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Application version is -1: true|
+- | [] | [20190716 17:08:48.251] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Getting all instance registry info from the eureka server|
+- | [] | [20190716 17:08:48.326] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> The response status is 200|
+- | [] | [20190716 17:08:48.328] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Starting heartbeat executor: renew interval is: 30|
+- | [] | [20190716 17:08:48.329] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.discovery.InstanceInfoReplicator] | --> InstanceInfoReplicator onDemand update allowed rate per min is 4|
+- | [] | [20190716 17:08:48.332] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Discovery Client initialized at timestamp 1563268128331 with initial instances count: 1|
+- | [] | [20190716 17:08:48.335] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Saw local status change event StatusChangeEvent [timestamp=1563268128335, current=UP, previous=STARTING]|
+- | [] | [20190716 17:08:48.337] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.p.DocumentationPluginsBootstrapper] | --> Context refreshed|
+- | [] | [20190716 17:08:48.337] | [INFO] | [PC-20190528OEHK] | [DiscoveryClient-InstanceInfoReplicator-0] | [c.netflix.discovery.DiscoveryClient] | --> DiscoveryClient_SCFCLOUD-SYSTEM/PC-20190528OEHK:scfcloud-system:22000: registering service...|
+- | [] | [20190716 17:08:48.356] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.p.DocumentationPluginsBootstrapper] | --> Found 1 custom documentation plugin(s)|
+- | [] | [20190716 17:08:48.376] | [INFO] | [PC-20190528OEHK] | [DiscoveryClient-InstanceInfoReplicator-0] | [c.netflix.discovery.DiscoveryClient] | --> DiscoveryClient_SCFCLOUD-SYSTEM/PC-20190528OEHK:scfcloud-system:22000 - registration status: 204|
+- | [] | [20190716 17:08:48.398] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.s.ApiListingReferenceScanner] | --> Scanning for api listing references|
+- | [] | [20190716 17:08:48.497] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_1|
+- | [] | [20190716 17:08:48.511] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_2|
+- | [] | [20190716 17:08:48.515] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_1|
+- | [] | [20190716 17:08:48.547] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_2|
+- | [] | [20190716 17:08:48.615] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: auditCommitUsingPOST_1|
+- | [] | [20190716 17:08:48.619] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: saveDraftUsingPOST_1|
+- | [] | [20190716 17:08:48.621] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: saveFileUsingPOST_1|
+- | [] | [20190716 17:08:48.662] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_3|
+- | [] | [20190716 17:08:48.664] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_1|
+- | [] | [20190716 17:08:48.669] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_3|
+- | [] | [20190716 17:08:48.674] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: isExistUsingPOST_1|
+- | [] | [20190716 17:08:48.676] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_4|
+- | [] | [20190716 17:08:48.678] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_2|
+- | [] | [20190716 17:08:48.680] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_1|
+- | [] | [20190716 17:08:48.681] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_4|
+- | [] | [20190716 17:08:48.686] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteByIdUsingPOST_1|
+- | [] | [20190716 17:08:48.693] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_5|
+- | [] | [20190716 17:08:48.694] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_3|
+- | [] | [20190716 17:08:48.696] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_2|
+- | [] | [20190716 17:08:48.697] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_5|
+- | [] | [20190716 17:08:48.698] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: isExistUsingPOST_2|
+- | [] | [20190716 17:08:48.700] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_6|
+- | [] | [20190716 17:08:48.701] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_6|
+- | [] | [20190716 17:08:48.702] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_7|
+- | [] | [20190716 17:08:48.704] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_4|
+- | [] | [20190716 17:08:48.706] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_3|
+- | [] | [20190716 17:08:48.707] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_7|
+- | [] | [20190716 17:08:48.708] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: isExistKeyUsingPOST_1|
+- | [] | [20190716 17:08:48.712] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_8|
+- | [] | [20190716 17:08:48.716] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_5|
+- | [] | [20190716 17:08:48.719] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_4|
+- | [] | [20190716 17:08:48.732] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: isExistUsingPOST_3|
+- | [] | [20190716 17:08:48.739] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_9|
+- | [] | [20190716 17:08:48.740] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_6|
+- | [] | [20190716 17:08:48.742] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_5|
+- | [] | [20190716 17:08:48.743] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_8|
+- | [] | [20190716 17:08:48.745] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: isExistUsingPOST_4|
+- | [] | [20190716 17:08:48.747] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_10|
+- | [] | [20190716 17:08:48.748] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_7|
+- | [] | [20190716 17:08:48.749] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_6|
+- | [] | [20190716 17:08:48.750] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_9|
+- | [] | [20190716 17:08:48.751] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: selectListUsingPOST_1|
+- | [] | [20190716 17:08:48.766] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteByIdUsingPOST_2|
+- | [] | [20190716 17:08:48.783] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findUserDataPermissionListUsingPOST_1|
+- | [] | [20190716 17:08:48.788] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findUserlistUsingPOST_1|
+- | [] | [20190716 17:08:48.828] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: phoneCheckUsingPOST_1|
+- | [] | [20190716 17:08:48.880] | [INFO] | [PC-20190528OEHK] | [main] | [o.a.coyote.http11.Http11NioProtocol] | --> Starting ProtocolHandler ["http-nio-22000"]|
+- | [] | [20190716 17:08:48.900] | [INFO] | [PC-20190528OEHK] | [main] | [c.z.s.s.ScfcloudSystemApplication] | --> Started ScfcloudSystemApplication in 6.58 seconds (JVM running for 7.084)|
+- | [] | [20190716 17:09:57.982] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-1] | [o.a.c.c.C.[Tomcat].[localhost].[/]] | --> Initializing Spring DispatcherServlet 'dispatcherServlet'|
+- | [] | [20190716 17:09:58.012] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-1] | [c.z.s.s.controller.UserController] | --> 根据邮箱查询用户:dto:"lzskcloud@qq.com"|
+- | [] | [20190716 17:09:58.155] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-2] | [c.z.s.s.controller.UserController] | --> 获取用户详细信息:dto:{"userId":1}|
+- | [] | [20190716 17:09:58.229] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-3] | [c.z.s.s.controller.UserController] | --> 密码输入是否正确{"createTime":"2019-06-06T05:07:14","email":"lzskcloud@qq.com","gender":1,"id":1,"idCard":"1111111111111111","isDel":0,"lastCompanyId":1,"password":"123456","permissionOrgIds":"1,23,11","permissionType":2,"phone":"13367966485","status":1,"updateTime":"2019-07-01T15:25:07","userName":"admin"} |
+- | [] | [20190716 17:09:58.433] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-4] | [c.z.s.s.controller.CompanyController] | --> subject:是否弹出邀请成员引导(只有一个成员时弹出),companyId:1|
+- | [] | [20190716 17:13:48.264] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 17:18:48.276] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 17:23:48.288] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 17:28:48.299] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 17:33:48.311] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 17:38:48.322] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 17:43:48.334] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 17:48:48.345] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 17:53:48.356] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 17:58:48.367] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:03:48.378] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:08:48.389] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:09:19.528] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-6] | [c.z.s.s.controller.UserController] | --> 根据邮箱查询用户:dto:"lzskcloud@qq.com"|
+- | [] | [20190716 18:09:19.538] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-7] | [c.z.s.s.controller.UserController] | --> 获取用户详细信息:dto:{"userId":1}|
+- | [] | [20190716 18:09:19.572] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-8] | [c.z.s.s.controller.UserController] | --> 密码输入是否正确{"createTime":"2019-06-06T05:07:14","email":"lzskcloud@qq.com","gender":1,"id":1,"idCard":"1111111111111111","isDel":0,"lastCompanyId":1,"password":"123456","permissionOrgIds":"1,23,11","permissionType":2,"phone":"13367966485","status":1,"updateTime":"2019-07-01T15:25:07","userName":"admin"} |
+- | [] | [20190716 18:09:19.748] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-9] | [c.z.s.s.controller.CompanyController] | --> subject:是否弹出邀请成员引导(只有一个成员时弹出),companyId:1|
+- | [] | [20190716 18:09:21.186] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-10] | [c.z.s.s.controller.CommentController] | --> 查询评论列表|
+- | [] | [20190716 18:09:21.252] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-1] | [c.z.s.s.c.CreditRecordController] | --> 根据身份证查询授信记录：1111111111111111|
+- | [] | [20190716 18:09:21.264] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-3] | [c.z.s.s.c.CreditApplyController] | --> subject:授信审核日记,AuditLogListDTO:AuditLogListDTO(companyId=1, businessTypeId=2, businessId=92)|
+- | [] | [20190716 18:09:21.265] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-2] | [c.z.s.s.c.CreditApplyController] | --> subject:操作日志,OperateLogDTO:OperateLogDTO(companyId=1, businessTypeId=2, businessId=92, operatObject=credit)|
+- | [] | [20190716 18:09:26.511] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-7] | [c.z.s.s.c.CreditApplyController] | --> subject:授信审批列表,creditApplyAuditListQueryDTO:CreditApplyAuditListQueryDTO(userId=1, roleIds=1, flowCode=, customerName=, businessId=null, itemName=, isWait=true)|
+- | [] | [20190716 18:09:26.607] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-7] | [io.lettuce.core.EpollProvider] | --> Starting without optional epoll library|
+- | [] | [20190716 18:09:26.608] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-7] | [io.lettuce.core.KqueueProvider] | --> Starting without optional kqueue library|
+- | [] | [20190716 18:09:29.995] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-8] | [c.z.s.s.controller.CommentController] | --> 查询评论列表|
+- | [] | [20190716 18:09:29.998] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-9] | [c.z.s.s.c.CreditApplyController] | --> subject:操作日志,OperateLogDTO:OperateLogDTO(companyId=1, businessTypeId=1, businessId=19, operatObject=credit)|
+- | [] | [20190716 18:09:29.998] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-10] | [c.z.s.s.c.CreditApplyController] | --> subject:授信审核日记,AuditLogListDTO:AuditLogListDTO(companyId=1, businessTypeId=1, businessId=19)|
+- | [] | [20190716 18:09:30.041] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-1] | [c.z.s.s.c.CreditApplyController] | --> subject:查询授信申请详情,CreditAuditCommitDTO:CreditApplyQueryDTO(creditApplyId=19, flowCode=credit2)|
+- | [] | [20190716 18:09:30.066] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-1] | [c.z.s.s.controller.FileController] | --> 查询文件 findList|
+- | [] | [20190716 18:13:48.400] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:18:48.412] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:23:48.423] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:28:48.434] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:33:48.445] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:38:48.456] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:43:48.467] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:48:48.478] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:53:48.489] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 18:58:48.500] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:03:48.512] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:08:48.524] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:13:48.535] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:18:48.546] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:23:48.557] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:28:48.569] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:33:48.580] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:38:48.591] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:43:48.602] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:48:48.613] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:53:48.625] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 19:58:48.636] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 20:03:15.888] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-6] | [c.z.s.s.controller.UserController] | --> 根据邮箱查询用户:dto:"lzskcloud@qq.com"|
+- | [] | [20190716 20:03:15.900] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-4] | [c.z.s.s.controller.UserController] | --> 获取用户详细信息:dto:{"userId":1}|
+- | [] | [20190716 20:03:15.932] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-7] | [c.z.s.s.controller.UserController] | --> 密码输入是否正确{"createTime":"2019-06-06T05:07:14","email":"lzskcloud@qq.com","gender":1,"id":1,"idCard":"1111111111111111","isDel":0,"lastCompanyId":1,"password":"123456","permissionOrgIds":"1,23,11","permissionType":2,"phone":"13367966485","status":1,"updateTime":"2019-07-01T15:25:07","userName":"admin"} |
+- | [] | [20190716 20:03:16.072] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-8] | [c.z.s.s.controller.CompanyController] | --> subject:是否弹出邀请成员引导(只有一个成员时弹出),companyId:1|
+- | [] | [20190716 20:03:48.647] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 20:08:48.658] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 20:13:48.670] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 20:18:48.682] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 20:23:48.694] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190716 20:28:48.706] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|

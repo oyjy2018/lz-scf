@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessTicketInquireMapper">
+  <select id="getInquireList" resultType="com.zhjs.scfcloud.model.vo.businessTicket.BusinessTicketInquireListVO">
+    SELECT sbti.id,sbti.bill_amt billAmt,sbti.accepter_name accepterName,sbti.maturity_date maturityDate,
+       sbti.surplus_valid_days surplusValidDays,sbti.flaws,sbti.create_time createTime,sbti.status,sbti.publish_person publishPerson,
+       (SELECT sbtq.id FROM scf_business_ticket_quotation sbtq WHERE sbti.id = sbtq.inquire_id AND sbtq.status = '2') AS relatedQuotationId
+    FROM scf_business_ticket_inquire sbti
+    where 1
+      <if test="isAssignBuyer == 1">
+        and sbti.assign_buyer_company_id is null
+      </if>
+      <if test="id != null and id != ''">
+        and sbti.id = #{id}
+      </if>
+      <if test="companyId != null and companyId != ''">
+        and sbti.company_id = #{companyId}
+      </if>
+      <if test="status != null and status != ''">
+        and sbti.status = #{status}
+      </if>
+      <if test="multiStatus != null and multiStatus != ''">
+          and sbti.status in  ${multiStatus}
+      </if>
+      <if test="accepterName != null and accepterName != ''">
+        and sbti.accepter_name like concat('%',#{accepterName},'%')
+      </if>
+      <if test="billAmtBegin != null and billAmtBegin != ''">
+        and sbti.bill_amt > #{billAmtBegin}
+      </if>
+      <if test="billAmtEnd != null and billAmtEnd != ''">
+        and #{billAmtEnd} > sbti.bill_amt
+      </if>
+      <if test="surplusValidDaysBegin != null and surplusValidDaysBegin != ''">
+        and sbti.surplus_valid_days > #{surplusValidDaysBegin}
+      </if>
+      <if test="surplusValidDaysEnd != null and surplusValidDaysEnd != ''">
+        and #{surplusValidDaysEnd} > sbti.surplus_valid_days
+      </if>
+      <if test="createTimeBegin != null and createTimeBegin != ''">
+        and sbti.create_time > #{createTimeBegin}
+      </if>
+      <if test="createTimeEnd != null and createTimeEnd != ''">
+        and #{createTimeEnd} > sbti.create_time
+      </if>
+      <if test="hasFlaws != null and hasFlaws != ''">
+        <if test="hasFlaws == 0 ">
+          and sbti.flaws = '无瑕疵'
+        </if>
+        <if test="hasFlaws == 1 ">
+          and sbti.flaws != '无瑕疵'
+        </if>
+      </if>
+      order by sbti.create_time desc
+  </select>
+
+  <select id="getInquireDetail" resultType="com.zhjs.scfcloud.model.vo.businessTicket.BusinessTicketInquireDetailVO">
+    SELECT sbti.id,sbti.create_time createTime,sbti.expiration_date expirationDate,sbti.status,
+      (select count(1) from scf_business_ticket_quotation sbtq where sbtq.inquire_id = sbti.id and sbtq.status != 4) as quotationCount,
+       sbti.accepter_name accepterName,sbti.bill_no billNo,sbti.bill_amt billAmt,sbti.maturity_date maturityDate,
+       sbti.endorsed_count endorsedCount,sbti.flaws,sbti.surplus_valid_days surplusValidDays,sbti.assign_buyer_company_name assignBuyerCompanyName,
+       (select sbtf.file_url from scf_business_ticket_file sbtf where sbtf.inquire_id = sbti.id and sbtf.file_type = 'ticket_front' limit 1) as ticketFrontUrl,
+       sbti.company_name companyName,su.user_name contactPerson,su.phone contactPhone
+    FROM scf_business_ticket_inquire sbti
+    left join scf_user su on su.id = sbti.publish_person_id
+    where sbti.id = #{id}
+  </select>
+  <update id="updateOverdueInquireStatus">
+    update  scf_business_ticket_inquire sbti
+    set
+      sbti.status = 4
+    where (sbti.status = 1 or sbti.status = 2) and  #{now} > sbti.expiration_date ;
+  </update>
+  <update id="updateSurplusValidDaysBatch"  parameterType="java.util.List">
+    <foreach collection="list" item="item" index="index" open="" close="" separator=";">
+      update scf_business_ticket_inquire
+      <set>
+        surplus_valid_days=${item.surplusValidDays}
+      </set>
+      where id = ${item.id}
+    </foreach>
+  </update>
+
+  <select id="findInquireByPlatformReqNo" resultType="com.zhjs.scfcloud.model.entity.BusinessTicketInquire">
+    SELECT
+      sbti.*
+    FROM scf_business_ticket_inquire sbti
+    JOIN scf_business_ticket_order sbto ON sbto.inquire_id = sbti.id
+    WHERE sbto.platform_req_no = #{platformReqNo,jdbcType=VARCHAR}
+    AND sbto.order_no = #{orderNo,jdbcType=VARCHAR}
+  </select>
+  <select id="getInquireInActiveOrderCount" parameterType="java.lang.String" resultType="integer">
+    select count(1) from scf_business_ticket_inquire sbti
+    left join scf_business_ticket_order sbto on sbto.inquire_id = sbti.id
+    where sbti.status = 3
+          and sbto.order_status != 98 and sbto.order_status != 99
+          and sbti.bill_no = #{billNo}
+  </select>
+
+    <select id="myAssignInquireList" resultType="com.zhjs.scfcloud.model.vo.businessTicket.BusinessTicketInquireMyAssignListVO">
+        SELECT sbti.id,sbti.bill_amt billAmt,sbti.accepter_name accepterName,sbti.maturity_date maturityDate,
+        sbti.surplus_valid_days surplusValidDays,sbti.flaws,sbti.create_time createTime,sbti.status,sbti.publish_person publishPerson,
+        sbti.company_name inquireName,
+        sbtq.id  relatedQuotationId, sbtq.annual_rate annualRate, sbtq.discount_fee discountFee
+        FROM scf_business_ticket_inquire sbti
+        LEFT JOIN scf_business_ticket_quotation sbtq ON sbti.id = sbtq.inquire_id AND sbtq.status = '2'
+        where sbti.assign_buyer_company_id = #{companyId}
+        <if test="id != null and id != ''">
+            and sbti.id = #{id}
+        </if>
+        <if test="status != null and status != ''">
+            and sbti.status = #{status}
+        </if>
+        <if test="accepterName != null and accepterName != ''">
+            and sbti.accepter_name like concat('%',#{accepterName},'%')
+        </if>
+        <if test="companyName != null and companyName != ''">
+            and sbti.company_name like concat('%',#{companyName},'%')
+        </if>
+        <if test="createTimeBegin != null and createTimeBegin != ''">
+            and sbti.create_time > #{createTimeBegin}
+        </if>
+        <if test="createTimeEnd != null and createTimeEnd != ''">
+            and #{createTimeEnd} > sbti.create_time
+        </if>
+        order by sbti.create_time desc
+    </select>
+
+    <select id="allInquire" resultType="com.zhjs.scfcloud.model.vo.businessTicket.BusinessTicketInquireListVO">
+        SELECT sbti.id,sbti.bill_amt billAmt,sbti.accepter_name accepterName,sbti.maturity_date maturityDate,
+        sbti.surplus_valid_days surplusValidDays,sbti.flaws,sbti.create_time createTime,sbti.status,sbti.publish_person publishPerson,
+        (SELECT sbtq.id FROM scf_business_ticket_quotation sbtq WHERE sbti.id = sbtq.inquire_id AND sbtq.status = '2') AS relatedQuotationId
+        FROM scf_business_ticket_inquire sbti
+        where (sbti.create_by = #{userId}
+        <if test="permissionType == 2 and permissionOrgIds != null and permissionOrgIds != ''">
+            or find_in_set(sbti.company_id,#{permissionOrgIds})
+        </if>
+        )
+        <if test="id != null and id != ''">
+            and sbti.id = #{id}
+        </if>
+        <if test="status != null and status != ''">
+            and sbti.status = #{status}
+        </if>
+        <if test="accepterName != null and accepterName != ''">
+            and sbti.accepter_name like concat('%',#{accepterName},'%')
+        </if>
+        <if test="createTimeBegin != null and createTimeBegin != ''">
+            and sbti.create_time > #{createTimeBegin}
+        </if>
+        <if test="createTimeEnd != null and createTimeEnd != ''">
+            and #{createTimeEnd} > sbti.create_time
+        </if>
+        order by sbti.create_time desc
+    </select>
+</mapper>

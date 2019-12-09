@@ -1,0 +1,6 @@
+- | [] | [20190722 10:00:41.433] | [WARN] | [PC-20190528OEHK] | [main] | [o.m.spring.SqlSessionFactoryBean] | --> Can't find class in '[classpath*:com/zhjs/scfcloud/model/enums]' package. Please check your configuration.|
+- | [] | [20190722 10:00:43.797] | [WARN] | [PC-20190528OEHK] | [main] | [c.n.c.sources.URLConfigurationSource] | --> No URLs will be polled as dynamic configuration sources.|
+- | [] | [20190722 10:00:43.801] | [WARN] | [PC-20190528OEHK] | [main] | [c.n.c.sources.URLConfigurationSource] | --> No URLs will be polled as dynamic configuration sources.|
+- | [] | [20190722 10:07:25.941] | [WARN] | [PC-20190528OEHK] | [main] | [o.m.spring.SqlSessionFactoryBean] | --> Can't find class in '[classpath*:com/zhjs/scfcloud/model/enums]' package. Please check your configuration.|
+- | [] | [20190722 10:07:27.396] | [WARN] | [PC-20190528OEHK] | [main] | [c.n.c.sources.URLConfigurationSource] | --> No URLs will be polled as dynamic configuration sources.|
+- | [] | [20190722 10:07:27.399] | [WARN] | [PC-20190528OEHK] | [main] | [c.n.c.sources.URLConfigurationSource] | --> No URLs will be polled as dynamic configuration sources.|

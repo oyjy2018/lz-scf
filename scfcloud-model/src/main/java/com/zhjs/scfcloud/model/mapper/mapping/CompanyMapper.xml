@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CompanyMapper">
+  <sql id="Base_Column_List">
+    id, company_name, blic_url, credit_code, blic_end_date, province_name, city_name, 
+    district_name, detail_addr, company_nature, company_nature_concrete, staff_size, 
+    contact_number, company_category, legal_person_cert_front_url, legal_person_cert_back_url, 
+    legal_person_name, legal_person_cert_no, legal_person_cert_end_date, aupis_lep, porxy_person_cert_front_url, 
+    porxy_person_cert_back_url, porxy_person_name, porxy_person_cert_no, porxy_person_cert_end_date, 
+    porxy_commission_url, reg_user_id, status, is_acceptor_limit, update_by_id, update_time, 
+    create_by_id, create_time, is_delete
+  </sql>
+  <!-- 公司管理列表 -->
+  <select id="selectCompanyListPage" resultType="com.zhjs.scfcloud.model.vo.CompanyListVO">
+    SELECT
+    sc.id AS companyId,
+    sc.company_name AS companyName,
+    sc.credit_code AS creditCode,
+    sc.legal_person_name AS legalPersonName,
+    sc.STATUS AS STATUS
+    FROM
+    scf_company sc
+    <where>
+      and sc.is_delete = 0
+      <if test="status != null and status.size() > 0">
+        and sc.status in
+        <foreach collection="status" item="item" index="index" open="("  close=")" separator=",">
+          #{item}
+        </foreach>
+      </if>
+      <if test="companyName != null and companyName!=''">
+        and sc.company_name LIKE '%' #{companyName} '%'
+      </if>
+    </where>
+    order by create_time desc
+  </select>
+
+  <!-- 查询公司管理列表的全部数据 -->
+  <select id="findCompanyList" resultType="com.zhjs.scfcloud.model.vo.CompanyListVO">
+    select sc.*, ssv.system_name, ssv.system_name, ssv.system_version,
+    (select COUNT(*) from  scf_cfg_company_user sccu
+        where sccu.company_id = sc.id and sccu.`status` = 1) as user_num
+    from scf_company sc
+    left join scf_system_version ssv on ssv.id = sc.system_id
+    where sc.is_delete = 0
+  </select>
+
+  <!-- 查询可指定报价公司列表 -->
+  <select id="getQuotationCompanyList" resultType="com.zhjs.scfcloud.model.vo.CompanySelectVO">
+    select sc.*
+    from scf_company sc
+    left join scf_company_jd_verified scjv on scjv.company_id = sc.id
+    left join scf_company_bank_account scba on scba.company_id = sc.id
+    where sc.is_delete !=  1 and sc.id != #{companyId} and sc.company_category in ('保理公司','工程公司','银行')
+    and scjv.mer_real_status = 4 and scba.is_receipt_default = 1
+  </select>
+</mapper>

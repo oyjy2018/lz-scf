@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessTicketOrderContractSignMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.BusinessTicketOrderContractSign">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="sign_party" jdbcType="INTEGER" property="signParty" />
+    <result column="scf_account_type" jdbcType="INTEGER" property="scfAccountType" />
+    <result column="scf_account_id" jdbcType="BIGINT" property="scfAccountId" />
+    <result column="e_sign_account_id" jdbcType="VARCHAR" property="eSignAccountId" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="sign_service_id" jdbcType="VARCHAR" property="signServiceId" />
+    <result column="sign_detail_url" jdbcType="VARCHAR" property="signDetailUrl" />
+    <result column="is_del" jdbcType="TINYINT" property="isDel" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, order_id, sign_party, scf_account_type, scf_account_id, e_sign_account_id, mobile, 
+    sign_service_id, sign_detail_url, is_del, update_by, create_by, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scf_business_ticket_order_contract_sign
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from scf_business_ticket_order_contract_sign
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessTicketOrderContractSign" useGeneratedKeys="true">
+    insert into scf_business_ticket_order_contract_sign (order_id, sign_party, scf_account_type, 
+      scf_account_id, e_sign_account_id, mobile, 
+      sign_service_id, sign_detail_url, is_del, 
+      update_by, create_by, create_time, 
+      update_time)
+    values (#{orderId,jdbcType=BIGINT}, #{signParty,jdbcType=INTEGER}, #{scfAccountType,jdbcType=INTEGER}, 
+      #{scfAccountId,jdbcType=BIGINT}, #{eSignAccountId,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{signServiceId,jdbcType=VARCHAR}, #{signDetailUrl,jdbcType=VARCHAR}, #{isDel,jdbcType=TINYINT}, 
+      #{updateBy,jdbcType=BIGINT}, #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessTicketOrderContractSign" useGeneratedKeys="true">
+    insert into scf_business_ticket_order_contract_sign
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="signParty != null">
+        sign_party,
+      </if>
+      <if test="scfAccountType != null">
+        scf_account_type,
+      </if>
+      <if test="scfAccountId != null">
+        scf_account_id,
+      </if>
+      <if test="eSignAccountId != null">
+        e_sign_account_id,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="signServiceId != null">
+        sign_service_id,
+      </if>
+      <if test="signDetailUrl != null">
+        sign_detail_url,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="signParty != null">
+        #{signParty,jdbcType=INTEGER},
+      </if>
+      <if test="scfAccountType != null">
+        #{scfAccountType,jdbcType=INTEGER},
+      </if>
+      <if test="scfAccountId != null">
+        #{scfAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="eSignAccountId != null">
+        #{eSignAccountId,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="signServiceId != null">
+        #{signServiceId,jdbcType=VARCHAR},
+      </if>
+      <if test="signDetailUrl != null">
+        #{signDetailUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=TINYINT},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.BusinessTicketOrderContractSign">
+    update scf_business_ticket_order_contract_sign
+    <set>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="signParty != null">
+        sign_party = #{signParty,jdbcType=INTEGER},
+      </if>
+      <if test="scfAccountType != null">
+        scf_account_type = #{scfAccountType,jdbcType=INTEGER},
+      </if>
+      <if test="scfAccountId != null">
+        scf_account_id = #{scfAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="eSignAccountId != null">
+        e_sign_account_id = #{eSignAccountId,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="signServiceId != null">
+        sign_service_id = #{signServiceId,jdbcType=VARCHAR},
+      </if>
+      <if test="signDetailUrl != null">
+        sign_detail_url = #{signDetailUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=TINYINT},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.BusinessTicketOrderContractSign">
+    update scf_business_ticket_order_contract_sign
+    set order_id = #{orderId,jdbcType=BIGINT},
+      sign_party = #{signParty,jdbcType=INTEGER},
+      scf_account_type = #{scfAccountType,jdbcType=INTEGER},
+      scf_account_id = #{scfAccountId,jdbcType=BIGINT},
+      e_sign_account_id = #{eSignAccountId,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      sign_service_id = #{signServiceId,jdbcType=VARCHAR},
+      sign_detail_url = #{signDetailUrl,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=TINYINT},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      create_by = #{createBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

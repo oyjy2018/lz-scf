@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CreditApplyMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.CreditApply">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="business_type_id" jdbcType="BIGINT" property="businessTypeId" />
+    <result column="flow_code" jdbcType="VARCHAR" property="flowCode" />
+    <result column="apply_source" jdbcType="VARCHAR" property="applySource" />
+    <result column="apply_time" jdbcType="TIMESTAMP" property="applyTime" />
+    <result column="ec_cooperation_time" jdbcType="TIMESTAMP" property="ecCooperationTime" />
+    <result column="ec_cooperation_year" jdbcType="DECIMAL" property="ecCooperationYear" />
+    <result column="belongs_region" jdbcType="VARCHAR" property="belongsRegion" />
+    <result column="their_filiale" jdbcType="VARCHAR" property="theirFiliale" />
+    <result column="region_manager" jdbcType="VARCHAR" property="regionManager" />
+    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="marital_status" jdbcType="INTEGER" property="maritalStatus" />
+    <result column="spouse_name" jdbcType="VARCHAR" property="spouseName" />
+    <result column="spouse_id_card" jdbcType="VARCHAR" property="spouseIdCard" />
+    <result column="spouse_mobile" jdbcType="VARCHAR" property="spouseMobile" />
+    <result column="family_address_province_code" jdbcType="VARCHAR" property="familyAddressProvinceCode" />
+    <result column="family_address_city_code" jdbcType="VARCHAR" property="familyAddressCityCode" />
+    <result column="family_address_region_code" jdbcType="VARCHAR" property="familyAddressRegionCode" />
+    <result column="family_address" jdbcType="VARCHAR" property="familyAddress" />
+    <result column="housing_ownership" jdbcType="VARCHAR" property="housingOwnership" />
+    <result column="dispose_role_ids" jdbcType="VARCHAR" property="disposeRoleIds" />
+    <result column="dispose_user_ids" jdbcType="VARCHAR" property="disposeUserIds" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_id, business_type_id, flow_code, apply_source, apply_time, ec_cooperation_time,
+    ec_cooperation_year, belongs_region, their_filiale, region_manager, customer_name, id_card, gender,
+    age, mobile, marital_status, spouse_name, spouse_id_card, spouse_mobile, family_address_province_code,
+    family_address_city_code, family_address_region_code, family_address, housing_ownership,
+    dispose_role_ids, dispose_user_ids, update_time, update_by, create_time, create_by
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from scf_credit_apply
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_credit_apply
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhjs.scfcloud.model.entity.CreditApply" useGeneratedKeys="true" keyProperty="id">
+    insert into scf_credit_apply (id, company_id, business_type_id,
+      flow_code, apply_source, apply_time,
+      ec_cooperation_time, ec_cooperation_year,
+      belongs_region, their_filiale, region_manager, customer_name,
+      id_card, gender, age,
+      mobile, marital_status, spouse_name,
+      spouse_id_card, spouse_mobile, family_address_province_code,
+      family_address_city_code, family_address_region_code,
+      family_address, housing_ownership, dispose_role_ids,
+      dispose_user_ids, update_time, update_by,
+      create_time, create_by)
+    values (#{id,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}, #{businessTypeId,jdbcType=BIGINT},
+      #{flowCode,jdbcType=VARCHAR}, #{applySource,jdbcType=VARCHAR}, #{applyTime,jdbcType=TIMESTAMP},
+      #{ecCooperationTime,jdbcType=TIMESTAMP}, #{ecCooperationYear,jdbcType=DECIMAL},
+      #{belongsRegion,jdbcType=VARCHAR}, #{theirFiliale,jdbcType=VARCHAR}, #{regionManager,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR},
+      #{idCard,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
+      #{mobile,jdbcType=VARCHAR}, #{maritalStatus,jdbcType=INTEGER}, #{spouseName,jdbcType=VARCHAR},
+      #{spouseIdCard,jdbcType=VARCHAR}, #{spouseMobile,jdbcType=VARCHAR}, #{familyAddressProvinceCode,jdbcType=VARCHAR},
+      #{familyAddressCityCode,jdbcType=VARCHAR}, #{familyAddressRegionCode,jdbcType=VARCHAR},
+      #{familyAddress,jdbcType=VARCHAR}, #{housingOwnership,jdbcType=VARCHAR}, #{disposeRoleIds,jdbcType=VARCHAR},
+      #{disposeUserIds,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT},
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhjs.scfcloud.model.entity.CreditApply" useGeneratedKeys="true" keyProperty="id">
+    insert into scf_credit_apply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id,
+      </if>
+      <if test="flowCode != null">
+        flow_code,
+      </if>
+      <if test="applySource != null">
+        apply_source,
+      </if>
+      <if test="applyTime != null">
+        apply_time,
+      </if>
+      <if test="ecCooperationTime != null">
+        ec_cooperation_time,
+      </if>
+      <if test="ecCooperationYear != null">
+        ec_cooperation_year,
+      </if>
+      <if test="belongsRegion != null">
+        belongs_region,
+      </if>
+      <if test="theirFiliale != null">
+        their_filiale,
+      </if>
+      <if test="regionManager != null">
+        region_manager,
+      </if>
+      <if test="customerName != null">
+        customer_name,
+      </if>
+      <if test="idCard != null">
+        id_card,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="maritalStatus != null">
+        marital_status,
+      </if>
+      <if test="spouseName != null">
+        spouse_name,
+      </if>
+      <if test="spouseIdCard != null">
+        spouse_id_card,
+      </if>
+      <if test="spouseMobile != null">
+        spouse_mobile,
+      </if>
+      <if test="familyAddressProvinceCode != null">
+        family_address_province_code,
+      </if>
+      <if test="familyAddressCityCode != null">
+        family_address_city_code,
+      </if>
+      <if test="familyAddressRegionCode != null">
+        family_address_region_code,
+      </if>
+      <if test="familyAddress != null">
+        family_address,
+      </if>
+      <if test="housingOwnership != null">
+        housing_ownership,
+      </if>
+      <if test="disposeRoleIds != null">
+        dispose_role_ids,
+      </if>
+      <if test="disposeUserIds != null">
+        dispose_user_ids,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="flowCode != null">
+        #{flowCode,jdbcType=VARCHAR},
+      </if>
+      <if test="applySource != null">
+        #{applySource,jdbcType=VARCHAR},
+      </if>
+      <if test="applyTime != null">
+        #{applyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ecCooperationTime != null">
+        #{ecCooperationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ecCooperationYear != null">
+        #{ecCooperationYear,jdbcType=DECIMAL},
+      </if>
+      <if test="belongsRegion != null">
+        #{belongsRegion,jdbcType=VARCHAR},
+      </if>
+      <if test="theirFiliale != null">
+        #{theirFiliale,jdbcType=VARCHAR},
+      </if>
+      <if test="regionManager != null">
+        #{regionManager,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null">
+        #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null">
+        #{maritalStatus,jdbcType=INTEGER},
+      </if>
+      <if test="spouseName != null">
+        #{spouseName,jdbcType=VARCHAR},
+      </if>
+      <if test="spouseIdCard != null">
+        #{spouseIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="spouseMobile != null">
+        #{spouseMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="familyAddressProvinceCode != null">
+        #{familyAddressProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="familyAddressCityCode != null">
+        #{familyAddressCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="familyAddressRegionCode != null">
+        #{familyAddressRegionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="familyAddress != null">
+        #{familyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="housingOwnership != null">
+        #{housingOwnership,jdbcType=VARCHAR},
+      </if>
+      <if test="disposeRoleIds != null">
+        #{disposeRoleIds,jdbcType=VARCHAR},
+      </if>
+      <if test="disposeUserIds != null">
+        #{disposeUserIds,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.CreditApply">
+    update scf_credit_apply
+    <set>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="flowCode != null">
+        flow_code = #{flowCode,jdbcType=VARCHAR},
+      </if>
+      <if test="applySource != null">
+        apply_source = #{applySource,jdbcType=VARCHAR},
+      </if>
+      <if test="applyTime != null">
+        apply_time = #{applyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ecCooperationTime != null">
+        ec_cooperation_time = #{ecCooperationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ecCooperationYear != null">
+        ec_cooperation_year = #{ecCooperationYear,jdbcType=DECIMAL},
+      </if>
+      <if test="belongsRegion != null">
+        belongs_region = #{belongsRegion,jdbcType=VARCHAR},
+      </if>
+      <if test="theirFiliale != null">
+        their_filiale = #{theirFiliale,jdbcType=VARCHAR},
+      </if>
+      <if test="regionManager != null">
+        region_manager = #{regionManager,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null">
+        customer_name = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null">
+        marital_status = #{maritalStatus,jdbcType=INTEGER},
+      </if>
+      <if test="spouseName != null">
+        spouse_name = #{spouseName,jdbcType=VARCHAR},
+      </if>
+      <if test="spouseIdCard != null">
+        spouse_id_card = #{spouseIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="spouseMobile != null">
+        spouse_mobile = #{spouseMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="familyAddressProvinceCode != null">
+        family_address_province_code = #{familyAddressProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="familyAddressCityCode != null">
+        family_address_city_code = #{familyAddressCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="familyAddressRegionCode != null">
+        family_address_region_code = #{familyAddressRegionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="familyAddress != null">
+        family_address = #{familyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="housingOwnership != null">
+        housing_ownership = #{housingOwnership,jdbcType=VARCHAR},
+      </if>
+      <if test="disposeRoleIds != null">
+        dispose_role_ids = #{disposeRoleIds,jdbcType=VARCHAR},
+      </if>
+      <if test="disposeUserIds != null">
+        dispose_user_ids = #{disposeUserIds,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.CreditApply">
+    update scf_credit_apply
+    set company_id = #{companyId,jdbcType=BIGINT},
+      business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      flow_code = #{flowCode,jdbcType=VARCHAR},
+      apply_source = #{applySource,jdbcType=VARCHAR},
+      apply_time = #{applyTime,jdbcType=TIMESTAMP},
+      ec_cooperation_time = #{ecCooperationTime,jdbcType=TIMESTAMP},
+      ec_cooperation_year = #{ecCooperationYear,jdbcType=DECIMAL},
+      belongs_region = #{belongsRegion,jdbcType=VARCHAR},
+      their_filiale = #{theirFiliale,jdbcType=VARCHAR},
+      region_manager = #{regionManager,jdbcType=VARCHAR},
+      customer_name = #{customerName,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      marital_status = #{maritalStatus,jdbcType=INTEGER},
+      spouse_name = #{spouseName,jdbcType=VARCHAR},
+      spouse_id_card = #{spouseIdCard,jdbcType=VARCHAR},
+      spouse_mobile = #{spouseMobile,jdbcType=VARCHAR},
+      family_address_province_code = #{familyAddressProvinceCode,jdbcType=VARCHAR},
+      family_address_city_code = #{familyAddressCityCode,jdbcType=VARCHAR},
+      family_address_region_code = #{familyAddressRegionCode,jdbcType=VARCHAR},
+      family_address = #{familyAddress,jdbcType=VARCHAR},
+      housing_ownership = #{housingOwnership,jdbcType=VARCHAR},
+      dispose_role_ids = #{disposeRoleIds,jdbcType=VARCHAR},
+      dispose_user_ids = #{disposeUserIds,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectMyApplyWebList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditApplyMyListWebVO" >
+    select sca.id,sca.company_id companyId, sca.business_type_id businessTypeId,sca.customer_name customerName,
+    sca.flow_code flowCode,sca.apply_time applyTime,
+    (select scbf.flow_name from scf_cfg_business_flow scbf where sca.flow_code = scbf.flow_code and  sca.company_id = scbf.company_id) flowName
+    from scf_credit_apply sca
+    where exists (
+        select sca1.id
+        from scf_credit_apply sca1
+        left join scf_credit_item sci ON sci.credit_apply_id = sca1.id
+        where sca1.id = sca.id and sca1.company_id = #{companyId} and sca1.create_by = #{userId}
+        <if test="businessId != null and businessId != ''">
+          and sca1. id = #{businessId}
+        </if>
+        <if test="flowCode != null and flowCode != ''">
+          and sca1.flow_code = #{flowCode}
+        </if>
+        <if test="customerName != null and customerName != ''">
+          and sca1.customer_name LIKE CONCAT('%',#{customerName},'%')
+        </if>
+        <if test="itemName != null and itemName != ''">
+          and sci .item_name LIKE CONCAT('%',#{itemName},'%')
+        </if>
+    )
+    order by sca.create_time desc
+  </select>
+
+  <select id="selectMyApplyAppList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditApplyMyListAppVO" >
+    select * from
+    (
+        select sca.id, sca.business_type_id businessTypeId, '' as itemNames,
+        sca.flow_code flowCode,sca.apply_time applyTime,
+        (select scbf.flow_name from scf_cfg_business_flow scbf where sca.flow_code = scbf.flow_code and  sca.company_id = scbf.company_id) flowName,
+        sca.create_time
+        from scf_credit_apply sca
+        where sca.company_id = #{companyId} and sca.create_by = #{userId}
+        union
+        select scta.id, scta.business_type_id businessTypeId,scta.credit_item_name  itemNames,
+        scta.flow_code flowCode,scta.apply_time applyTime,
+        (select scbf.flow_name from scf_cfg_business_flow scbf where scta.flow_code = scbf.flow_code and  scta.company_id = scbf.company_id) flowName
+        scta.create_time
+        from scf_credit_ticket_apply scta
+        where scta.company_id = #{companyId} and scta.create_by = #{userId}
+    ) as tmp
+    order by tmp.create_time desc
+  </select>
+  <select id="selectAllApplyList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditApplyAllListWebVO" >
+    select sca.company_id companyId,sca.business_type_id businessTypeId,sca.id,
+    sca.customer_name customerName,sca.flow_code flowCode,
+    sca.mobile,sca.apply_time applyTime,
+    (select group_concat(u.user_name) from scf_user u where find_in_set (u.id,sca.dispose_user_ids)) disposeUserNames,
+    (select group_concat(r.role_name) from scf_cfg_role r where FIND_IN_SET( r.id,sca.dispose_role_ids)) disposeRoleNames,
+    (select scbf.flow_name from scf_cfg_business_flow scbf where sca.flow_code = scbf.flow_code and  sca.company_id = scbf.company_id ) flowName
+    from scf_credit_apply sca
+    where  exists (
+        select sca1.id
+        from scf_credit_apply sca1
+        left join scf_credit_item sci ON sci.credit_apply_id = sca1.id
+        where sca.id = sca1.id and
+        (sca1.create_by = #{userId}
+        or find_in_set(#{userId},sca1.dispose_user_ids)
+        or is_mixed(sca1.dispose_role_ids,#{roleIds})
+        <if test="permissionType == 2 and permissionOrgIds != null and permissionOrgIds != ''">
+          or find_in_set(sca1.company_id,#{permissionOrgIds})
+        </if>
+        )
+        <if test="businessId != null and businessId != ''">
+          and sca1. id = #{businessId}
+        </if>
+        <if test="flowCode != null and flowCode != ''">
+          and sca1.flow_code = #{flowCode}
+        </if>
+        <if test="customerName != null and customerName != ''">
+          and sca1.customer_name like CONCAT('%',#{customerName},'%')
+        </if>
+        <if test="itemName != null and itemName != ''">
+          and sci.item_name LIKE CONCAT('%',#{itemName},'%')
+        </if>
+    )
+    order by sca.create_time desc
+  </select>
+
+  <select id="selectAuditList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditApplyAuditListWebVO" >
+    select sca.company_id companyId,sca.business_type_id businessTypeId,sca.id,
+    sca.customer_name customerName,sca.flow_code flowCode,
+    sca.mobile,sca.apply_time applyTime,scbf.flow_name flowName,
+    (select group_concat(u.user_name) from scf_user u where find_in_set (u.id,sca.dispose_user_ids)) disposeUserNames,
+    (select group_concat(r.role_name) from scf_cfg_role r where find_in_set( r.id,sca.dispose_role_ids)) disposeRoleNames
+    from scf_credit_apply sca
+    left join scf_cfg_business_flow scbf on sca.flow_code = scbf.flow_code and sca.company_id = scbf.company_id
+    where (scbf.flow_type = 1 or scbf.flow_type = 2)
+    and exists (
+        select sca1.id
+        from scf_credit_apply sca1
+        left join scf_credit_item sci ON sci.credit_apply_id = sca1.id
+        where sca1.id = sca.id
+        and (
+           (sca1.dispose_user_ids IS NULL
+            and sca1.dispose_role_ids IS NULL
+            and #{permissionType} = 2
+            and find_in_set(sca1.company_id,#{permissionOrgIds})
+           )
+           or find_in_set(#{userId},sca1.dispose_user_ids)
+           or is_mixed(sca1.dispose_role_ids,#{roleIds})
+        )
+        <if test="businessId != null and businessId != ''">
+          and sca1.id = #{businessId}
+        </if>
+        <if test="flowCode != null and flowCode != ''">
+          and sca1.flow_code = #{flowCode}
+        </if>
+        <if test="customerName != null and customerName != ''">
+          and sca1.customer_name LIKE CONCAT('%', #{customerName},'%')
+        </if>
+        <if test="itemName != null and itemName != ''">
+          and sci .item_name LIKE CONCAT('%',#{itemName},'%')
+        </if>
+    )
+    order by sca.create_time desc
+  </select>
+
+  <select id="findCreditApplyDetails" resultType="java.util.Map">
+    SELECT
+      sca.id creditApply_id,
+      sca.id creditApply_creditApplyId,
+      sca.company_id creditApply_companyId,
+      sca.business_type_id creditApply_businessTypeId,
+      sca.flow_code creditApply_flowCode,
+      sca.apply_source creditApply_applySource,
+      DATE_FORMAT(sca.apply_time,'%Y-%m-%d %H:%k:%s') creditApply_applyTime,
+      DATE_FORMAT(sca.ec_cooperation_time,'%Y-%m-%d') creditApply_ecCooperationTime,
+      CONCAT(sca.ec_cooperation_year) creditApply_ecCooperationYear,
+      sca.belongs_region creditApply_belongsRegion,
+      sca.their_filiale creditApply_theirFiliale,
+      sca.region_manager creditApply_regionManager,
+      sca.customer_name creditApply_customerName,
+      sca.id_card creditApply_idCard,
+      sca.gender creditApply_gender,
+      CONCAT(sca.age) creditApply_age,
+      sca.mobile creditApply_mobile,
+      CONCAT(sca.marital_status) creditApply_maritalStatus,
+      sca.spouse_name creditApply_spouseName,
+      sca.spouse_id_card creditApply_spouseIdCard,
+      sca.spouse_mobile creditApply_spouseMobile,
+      sca.family_address_province_code creditApply_familyAddressProvinceCode,
+      sca.family_address_city_code creditApply_familyAddressCityCode,
+      sca.family_address_region_code creditApply_familyAddressRegionCode,
+      sca.family_address creditApply_familyAddress,
+      sca.housing_ownership creditApply_housingOwnership,
+      scr.id creditRisk_id,
+      CONCAT(scr.risk_credit1) creditRisk_riskCredit1,
+      CONCAT(scr.risk_credit2) creditRisk_riskCredit2,
+      CONCAT(scr.risk_credit3) creditRisk_riskCredit3,
+      CONCAT(scr.risk_credit4) creditRisk_riskCredit4,
+      CONCAT(scr.risk_credit5) creditRisk_riskCredit5,
+      CONCAT(scr.risk_credit6) creditRisk_riskCredit6,
+      CONCAT(scr.risk_credit7) creditRisk_riskCredit7,
+      scr.risk_credit8 creditRisk_riskCredit8,
+      CONCAT(scr.risk_credit9) creditRisk_riskCredit9,
+      scr.risk_credit10 creditRisk_riskCredit10,
+      CONCAT(scr.risk_credit11) creditRisk_riskCredit11,
+      scr.risk_credit12 creditRisk_riskCredit12,
+      scr.risk_credit13 creditRisk_riskCredit13,
+      CONCAT(scr.risk_credit16) creditRisk_riskCredit16,
+      scr.risk_credit17 creditRisk_riskCredit17,
+      CONCAT(scr.risk_credit18) creditRisk_riskCredit18,
+      scr.risk_credit19 creditRisk_riskCredit19,
+      scr.risk_credit20 creditRisk_riskCredit20,
+      scad.id creditAuditData_id
+    FROM scf_credit_apply sca
+    LEFT JOIN scf_credit_risk scr ON scr.credit_apply_id = sca.id
+    LEFT JOIN scf_credit_audit_data scad ON scad.credit_apply_id = sca.id
+    WHERE sca.id = #{creditApplyId}
+  </select>
+
+  <select id="findCreditAuditDataObj" resultType="java.util.Map">
+    SELECT * FROM ${tableName}
+    WHERE company_id = #{companyId,jdbcType=BIGINT}
+    AND credit_apply_id = #{creditApplyId,jdbcType=BIGINT}
+  </select>
+
+  <update id="updateCreditAuditData">
+    <foreach collection="tcList" item="tc" >
+      UPDATE ${tc.tableName}
+      <set>
+        <foreach collection="tc.columns" item="c">
+            ${c.columnName} = #{c.columnValue},
+        </foreach>
+      </set>
+      WHERE company_id = #{companyId,jdbcType=BIGINT}
+      AND credit_apply_id = #{creditApplyId,jdbcType=BIGINT}
+      <if test="tc.projectId != null">
+        AND id = #{tc.projectId,jdbcType=BIGINT}
+      </if>
+    </foreach>
+  </update>
+</mapper>

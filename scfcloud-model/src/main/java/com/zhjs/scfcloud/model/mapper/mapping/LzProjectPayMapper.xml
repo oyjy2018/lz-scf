@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectPayMapper">
+  <sql id="Base_Column_List">
+    id, contract_no, related_contract_no, pay_register_no, pay_date, pay_type, payer_full_name, 
+    gathering_full_name, actual_pay_money, delete_status, create_by, create_time, update_by, 
+    update_time
+  </sql>
+  <select id="getPayList" resultType="com.zhjs.scfcloud.model.vo.lzProject.LzProjectPayListVO">
+    select id, related_contract_no, pay_register_no, pay_date, pay_type, payer_full_name,
+    gathering_full_name, actual_pay_money
+    from lz_project_pay lpp
+    where lpp.contract_no = #{contractNo} and lpp.delete_status != 1
+  </select>
+</mapper>

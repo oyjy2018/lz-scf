@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"/>
+</head>
+<body>
+<h2 th:text="${email} + '您好!' + ${name} +'邀请您加入' + ${company} + '这时一封邀请邮件，请点击下面的链接完成激活！'"/>
+<a style="height: 30px;width: 80px; border: dodgerblue solid 1px" href="#" th:href="@{${url}(param=${param})}">点我激活</a>
+</body>
+</html>

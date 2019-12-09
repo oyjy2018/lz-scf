@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.RiskControlModelMapper">
+  <sql id="Base_Column_List">
+    id, company_id, model_name, system_id, business_type_id, business_type_name, model_formula,
+    model_explain, has_enabled, status, create_by, create_time, update_by, update_time
+  </sql>
+  <select id="list" resultType="com.zhjs.scfcloud.model.vo.risk.RiskControlModelListVO">
+    select scrcm.*,ss.system_name systemName,sc.company_name companyName from scf_cfg_risk_control_model scrcm
+    left join scf_system ss on scrcm.system_id = ss.id
+    left join scf_company sc on scrcm.company_id = sc.id
+    where
+    (scrcm.create_by = #{userId}
+    <if test="permissionType == 2 and permissionOrgIds != null and permissionOrgIds != ''">or
+      find_in_set(scrcm.company_id,#{permissionOrgIds})
+    </if>
+     )
+    and scrcm.status = 1
+    <if test="modelName != null and modelName != ''">
+      and scrcm.model_name like '%${modelName}%'
+    </if>
+    <if test="hasEnabled != null and hasEnabled != ''">
+      and scrcm.has_enabled = #{hasEnabled}
+    </if>
+    order by scrcm.create_time desc
+  </select>
+</mapper>

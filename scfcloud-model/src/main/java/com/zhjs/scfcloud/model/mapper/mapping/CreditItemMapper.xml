@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CreditItemMapper">
+
+  <select id="selectByCreditApplyId" resultType="java.util.Map">
+    SELECT
+      sci.id,
+      sci.id creditItem_id,
+      sci.item_name creditItem_itemName,
+      CONCAT(sci.construction_schedule) creditItem_constructionSchedule,
+      DATE_FORMAT(sci.plan_finish_time,'%Y-%m-%d') creditItem_planFinishTime,
+      CONCAT(sci.item_collection_days) creditItem_itemCollectionDays,
+      CONCAT(sci.apply_credit_money) creditItem_applyCreditMoney,
+      CONCAT(sci.audit_credit_money) creditItem_auditCreditMoney,
+      sci.apply_credit_business creditItem_applyCreditBusiness,
+      sci.apply_purpose creditItem_applyPurpose,
+      sci.apply_purpose_other creditItem_applyPurposeOther,
+      CONCAT(sci.has_divide_use) creditItem_hasDivideUse,
+      DATE_FORMAT(sci.credit_start_date,'%Y-%m-%d') creditItem_creditStartDate,
+      DATE_FORMAT(sci.credit_end_date,'%Y-%m-%d') creditItem_creditEndDate,
+      CONCAT(sci.the_use_money) creditItem_theUseMoney,
+      sci.use_credit_require creditItem_useCreditRequire,
+      sci.credit_conditions creditItem_creditConditions,
+      sci.use_credit_plan creditItem_useCreditPlan,
+      CONCAT(sci.has_occur_safety_accident) creditItem_hasOccurSafetyAccident,
+      sci.safety_accident_explain creditItem_safetyAccidentExplain,
+      CONCAT(sci.has_sign_duty_book) creditItem_hasSignDutyBook,
+      sci.risk_explain creditItem_riskExplain,
+      sci.controls_explain creditItem_controlsExplain,
+      sci.other_notice_item creditItem_otherNoticeItem,
+      sci.item_index creditItem_itemIndex
+    FROM scf_credit_item sci
+    WHERE sci.credit_apply_id = #{creditApplyId,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectListByApplyIds" resultType="com.zhjs.scfcloud.model.entity.CreditItem" parameterType="java.lang.String">
+    SELECT
+      sci.id,
+      sci.item_name itemName,
+      sci.apply_credit_money applyCreditMoney,
+      (select scbav.value_ch from scf_cfg_business_attr_val scbav where scbav.id = sci.apply_credit_business) applyCreditBusiness,
+      sci.audit_credit_money auditCreditMoney,
+      sci.credit_start_date creditstartDate,
+      sci.credit_end_date creditEndDate,
+      sci.credit_apply_id creditApplyId
+    FROM scf_credit_item sci
+    WHERE find_in_set(sci.credit_apply_id,#{applyIds})
+  </select>
+</mapper>

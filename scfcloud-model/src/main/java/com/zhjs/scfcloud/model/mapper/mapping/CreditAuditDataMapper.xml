@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CreditAuditDataMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.CreditAuditData">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="credit_apply_id" jdbcType="BIGINT" property="creditApplyId" />
+    <result column="ec_cooperation_year" jdbcType="DECIMAL" property="ecCooperationYear" />
+    <result column="has_bloc_debt" jdbcType="INTEGER" property="hasBlocDebt" />
+    <result column="has_sign_sh_cont" jdbcType="INTEGER" property="hasSignShCont" />
+    <result column="has_sh_buy_insure" jdbcType="INTEGER" property="hasShBuyInsure" />
+    <result column="has_sign_duty_book" jdbcType="INTEGER" property="hasSignDutyBook" />
+    <result column="has_occur_lawsuit" jdbcType="INTEGER" property="hasOccurLawsuit" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zhjs.scfcloud.model.entity.CreditAuditDataWithBLOBs">
+    <result column="cust_manager_first_audit" jdbcType="LONGVARCHAR" property="custManagerFirstAudit" />
+    <result column="business_manager_exp" jdbcType="LONGVARCHAR" property="businessManagerExp" />
+    <result column="bloc_debt_explain" jdbcType="LONGVARCHAR" property="blocDebtExplain" />
+    <result column="item_sub_contract_condition" jdbcType="LONGVARCHAR" property="itemSubContractCondition" />
+    <result column="lawsuit_condition_explain" jdbcType="LONGVARCHAR" property="lawsuitConditionExplain" />
+    <result column="other_notice_item" jdbcType="LONGVARCHAR" property="otherNoticeItem" />
+    <result column="pause_program_audit" jdbcType="LONGVARCHAR" property="pauseProgramAudit" />
+    <result column="cust_manager_audit" jdbcType="LONGVARCHAR" property="custManagerAudit" />
+    <result column="risk_manager_audit" jdbcType="LONGVARCHAR" property="riskManagerAudit" />
+    <result column="fund_manager_audit" jdbcType="LONGVARCHAR" property="fundManagerAudit" />
+    <result column="risk_manager_head_audit" jdbcType="LONGVARCHAR" property="riskManagerHeadAudit" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_id, credit_apply_id, ec_cooperation_year, has_bloc_debt, has_sign_sh_cont, 
+    has_sh_buy_insure, has_sign_duty_book, has_occur_lawsuit, status, update_time, update_by, 
+    create_time, create_by
+  </sql>
+  <sql id="Blob_Column_List">
+    cust_manager_first_audit, business_manager_exp, bloc_debt_explain, item_sub_contract_condition, 
+    lawsuit_condition_explain, other_notice_item, pause_program_audit, cust_manager_audit, 
+    risk_manager_audit, fund_manager_audit, risk_manager_head_audit
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from scf_credit_audit_data
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_credit_audit_data
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.CreditAuditDataWithBLOBs" useGeneratedKeys="true">
+    insert into scf_credit_audit_data (company_id, credit_apply_id, ec_cooperation_year, 
+      has_bloc_debt, has_sign_sh_cont, has_sh_buy_insure, 
+      has_sign_duty_book, has_occur_lawsuit, status, 
+      update_time, update_by, create_time, 
+      create_by, cust_manager_first_audit, business_manager_exp, 
+      bloc_debt_explain, item_sub_contract_condition, 
+      lawsuit_condition_explain, other_notice_item, 
+      pause_program_audit, cust_manager_audit, 
+      risk_manager_audit, fund_manager_audit, 
+      risk_manager_head_audit)
+    values (#{companyId,jdbcType=BIGINT}, #{creditApplyId,jdbcType=BIGINT}, #{ecCooperationYear,jdbcType=DECIMAL}, 
+      #{hasBlocDebt,jdbcType=INTEGER}, #{hasSignShCont,jdbcType=INTEGER}, #{hasShBuyInsure,jdbcType=INTEGER}, 
+      #{hasSignDutyBook,jdbcType=INTEGER}, #{hasOccurLawsuit,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{custManagerFirstAudit,jdbcType=LONGVARCHAR}, #{businessManagerExp,jdbcType=LONGVARCHAR}, 
+      #{blocDebtExplain,jdbcType=LONGVARCHAR}, #{itemSubContractCondition,jdbcType=LONGVARCHAR}, 
+      #{lawsuitConditionExplain,jdbcType=LONGVARCHAR}, #{otherNoticeItem,jdbcType=LONGVARCHAR}, 
+      #{pauseProgramAudit,jdbcType=LONGVARCHAR}, #{custManagerAudit,jdbcType=LONGVARCHAR}, 
+      #{riskManagerAudit,jdbcType=LONGVARCHAR}, #{fundManagerAudit,jdbcType=LONGVARCHAR}, 
+      #{riskManagerHeadAudit,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.CreditAuditDataWithBLOBs" useGeneratedKeys="true">
+    insert into scf_credit_audit_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="creditApplyId != null">
+        credit_apply_id,
+      </if>
+      <if test="ecCooperationYear != null">
+        ec_cooperation_year,
+      </if>
+      <if test="hasBlocDebt != null">
+        has_bloc_debt,
+      </if>
+      <if test="hasSignShCont != null">
+        has_sign_sh_cont,
+      </if>
+      <if test="hasShBuyInsure != null">
+        has_sh_buy_insure,
+      </if>
+      <if test="hasSignDutyBook != null">
+        has_sign_duty_book,
+      </if>
+      <if test="hasOccurLawsuit != null">
+        has_occur_lawsuit,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="custManagerFirstAudit != null">
+        cust_manager_first_audit,
+      </if>
+      <if test="businessManagerExp != null">
+        business_manager_exp,
+      </if>
+      <if test="blocDebtExplain != null">
+        bloc_debt_explain,
+      </if>
+      <if test="itemSubContractCondition != null">
+        item_sub_contract_condition,
+      </if>
+      <if test="lawsuitConditionExplain != null">
+        lawsuit_condition_explain,
+      </if>
+      <if test="otherNoticeItem != null">
+        other_notice_item,
+      </if>
+      <if test="pauseProgramAudit != null">
+        pause_program_audit,
+      </if>
+      <if test="custManagerAudit != null">
+        cust_manager_audit,
+      </if>
+      <if test="riskManagerAudit != null">
+        risk_manager_audit,
+      </if>
+      <if test="fundManagerAudit != null">
+        fund_manager_audit,
+      </if>
+      <if test="riskManagerHeadAudit != null">
+        risk_manager_head_audit,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="creditApplyId != null">
+        #{creditApplyId,jdbcType=BIGINT},
+      </if>
+      <if test="ecCooperationYear != null">
+        #{ecCooperationYear,jdbcType=DECIMAL},
+      </if>
+      <if test="hasBlocDebt != null">
+        #{hasBlocDebt,jdbcType=INTEGER},
+      </if>
+      <if test="hasSignShCont != null">
+        #{hasSignShCont,jdbcType=INTEGER},
+      </if>
+      <if test="hasShBuyInsure != null">
+        #{hasShBuyInsure,jdbcType=INTEGER},
+      </if>
+      <if test="hasSignDutyBook != null">
+        #{hasSignDutyBook,jdbcType=INTEGER},
+      </if>
+      <if test="hasOccurLawsuit != null">
+        #{hasOccurLawsuit,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="custManagerFirstAudit != null">
+        #{custManagerFirstAudit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="businessManagerExp != null">
+        #{businessManagerExp,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="blocDebtExplain != null">
+        #{blocDebtExplain,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="itemSubContractCondition != null">
+        #{itemSubContractCondition,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="lawsuitConditionExplain != null">
+        #{lawsuitConditionExplain,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="otherNoticeItem != null">
+        #{otherNoticeItem,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="pauseProgramAudit != null">
+        #{pauseProgramAudit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="custManagerAudit != null">
+        #{custManagerAudit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="riskManagerAudit != null">
+        #{riskManagerAudit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fundManagerAudit != null">
+        #{fundManagerAudit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="riskManagerHeadAudit != null">
+        #{riskManagerHeadAudit,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.CreditAuditDataWithBLOBs">
+    update scf_credit_audit_data
+    <set>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="creditApplyId != null">
+        credit_apply_id = #{creditApplyId,jdbcType=BIGINT},
+      </if>
+      <if test="ecCooperationYear != null">
+        ec_cooperation_year = #{ecCooperationYear,jdbcType=DECIMAL},
+      </if>
+      <if test="hasBlocDebt != null">
+        has_bloc_debt = #{hasBlocDebt,jdbcType=INTEGER},
+      </if>
+      <if test="hasSignShCont != null">
+        has_sign_sh_cont = #{hasSignShCont,jdbcType=INTEGER},
+      </if>
+      <if test="hasShBuyInsure != null">
+        has_sh_buy_insure = #{hasShBuyInsure,jdbcType=INTEGER},
+      </if>
+      <if test="hasSignDutyBook != null">
+        has_sign_duty_book = #{hasSignDutyBook,jdbcType=INTEGER},
+      </if>
+      <if test="hasOccurLawsuit != null">
+        has_occur_lawsuit = #{hasOccurLawsuit,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="custManagerFirstAudit != null">
+        cust_manager_first_audit = #{custManagerFirstAudit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="businessManagerExp != null">
+        business_manager_exp = #{businessManagerExp,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="blocDebtExplain != null">
+        bloc_debt_explain = #{blocDebtExplain,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="itemSubContractCondition != null">
+        item_sub_contract_condition = #{itemSubContractCondition,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="lawsuitConditionExplain != null">
+        lawsuit_condition_explain = #{lawsuitConditionExplain,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="otherNoticeItem != null">
+        other_notice_item = #{otherNoticeItem,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="pauseProgramAudit != null">
+        pause_program_audit = #{pauseProgramAudit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="custManagerAudit != null">
+        cust_manager_audit = #{custManagerAudit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="riskManagerAudit != null">
+        risk_manager_audit = #{riskManagerAudit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fundManagerAudit != null">
+        fund_manager_audit = #{fundManagerAudit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="riskManagerHeadAudit != null">
+        risk_manager_head_audit = #{riskManagerHeadAudit,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zhjs.scfcloud.model.entity.CreditAuditDataWithBLOBs">
+    update scf_credit_audit_data
+    set company_id = #{companyId,jdbcType=BIGINT},
+      credit_apply_id = #{creditApplyId,jdbcType=BIGINT},
+      ec_cooperation_year = #{ecCooperationYear,jdbcType=DECIMAL},
+      has_bloc_debt = #{hasBlocDebt,jdbcType=INTEGER},
+      has_sign_sh_cont = #{hasSignShCont,jdbcType=INTEGER},
+      has_sh_buy_insure = #{hasShBuyInsure,jdbcType=INTEGER},
+      has_sign_duty_book = #{hasSignDutyBook,jdbcType=INTEGER},
+      has_occur_lawsuit = #{hasOccurLawsuit,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      cust_manager_first_audit = #{custManagerFirstAudit,jdbcType=LONGVARCHAR},
+      business_manager_exp = #{businessManagerExp,jdbcType=LONGVARCHAR},
+      bloc_debt_explain = #{blocDebtExplain,jdbcType=LONGVARCHAR},
+      item_sub_contract_condition = #{itemSubContractCondition,jdbcType=LONGVARCHAR},
+      lawsuit_condition_explain = #{lawsuitConditionExplain,jdbcType=LONGVARCHAR},
+      other_notice_item = #{otherNoticeItem,jdbcType=LONGVARCHAR},
+      pause_program_audit = #{pauseProgramAudit,jdbcType=LONGVARCHAR},
+      cust_manager_audit = #{custManagerAudit,jdbcType=LONGVARCHAR},
+      risk_manager_audit = #{riskManagerAudit,jdbcType=LONGVARCHAR},
+      fund_manager_audit = #{fundManagerAudit,jdbcType=LONGVARCHAR},
+      risk_manager_head_audit = #{riskManagerHeadAudit,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.CreditAuditData">
+    update scf_credit_audit_data
+    set company_id = #{companyId,jdbcType=BIGINT},
+      credit_apply_id = #{creditApplyId,jdbcType=BIGINT},
+      ec_cooperation_year = #{ecCooperationYear,jdbcType=DECIMAL},
+      has_bloc_debt = #{hasBlocDebt,jdbcType=INTEGER},
+      has_sign_sh_cont = #{hasSignShCont,jdbcType=INTEGER},
+      has_sh_buy_insure = #{hasShBuyInsure,jdbcType=INTEGER},
+      has_sign_duty_book = #{hasSignDutyBook,jdbcType=INTEGER},
+      has_occur_lawsuit = #{hasOccurLawsuit,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="findAuditDataById" parameterType="java.lang.Long" resultType="java.util.Map" >
+    select
+      CONCAT(scad.ec_cooperation_year) creditAuditData_ecCooperationYear,
+      scad.has_bloc_debt creditAuditData_hasBlocDebt,
+      scad.has_sign_sh_cont creditAuditData_hasSignShCont,
+      scad.has_sh_buy_insure creditAuditData_hasShBuyInsure,
+      scad.has_sign_duty_book creditAuditData_hasSignDutyBook,
+      scad.has_occur_lawsuit creditAuditData_hasOccurLawsuit,
+      scad.cust_manager_first_audit creditAuditData_custManagerFirstAudit,
+      scad.business_manager_exp creditAuditData_businessManagerExp,
+      scad.bloc_debt_explain creditAuditData_blocDebtExplain,
+      scad.item_sub_contract_condition creditAuditData_itemSubContractCondition,
+      scad.lawsuit_condition_explain creditAuditData_lawsuitConditionExplain,
+      scad.other_notice_item creditAuditData_otherNoticeItem,
+      scad.pause_program_audit creditAuditData_pauseProgramAudit,
+      scad.cust_manager_audit creditAuditData_custManagerAudit,
+      scad.risk_manager_audit creditAuditData_riskManagerAudit,
+      scad.fund_manager_audit creditAuditData_fundManagerAudit,
+      scad.risk_manager_head_audit creditAuditData_riskManagerHeadAudit,
+      scr.risk_credit14 creditRisk_riskCredit14,
+      scr.risk_credit15 creditRisk_riskCredit15
+    from scf_credit_audit_data scad
+    JOIN scf_credit_risk scr ON scr.credit_apply_id = scad.credit_apply_id
+    where scad.credit_apply_id = #{creditApplyId,jdbcType=BIGINT}
+  </select>
+</mapper>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"/>
+</head>
+<body>
+<div style="width: 100%;">
+    <div style="margin: 0 auto;max-width: 700px; font-size: 14px;">
+        <div style="text-align: center;margin: 40px;">
+            <img style="max-width: 300px;" th:src="${fileServiceUrl}+'file/downloadFile?fileUrl=/app/file/upload/logo/lzsk_logo_hb.png&suffix=.png'">
+        </div>
+        <p><b th:text="'亲爱的【'+${userName}+'】'"></b></p>
+        <p><b th:text="'您好！'"></b></p>
+        <p>
+            <span th:text="'您正在进行账户基础信息维护，请在验证码输入框中输入: '"></span>
+            <span th:text="${code}" style="color: blue;font-size: 25px;"></span>
+            <span th:text="', 以完成操作。'"></span>
+        </p>
+        <p th:text="'验证码30分钟内有效。'"></p>
+        <p th:text="'如果您没有进行此项操作，请忽略本邮件。'"></p>
+        <p style="font-size: 12px; margin: 40px 0;">任何问题您可以与我们邮件咨询：lingzhufin@zhihuikg.com</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CreditTicketAuditDataMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.CreditTicketAuditData">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="business_id" jdbcType="BIGINT" property="businessId" />
+    <result column="risk_manager_head_audit_money" jdbcType="DECIMAL" property="riskManagerHeadAuditMoney" />
+    <result column="risk_manager_head_audit_deadline" jdbcType="VARCHAR" property="riskManagerHeadAuditDeadline" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zhjs.scfcloud.model.entity.CreditTicketAuditData">
+    <result column="risk_manager_head_audit_analyze" jdbcType="LONGVARCHAR" property="riskManagerHeadAuditAnalyze" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_id, business_id, risk_manager_head_audit_money, risk_manager_head_audit_deadline, 
+    status, update_time, update_by, create_time, create_by
+  </sql>
+  <sql id="Blob_Column_List">
+    risk_manager_head_audit_analyze
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from scf_credit_ticket_audit_data
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_credit_ticket_audit_data
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.CreditTicketAuditData" useGeneratedKeys="true">
+    insert into scf_credit_ticket_audit_data (company_id, business_id, risk_manager_head_audit_money, 
+      risk_manager_head_audit_deadline, status, update_time, 
+      update_by, create_time, create_by, 
+      risk_manager_head_audit_analyze)
+    values (#{companyId,jdbcType=BIGINT}, #{businessId,jdbcType=BIGINT}, #{riskManagerHeadAuditMoney,jdbcType=DECIMAL}, 
+      #{riskManagerHeadAuditDeadline,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
+      #{riskManagerHeadAuditAnalyze,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.CreditTicketAuditData" useGeneratedKeys="true">
+    insert into scf_credit_ticket_audit_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="riskManagerHeadAuditMoney != null">
+        risk_manager_head_audit_money,
+      </if>
+      <if test="riskManagerHeadAuditDeadline != null">
+        risk_manager_head_audit_deadline,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="riskManagerHeadAuditAnalyze != null">
+        risk_manager_head_audit_analyze,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="riskManagerHeadAuditMoney != null">
+        #{riskManagerHeadAuditMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="riskManagerHeadAuditDeadline != null">
+        #{riskManagerHeadAuditDeadline,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="riskManagerHeadAuditAnalyze != null">
+        #{riskManagerHeadAuditAnalyze,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.CreditTicketAuditData">
+    update scf_credit_ticket_audit_data
+    <set>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        business_id = #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="riskManagerHeadAuditMoney != null">
+        risk_manager_head_audit_money = #{riskManagerHeadAuditMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="riskManagerHeadAuditDeadline != null">
+        risk_manager_head_audit_deadline = #{riskManagerHeadAuditDeadline,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="riskManagerHeadAuditAnalyze != null">
+        risk_manager_head_audit_analyze = #{riskManagerHeadAuditAnalyze,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zhjs.scfcloud.model.entity.CreditTicketAuditData">
+    update scf_credit_ticket_audit_data
+    set company_id = #{companyId,jdbcType=BIGINT},
+      business_id = #{businessId,jdbcType=BIGINT},
+      risk_manager_head_audit_money = #{riskManagerHeadAuditMoney,jdbcType=DECIMAL},
+      risk_manager_head_audit_deadline = #{riskManagerHeadAuditDeadline,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      risk_manager_head_audit_analyze = #{riskManagerHeadAuditAnalyze,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.CreditTicketAuditData">
+    update scf_credit_ticket_audit_data
+    set company_id = #{companyId,jdbcType=BIGINT},
+      business_id = #{businessId,jdbcType=BIGINT},
+      risk_manager_head_audit_money = #{riskManagerHeadAuditMoney,jdbcType=DECIMAL},
+      risk_manager_head_audit_deadline = #{riskManagerHeadAuditDeadline,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="findAuditDataByBusinessId" parameterType="java.lang.Long" resultType="java.util.Map" >
+    SELECT
+        id,
+        company_id,
+        business_id,
+        CONCAT(risk_manager_head_audit_money) creditTicketAuditData_riskManagerHeadAuditMoney,
+        risk_manager_head_audit_deadline creditTicketAuditData_riskManagerHeadAuditDeadline,
+        risk_manager_head_audit_analyze creditTicketAuditData_riskManagerHeadAuditAnalyze
+    FROM scf_credit_ticket_audit_data
+    WHERE business_id = #{businessId,jdbcType=BIGINT}
+  </select>
+
+  <select id="findUnUseAuditDataByRecordId" parameterType="java.lang.Long" resultMap="BaseResultMap" >
+    SELECT
+    <include refid="Base_Column_List"></include>
+    FROM scf_credit_ticket_audit_data
+    WHERE business_id in (select scta.id from scf_credit_ticket_apply scta
+    where scta.credit_id = #{record} and scta.flow_code = 'ticket99' and scta.has_use != 1)
+  </select>
+</mapper>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.QuartzJobMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.QuartzJob">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="job_name" jdbcType="VARCHAR" property="jobName" />
+    <result column="job_desc" jdbcType="VARCHAR" property="jobDesc" />
+    <result column="class_path" jdbcType="VARCHAR" property="classPath" />
+    <result column="job_cron" jdbcType="VARCHAR" property="jobCron" />
+    <result column="run_status" jdbcType="INTEGER" property="runStatus" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, job_name, job_desc, class_path, job_cron, run_status, is_del, create_time, create_by, 
+    update_time, update_by
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scf_cfg_quartz_job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from scf_cfg_quartz_job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.QuartzJob" useGeneratedKeys="true">
+    insert into scf_cfg_quartz_job (job_name, job_desc, class_path, 
+      job_cron, run_status, is_del, 
+      create_time, create_by, update_time, 
+      update_by)
+    values (#{jobName,jdbcType=VARCHAR}, #{jobDesc,jdbcType=VARCHAR}, #{classPath,jdbcType=VARCHAR}, 
+      #{jobCron,jdbcType=VARCHAR}, #{runStatus,jdbcType=INTEGER}, #{isDel,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.QuartzJob" useGeneratedKeys="true">
+    insert into scf_cfg_quartz_job
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jobName != null">
+        job_name,
+      </if>
+      <if test="jobDesc != null">
+        job_desc,
+      </if>
+      <if test="classPath != null">
+        class_path,
+      </if>
+      <if test="jobCron != null">
+        job_cron,
+      </if>
+      <if test="runStatus != null">
+        run_status,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jobName != null">
+        #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobDesc != null">
+        #{jobDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="classPath != null">
+        #{classPath,jdbcType=VARCHAR},
+      </if>
+      <if test="jobCron != null">
+        #{jobCron,jdbcType=VARCHAR},
+      </if>
+      <if test="runStatus != null">
+        #{runStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.QuartzJob">
+    update scf_cfg_quartz_job
+    <set>
+      <if test="jobName != null">
+        job_name = #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobDesc != null">
+        job_desc = #{jobDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="classPath != null">
+        class_path = #{classPath,jdbcType=VARCHAR},
+      </if>
+      <if test="jobCron != null">
+        job_cron = #{jobCron,jdbcType=VARCHAR},
+      </if>
+      <if test="runStatus != null">
+        run_status = #{runStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.QuartzJob">
+    update scf_cfg_quartz_job
+    set job_name = #{jobName,jdbcType=VARCHAR},
+      job_desc = #{jobDesc,jdbcType=VARCHAR},
+      class_path = #{classPath,jdbcType=VARCHAR},
+      job_cron = #{jobCron,jdbcType=VARCHAR},
+      run_status = #{runStatus,jdbcType=INTEGER},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getJobList" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"/> from scf_cfg_quartz_job
+  </select>
+  <update id="pauseAllJob">
+    update scf_cfg_quartz_job set run_status = 0 where run_status = 1 and is_del = 0;
+  </update>
+  <update id="startAllJob">
+    update scf_cfg_quartz_job set run_status = 1 where run_status = 0 and is_del = 0;
+  </update>
+</mapper>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessTicketQuotationMapper">
+    <!-- 票方_报价列表 -->
+    <select id="selectQuotationTicketList" parameterType="com.zhjs.scfcloud.model.dto.QuotationTicketQueryDTO" resultType="com.zhjs.scfcloud.model.vo.QuotationTicketVO">
+        SELECT
+            q.id as quotationId,
+            i.id as inquireId,
+            q.company_name as quotationCompanyName,
+            q.`status` as quotationStatus,
+            i.accepter_name as accepterName,
+            i.bill_amt as billAmt,
+            q.amount as amount,
+            i.maturity_date as maturityDate,
+            i.surplus_valid_days as surplusValidDays,
+            q.annual_rate as annualRate,
+            q.discount_fee as discountFee,
+            i.flaws as flaws,
+            q.create_time as quotationCreateTime
+        FROM
+            scf_business_ticket_quotation q
+            INNER JOIN scf_business_ticket_inquire i ON q.inquire_id = i.id
+        WHERE
+            i.company_id = #{inquireCompanyId}
+        <if test="quotationStatus != null">
+            AND q.`status` = #{quotationStatus}
+        </if>
+        <if test="quotationCompanyName != null and quotationCompanyName != ''">
+          AND q.`company_name` LIKE CONCAT('%',#{quotationCompanyName},'%')
+        </if>
+        <if test="quotationCreateStartTime != null">
+          AND q.create_time &gt; #{quotationCreateStartTime}
+        </if>
+        <if test="quotationCreateEndTime != null">
+          AND q.create_time &lt;  #{quotationCreateEndTime}
+        </if>
+        <if test="quotationId != null">
+          AND q.id = #{quotationId}
+        </if>
+        <if test="inquireId != null">
+            AND i.id = #{inquireId}
+        </if>
+        ORDER BY q.create_time DESC
+    </select>
+
+
+    <!-- 资方_我的报价列表 -->
+    <select id="selectQuotationOwnerList" parameterType="com.zhjs.scfcloud.model.dto.QuotationOwnerQueryDTO" resultType="com.zhjs.scfcloud.model.vo.QuotationOwnerVO">
+        SELECT
+        q.id as quotationId,
+        i.id as inquireId,
+        q.`status` as quotationStatus,
+        i.company_name as inquireCompanyName,
+        i.`status` as inquireStatus,
+        i.accepter_name as accepterName,
+        i.bill_amt as billAmt,
+        q.amount as amount,
+        i.maturity_date as maturityDate,
+        i.surplus_valid_days as surplusValidDays,
+        q.annual_rate as annualRate,
+        q.discount_fee as discountFee,
+        i.flaws as flaws,
+        q.quotation_person as quotationPerson,
+        q.create_time as quotationCreateTime
+        FROM
+        scf_business_ticket_quotation q
+        INNER JOIN scf_business_ticket_inquire i ON q.inquire_id = i.id
+        WHERE
+        q.company_id = #{quotationCompanyId}
+        <if test="quotationStatus != null">
+            AND q.`status` = #{quotationStatus}
+        </if>
+        <if test="inquireCompanyName != null and inquireCompanyName != ''">
+            AND i.`company_name` LIKE CONCAT('%',#{inquireCompanyName},'%')
+        </if>
+        <if test="quotationCreateStartTime != null">
+            AND q.create_time &gt; #{quotationCreateStartTime}
+        </if>
+        <if test="quotationCreateEndTime != null">
+            AND q.create_time &lt;  #{quotationCreateEndTime}
+        </if>
+        <if test="quotationId != null">
+            AND q.id = #{quotationId}
+        </if>
+        ORDER BY q.create_time DESC
+    </select>
+
+    <!-- 所有_报价列表 -->
+    <select id="selectAllQuotationsList" parameterType="com.zhjs.scfcloud.model.dto.ticket.AllQuotationListDTO" resultType="com.zhjs.scfcloud.model.vo.businessTicket.AllQuotationTicketVO">
+        SELECT
+        q.id as quotationId,
+        i.id as inquireId,
+        q.company_name as quotationCompanyName,
+        q.`status` as quotationStatus,
+        i.accepter_name as accepterName,
+        i.bill_amt as billAmt,
+        q.amount as amount,
+        i.maturity_date as maturityDate,
+        i.surplus_valid_days as surplusValidDays,
+        q.annual_rate as annualRate,
+        q.discount_fee as discountFee,
+        i.flaws as flaws,
+        q.create_time as quotationCreateTime
+        FROM
+        scf_business_ticket_quotation q
+        INNER JOIN scf_business_ticket_inquire i ON q.inquire_id = i.id
+        WHERE
+            1=1
+        <if test="quotationStatus != null">
+            AND q.`status` = #{quotationStatus}
+        </if>
+        <if test="quotationCompanyName != null and quotationCompanyName != ''">
+            AND q.`company_name` LIKE CONCAT('%',#{quotationCompanyName},'%')
+        </if>
+        <if test="quotationCreateStartTime != null">
+            AND q.create_time &gt; #{quotationCreateStartTime}
+        </if>
+        <if test="quotationCreateEndTime != null">
+            AND q.create_time &lt; #{quotationCreateEndTime}
+        </if>
+        <if test="quotationId != null">
+            AND q.id = #{quotationId}
+        </if>
+        <if test="companyIds != null">
+            AND q.`company_id` in (${companyIds})
+        </if>
+        ORDER BY q.create_time DESC
+    </select>
+</mapper>

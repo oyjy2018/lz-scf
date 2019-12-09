@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectInvoiceMapper">
+  <sql id="Base_Column_List">
+    id, contract_no, invoice_no, invoice_type, register_type, invoice_date, invoice_money, 
+    invoicing_company_full_name, remark, delete_status, create_by, create_time, update_by, 
+    update_time
+  </sql>
+  <select id="getList" resultType="com.zhjs.scfcloud.model.vo.lzProject.LzProjectInvoiceListVO">
+    select id, invoice_no, invoice_type, register_type, invoice_date, invoice_money,
+    invoicing_company_full_name
+    from lz_project_invoice lpi
+    where lpi.contract_no = #{contractNo}
+    and lpi.delete_status != 1
+    order by lpi.invoice_date
+  </select>
+</mapper>

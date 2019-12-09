@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.RiskScoreItemsMapper">
+  <sql id="Base_Column_List">
+    id, risk_control_model_id, item_name, full_mark, formula, formula_desc, item_explain, 
+    status, create_by, create_time, update_by, update_time
+  </sql>
+</mapper>

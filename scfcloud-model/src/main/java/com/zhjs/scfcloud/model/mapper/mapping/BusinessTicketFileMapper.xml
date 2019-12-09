@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessTicketFileMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.BusinessTicketFile">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="inquire_id" jdbcType="BIGINT" property="inquireId" />
+    <result column="file_type" jdbcType="VARCHAR" property="fileType" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="is_del" jdbcType="TINYINT" property="isDel" />
+    <result column="file_url" jdbcType="VARCHAR" property="fileUrl" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="original_file_name" jdbcType="VARCHAR" property="originalFileName" />
+    <result column="new_file_name" jdbcType="VARCHAR" property="newFileName" />
+    <result column="file_size" jdbcType="VARCHAR" property="fileSize" />
+    <result column="suffix" jdbcType="VARCHAR" property="suffix" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, inquire_id, file_type, sort, is_del, file_url, create_by, create_time, update_by, 
+    update_time, original_file_name, new_file_name, file_size, suffix
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scf_business_ticket_file
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_business_ticket_file
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessTicketFile" useGeneratedKeys="true">
+    insert into scf_business_ticket_file (inquire_id, file_type, sort, 
+      is_del, file_url, create_by, 
+      create_time, update_by, update_time, 
+      original_file_name, new_file_name, file_size, 
+      suffix)
+    values (#{inquireId,jdbcType=BIGINT}, #{fileType,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
+      #{isDel,jdbcType=TINYINT}, #{fileUrl,jdbcType=VARCHAR}, #{createBy,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{originalFileName,jdbcType=VARCHAR}, #{newFileName,jdbcType=VARCHAR}, #{fileSize,jdbcType=VARCHAR}, 
+      #{suffix,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessTicketFile" useGeneratedKeys="true">
+    insert into scf_business_ticket_file
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="inquireId != null">
+        inquire_id,
+      </if>
+      <if test="fileType != null">
+        file_type,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+      <if test="fileUrl != null">
+        file_url,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="originalFileName != null">
+        original_file_name,
+      </if>
+      <if test="newFileName != null">
+        new_file_name,
+      </if>
+      <if test="fileSize != null">
+        file_size,
+      </if>
+      <if test="suffix != null">
+        suffix,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="inquireId != null">
+        #{inquireId,jdbcType=BIGINT},
+      </if>
+      <if test="fileType != null">
+        #{fileType,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=TINYINT},
+      </if>
+      <if test="fileUrl != null">
+        #{fileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="originalFileName != null">
+        #{originalFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="newFileName != null">
+        #{newFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        #{fileSize,jdbcType=VARCHAR},
+      </if>
+      <if test="suffix != null">
+        #{suffix,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.BusinessTicketFile">
+    update scf_business_ticket_file
+    <set>
+      <if test="inquireId != null">
+        inquire_id = #{inquireId,jdbcType=BIGINT},
+      </if>
+      <if test="fileType != null">
+        file_type = #{fileType,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=TINYINT},
+      </if>
+      <if test="fileUrl != null">
+        file_url = #{fileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="originalFileName != null">
+        original_file_name = #{originalFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="newFileName != null">
+        new_file_name = #{newFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        file_size = #{fileSize,jdbcType=VARCHAR},
+      </if>
+      <if test="suffix != null">
+        suffix = #{suffix,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.BusinessTicketFile">
+    update scf_business_ticket_file
+    set inquire_id = #{inquireId,jdbcType=BIGINT},
+      file_type = #{fileType,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      is_del = #{isDel,jdbcType=TINYINT},
+      file_url = #{fileUrl,jdbcType=VARCHAR},
+      create_by = #{createBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      original_file_name = #{originalFileName,jdbcType=VARCHAR},
+      new_file_name = #{newFileName,jdbcType=VARCHAR},
+      file_size = #{fileSize,jdbcType=VARCHAR},
+      suffix = #{suffix,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

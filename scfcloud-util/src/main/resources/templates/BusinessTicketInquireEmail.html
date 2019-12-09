@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <title th:text="${title}" /> -->
+  <title>dsafds</title>
+</head>
+
+<body>
+<div style="width: 100%;">
+  <div style="margin: 0 auto;max-width: 700px; font-size: 14px;">
+    <div style="text-align: left;margin: 40px;"><img style="max-width: 300px;" th:src="${fileServiceUrl}+'file/downloadFile?fileUrl=/app/file/upload/logo/lzsk_logo_hb.png&suffix=.png'">
+    </div>
+    <h2 style="text-align: left" th:text="${inquireCompanyName}"></h2>
+    <p><b th:text="'贵公司于'+${updateTime}+'接受了'+${quotationCompanyName}+'的报价(询价单ID：'+${inquireId}+')'"></b></p>
+    <p th:text="'报价方：'+${quotationCompanyName}">公司</p>
+    <p th:text="'票面金额：￥'+${billAmt}+' 元'"></p>
+    <p><span th:text="'报价金额：'"></span><span th:text="${amount}" style="color:red;"></span><span th:text="' 元（每10万扣款'+${discountFee}+' 元）'"></span></p>
+    <p th:text="'票据承兑方：'+${accepterName}"></p>
+    <!-- <div><a style="width: 150px; height: 40px; line-height: 40px;text-align: center;color:#fff;display: inline-block; background: #2C8EF3"
+            href="#" th:href="@{${url}(param=${param})}">查看报价</a>
+    </div> -->
+    <p style="font-size: 12px; margin: 40px 0;">本邮件由系统自动发送，请勿回复。任何疑问或建议，欢迎联系客服邮箱lijiawen@zhihuikg.com</p>
+  </div>
+</div>
+</body>
+
+</html>

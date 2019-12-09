@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CompanyUserMapper">
+
+    <select id="findLastAccessCompanyIdByUserId" resultType="java.lang.Long">
+        select sccu.company_id from scf_cfg_company_user sccu where sccu.`status` = 1 and sccu.user_id = #{userId} ORDER BY sccu.id limit 1
+    </select>
+
+    <!--  根据公司ID 查询公司的所有成员  -->
+    <select id="findCompanyUserListById" resultType="com.zhjs.scfcloud.model.vo.UserVO">
+        SELECT su.id, su.user_name, su.email, su.phone FROM `scf_cfg_company_user` sccu
+        LEFT JOIN scf_user su ON su.id = sccu.user_id
+        WHERE sccu.company_id = #{companyId}
+    </select>
+
+    <!--  查询用户加入的公司  -->
+    <select id="findCompanyIdList" resultType="java.lang.Long">
+        SELECT sccu.company_id FROM `scf_cfg_company_user` sccu
+        WHERE sccu.user_id = #{userId} AND sccu.`status` = 1
+    </select>
+
+    <!--  查询员工在职状态和公司状态  -->
+    <select id="findCompanyUserStatus" resultType="java.lang.Integer">
+        SELECT sccu.status companyUserStatus FROM `scf_cfg_company_user` sccu
+        WHERE sccu.user_id = #{userId} AND sccu.company_id = #{companyId}
+        limit 1
+    </select>
+    <!-- 通过用户id和公司id更新状态 -->
+    <update id="updateStatusByUserIdAndCompanyId">
+        update scf_cfg_company_user sccu set sccu.status = #{status}
+        where sccu.user_id = #{userId} and sccu.company_id = #{companyId} and sccu.status = 0
+    </update>
+
+</mapper>

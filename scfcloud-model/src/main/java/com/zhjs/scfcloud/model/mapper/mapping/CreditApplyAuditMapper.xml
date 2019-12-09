@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CreditApplyAuditMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.CreditApplyAudit">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="business_type_id" jdbcType="BIGINT" property="businessTypeId" />
+    <result column="business_id" jdbcType="BIGINT" property="businessId" />
+    <result column="audit_result" jdbcType="INTEGER" property="auditResult" />
+    <result column="audit_person_id" jdbcType="BIGINT" property="auditPersonId" />
+    <result column="audit_person" jdbcType="VARCHAR" property="auditPerson" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="audit_before_flow" jdbcType="VARCHAR" property="auditBeforeFlow" />
+    <result column="audit_after_flow" jdbcType="VARCHAR" property="auditAfterFlow" />
+    <result column="total_time_consuming" jdbcType="VARCHAR" property="totalTimeConsuming" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zhjs.scfcloud.model.entity.CreditApplyAudit">
+    <result column="audit_opinion" jdbcType="LONGVARCHAR" property="auditOpinion" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_id, business_type_id, business_id, audit_result, audit_person_id, audit_person, 
+    audit_time, audit_before_flow, audit_after_flow, total_time_consuming, remarks, create_time, 
+    create_by
+  </sql>
+  <sql id="Blob_Column_List">
+    audit_opinion
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from scf_credit_apply_audit
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_credit_apply_audit
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.CreditApplyAudit" useGeneratedKeys="true">
+    insert into scf_credit_apply_audit (company_id, business_type_id, business_id, 
+      audit_result, audit_person_id, audit_person, 
+      audit_time, audit_before_flow, audit_after_flow, 
+      total_time_consuming, remarks, create_time, 
+      create_by, audit_opinion)
+    values (#{companyId,jdbcType=BIGINT}, #{businessTypeId,jdbcType=BIGINT}, #{businessId,jdbcType=BIGINT}, 
+      #{auditResult,jdbcType=INTEGER}, #{auditPersonId,jdbcType=BIGINT}, #{auditPerson,jdbcType=VARCHAR}, 
+      #{auditTime,jdbcType=TIMESTAMP}, #{auditBeforeFlow,jdbcType=VARCHAR}, #{auditAfterFlow,jdbcType=VARCHAR}, 
+      #{totalTimeConsuming,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{auditOpinion,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.CreditApplyAudit" useGeneratedKeys="true">
+    insert into scf_credit_apply_audit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="auditResult != null">
+        audit_result,
+      </if>
+      <if test="auditPersonId != null">
+        audit_person_id,
+      </if>
+      <if test="auditPerson != null">
+        audit_person,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="auditBeforeFlow != null">
+        audit_before_flow,
+      </if>
+      <if test="auditAfterFlow != null">
+        audit_after_flow,
+      </if>
+      <if test="totalTimeConsuming != null">
+        total_time_consuming,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="auditOpinion != null">
+        audit_opinion,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="auditResult != null">
+        #{auditResult,jdbcType=INTEGER},
+      </if>
+      <if test="auditPersonId != null">
+        #{auditPersonId,jdbcType=BIGINT},
+      </if>
+      <if test="auditPerson != null">
+        #{auditPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditBeforeFlow != null">
+        #{auditBeforeFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="auditAfterFlow != null">
+        #{auditAfterFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="totalTimeConsuming != null">
+        #{totalTimeConsuming,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="auditOpinion != null">
+        #{auditOpinion,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.CreditApplyAudit">
+    update scf_credit_apply_audit
+    <set>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        business_id = #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="auditResult != null">
+        audit_result = #{auditResult,jdbcType=INTEGER},
+      </if>
+      <if test="auditPersonId != null">
+        audit_person_id = #{auditPersonId,jdbcType=BIGINT},
+      </if>
+      <if test="auditPerson != null">
+        audit_person = #{auditPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditBeforeFlow != null">
+        audit_before_flow = #{auditBeforeFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="auditAfterFlow != null">
+        audit_after_flow = #{auditAfterFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="totalTimeConsuming != null">
+        total_time_consuming = #{totalTimeConsuming,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="auditOpinion != null">
+        audit_opinion = #{auditOpinion,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zhjs.scfcloud.model.entity.CreditApplyAudit">
+    update scf_credit_apply_audit
+    set company_id = #{companyId,jdbcType=BIGINT},
+      business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      business_id = #{businessId,jdbcType=BIGINT},
+      audit_result = #{auditResult,jdbcType=INTEGER},
+      audit_person_id = #{auditPersonId,jdbcType=BIGINT},
+      audit_person = #{auditPerson,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      audit_before_flow = #{auditBeforeFlow,jdbcType=VARCHAR},
+      audit_after_flow = #{auditAfterFlow,jdbcType=VARCHAR},
+      total_time_consuming = #{totalTimeConsuming,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      audit_opinion = #{auditOpinion,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.CreditApplyAudit">
+    update scf_credit_apply_audit
+    set company_id = #{companyId,jdbcType=BIGINT},
+      business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      business_id = #{businessId,jdbcType=BIGINT},
+      audit_result = #{auditResult,jdbcType=INTEGER},
+      audit_person_id = #{auditPersonId,jdbcType=BIGINT},
+      audit_person = #{auditPerson,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      audit_before_flow = #{auditBeforeFlow,jdbcType=VARCHAR},
+      audit_after_flow = #{auditAfterFlow,jdbcType=VARCHAR},
+      total_time_consuming = #{totalTimeConsuming,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="findAuditLogList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditAuditVO">
+    SELECT scaa.id, scaa.audit_result, scaa.audit_time, scaa.audit_person,scaa.audit_opinion,scaa.total_time_consuming,
+    (SELECT scbf.flow_name FROM scf_cfg_business_flow scbf WHERE scbf.flow_code = scaa.audit_before_flow AND scbf.company_id = sca.company_id AND scbf.business_type_id = sca.business_type_id) as audit_before_flow,
+    (SELECT scbf.flow_name FROM scf_cfg_business_flow scbf WHERE scbf.flow_code = scaa.audit_after_flow AND scbf.company_id = sca.company_id AND scbf.business_type_id = sca.business_type_id) as audit_after_flow
+    FROM `scf_credit_apply_audit` scaa
+    LEFT JOIN scf_credit_apply sca ON sca.id = scaa.business_id
+    WHERE scaa.business_type_id = #{businessTypeId} AND scaa.business_id = #{businessId} AND scaa.company_id = #{companyId}
+    ORDER BY scaa.id DESC
+  </select>
+
+
+  <!-- 更新字段的值 -->
+  <update id="updateFieldNewValueBy">
+    update ${tableName} set ${columnName} = #{columnValue}
+    <where>
+      <if test="tableName == 'scf_credit_apply'">
+        id = #{businessId}
+      </if>
+      <if test="tableName == 'scf_credit_item'">
+        id = #{projectId} and company_id = #{companyId} and credit_apply_id = #{businessId}
+      </if>
+      <if test="tableName == 'scf_credit_risk'">
+        company_id = #{companyId} and credit_apply_id = #{businessId}
+      </if>
+      <if test="tableName == 'scf_credit_audit_data'">
+        company_id = #{companyId} and credit_apply_id = #{businessId}
+      </if>
+    </where>
+  </update>
+
+  <!-- 查询字段的 -->
+  <select id="findFieldOldValueBy" resultType="java.lang.String">
+    SELECT ${columnName} FROM ${tableName}
+    <where>
+      <if test="tableName == 'scf_credit_apply'">
+        id = #{businessId}
+      </if>
+      <if test="tableName == 'scf_credit_item'">
+        id = #{projectId} and company_id = #{companyId} and credit_apply_id = #{businessId}
+      </if>
+      <if test="tableName == 'scf_credit_risk'">
+        company_id = #{companyId} and credit_apply_id = #{businessId}
+      </if>
+      <if test="tableName == 'scf_credit_audit_data'">
+        company_id = #{companyId} and credit_apply_id = #{businessId}
+      </if>
+    </where>
+  </select>
+
+  <select id="findAuditDataObj" resultType="java.util.Map">
+    SELECT * FROM ${tableName}
+    WHERE company_id = #{companyId,jdbcType=BIGINT}
+    AND ${businessIdColumnName} = #{businessId,jdbcType=BIGINT}
+    <if test="projectId != null and projectId != ''">
+        and id = #{projectId}
+    </if>
+  </select>
+
+  <update id="updateAuditData">
+    UPDATE ${tableName}
+    <set>
+      <foreach collection="columns" item="c">
+        ${c.columnName} = #{c.columnValue},
+      </foreach>
+      update_by = #{updateBy}
+    </set>
+    WHERE company_id = #{companyId,jdbcType=BIGINT}
+    AND ${businessIdColumnName} = #{businessId,jdbcType=BIGINT}
+    <if test="projectId != null and projectId != ''">
+      and id = #{projectId}
+    </if>
+  </update>
+
+  <insert id="insertAuditData">
+    insert into ${tableName}
+    (${columnNames},create_time)
+    values (
+    <foreach collection="columnValues" item="columnValue">
+      #{columnValue},
+    </foreach>
+    now()
+    )
+  </insert>
+
+  <select id="findApprovalCourse" resultType="com.zhjs.scfcloud.model.vo.credit.CreditApprovalCourseVO">
+    SELECT
+      scaa.audit_result auditResult,
+      scaa.audit_person_id auditPersonId,
+      scaa.audit_person auditPerson,
+      DATE_FORMAT(scaa.audit_time,'%Y-%m-%d %H:%k:%s') auditTime,
+      scaa.audit_before_flow auditBeforeFlow,
+      bScbf.flow_name auditBeforeFlowCH,
+      scaa.audit_after_flow auditAfterFlow,
+      aScbf.flow_name auditAfterFlowCH,
+      scaa.total_time_consuming totalTimeConsuming
+    FROM scf_credit_apply_audit scaa
+    LEFT JOIN scf_cfg_business_flow bScbf ON bScbf.company_id = scaa.company_id AND bScbf.business_type_id = scaa.business_type_id AND bScbf.flow_code = scaa.audit_before_flow
+    LEFT JOIN scf_cfg_business_flow aScbf ON aScbf.company_id = scaa.company_id AND aScbf.business_type_id = scaa.business_type_id AND aScbf.flow_code = scaa.audit_after_flow
+    WHERE scaa.id IN(
+            SELECT MAX(scaa1.id) FROM scf_credit_apply_audit scaa1
+            WHERE scaa1.business_id = #{businessId,jdbcType=BIGINT}
+            AND scaa1.company_id = #{companyId,jdbcType=BIGINT}
+            AND scaa1.business_type_id = #{businessTypeId,jdbcType=BIGINT}
+            GROUP BY scaa1.audit_before_flow
+          )
+    AND bScbf.flow_type != 0
+    ORDER BY scaa.id
+  </select>
+</mapper>

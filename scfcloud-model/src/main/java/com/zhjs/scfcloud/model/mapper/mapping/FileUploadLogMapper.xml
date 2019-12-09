@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhjs.scfcloud.model.mapper.FileUploadLogMapper">
+
+    <!--  查询垃圾文件  -->
+    <select id="findRubbishFileList" resultType="com.zhjs.scfcloud.model.entity.FileUploadLog">
+        SELECT sful.*,sf.file_url FROM `scf_file_upload_log` sful
+        LEFT JOIN scf_file sf ON sf.file_url = sful.file_url
+        WHERE sful.file_url is null
+    </select>
+</mapper>

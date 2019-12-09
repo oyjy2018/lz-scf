@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessTicketOrderMapper">
+  <sql id="Base_Column_List">
+    id, inquire_id, quotation_id, order_no, platform_req_no, jd_order_no, contract_no,
+    amounts, surplus_valid_days, order_status, pay_status, pay_launch_time, pay_overdue_time,
+    pay_end_time, remit_status, comm_deduct_status, deal_time, cancel_type, cancel_person_id,
+    cancel_person, cancel_time, create_by, create_time, update_by, update_time, contract_sign_status,
+    service_rate
+  </sql>
+  <select id="findOrderList" parameterType="com.zhjs.scfcloud.model.dto.businessTicket.QueryOrderListDTO" resultType="com.zhjs.scfcloud.model.vo.businessTicket.OrderListVO">
+    SELECT
+      sbto.id,
+      sbto.inquire_id inquireId,
+      sbto.quotation_id quotationId,
+      sbto.order_status orderStatus,
+      sbti.bill_status billStatus,
+      sbto.pay_status payStatus,
+      sbto.contract_sign_status contractSignStatus,
+      sbti.company_id inquireCompanyId,
+      sbti.company_name inquireCompanyName,
+      sbtq.company_id quotationCompanyId,
+      sbtq.company_name quotationCompanyName,
+      sbti.accepter_name accepterName,
+      CONCAT(sbti.bill_amt) billAmt,
+      CONCAT(sbtq.amount) amount,
+      DATE_FORMAT(sbti.maturity_date, '%Y-%m-%d') maturityDate,
+      sbto.surplus_valid_days surplusValidDays,
+      CONCAT(sbtq.annual_rate) annualRate,
+      CONCAT(sbtq.discount_fee) discountFee,
+      sbti.flaws,
+      sbti.publish_person_id publishPersonId,
+      sbti.publish_person publishPerson,
+      sbtq.quotation_person_id quotationPersonId,
+      sbtq.quotation_person quotationPerson,
+      DATE_FORMAT(sbto.deal_time, '%Y-%m-%d %H:%i:%s') dealTime,
+      sbtoc.contract_file_url contractFileUrl,
+      sbtoc.contract_type contractType
+    FROM scf_business_ticket_order sbto
+    JOIN scf_business_ticket_inquire sbti ON sbti.id = sbto.inquire_id
+    JOIN scf_business_ticket_quotation sbtq ON sbtq.id = sbto.quotation_id
+    left join scf_business_ticket_order_contract sbtoc on sbtoc.order_id = sbto.id and sbtoc.is_use = 1
+    <where>
+      <if test="publishCompanyId != null">
+        AND sbti.company_id = #{publishCompanyId,jdbcType=BIGINT}
+      </if>
+      <if test="quotationCompanyId != null">
+        AND sbtq.company_id = #{quotationCompanyId,jdbcType=BIGINT}
+      </if>
+      <if test="orderId != null and orderId != ''">
+        and sbto.id = #{orderId,jdbcType=BIGINT}
+      </if>
+      <if test="orderStatus != null">
+        AND sbto.order_status = #{orderStatus,jdbcType=INTEGER}
+      </if>
+      <if test="billStatus != null">
+        AND sbti.bill_status = #{billStatus,jdbcType=INTEGER}
+      </if>
+      <if test="payStatus != null">
+        AND sbto.pay_status = #{payStatus,jdbcType=INTEGER}
+      </if>
+      <if test="dealStartDate != null and dealStartDate != ''">
+        AND sbto.deal_time <![CDATA[ >= ]]> #{dealStartDate,jdbcType=VARCHAR}
+      </if>
+      <if test="dealEndDate != null and dealEndDate != ''">
+        AND sbto.deal_time <![CDATA[ <= ]]> #{dealEndDate,jdbcType=VARCHAR}
+      </if>
+      <if test="publishCompanyName != null and publishCompanyName != ''">
+        AND sbti.company_name LIKE '%${publishCompanyName}%'
+      </if>
+      <if test="quotationCompanyName != null and quotationCompanyName != ''">
+        AND sbtq.company_name LIKE '%${quotationCompanyName}%'
+      </if>
+      <if test="acceptorName != null and acceptorName != ''">
+        AND sbti.accepter_name = #{acceptorName}
+      </if>
+      <if test="isTicketMaturity != null and isTicketMaturity == 'true'">
+        AND sbti.maturity_date >= CURRENT_DATE
+      </if>
+    </where>
+    order by sbto.create_time desc
+  </select>
+
+  <select id="findOrderDetails" resultType="com.zhjs.scfcloud.model.vo.businessTicket.OrderDetailsVO" parameterType="java.lang.Long">
+    SELECT
+      sbto.id,
+      sbto.inquire_id inquireId,
+      sbto.quotation_id quotationId,
+      sbti.company_name inquireCompanyName,
+      sbti.publish_person publishPerson,
+      publishPerson.phone publishPersonPhone,
+      sbtq.company_name quotationCompanyName,
+      sbtq.quotation_person quotationPerson,
+      quotationPerson.phone quotationPersonPhone,
+      sbtq.amount,
+      CONCAT(sbtq.annual_rate) annualRate,
+      CONCAT(sbtq.discount_fee) discountFee,
+      sbto.order_status orderStatus,
+      sbti.accepter_name accepterName,
+      sbti.bill_no billNo,
+      sbti.bill_amt billAmt,
+      DATE_FORMAT(sbti.maturity_date, '%Y-%m-%d') maturityDate,
+      sbto.surplus_valid_days surplusValidDays,
+      sbti.endorsed_count endorsedCount,
+      sbti.flaws,
+      DATE_FORMAT(sbto.create_time, '%Y-%m-%d %H:%i:%s') createTime
+    FROM scf_business_ticket_order sbto
+    JOIN scf_business_ticket_inquire sbti ON sbti.id = sbto.inquire_id
+    JOIN scf_user publishPerson ON publishPerson.id = sbti.publish_person_id
+    JOIN scf_business_ticket_quotation sbtq ON sbtq.id = sbto.quotation_id
+    JOIN scf_user quotationPerson ON quotationPerson.id = sbtq.quotation_person_id
+    WHERE sbto.id = #{orderId,jdbcType=BIGINT}
+  </select>
+
+  <select id="findPayOverdueOrderList" resultType="com.zhjs.scfcloud.model.entity.BusinessTicketOrder">
+    SELECT
+    *
+    FROM scf_business_ticket_order sbto
+    WHERE sbto.order_status = 3
+    AND sbto.pay_status in(1,96)
+    AND sbto.pay_overdue_time <![CDATA[ <= ]]> #{sysDate,jdbcType=TIMESTAMP}
+  </select>
+
+  <!-- 获取所有商票订单 -->
+  <select id="getAllOrderList" parameterType="com.zhjs.scfcloud.model.dto.businessTicket.BusinessTicketOrderAllListDTO" resultType="com.zhjs.scfcloud.model.vo.businessTicket.OrderAllListVO">
+    SELECT
+    sbto.id,
+    sbto.inquire_id inquireId,
+    sbto.quotation_id quotationId,
+    sbti.bill_no billNo,
+    sbto.order_status orderStatus,
+    sbti.bill_status billStatus,
+    sbto.pay_status payStatus,
+    sbti.company_id inquireCompanyId,
+    sbti.company_name inquireCompanyName,
+    sbtq.company_id quotationCompanyId,
+    sbtq.company_name quotationCompanyName,
+    sbti.accepter_name accepterName,
+    CONCAT(sbti.bill_amt) billAmt,
+    CONCAT(sbtq.amount) amount,
+    DATE_FORMAT(sbti.maturity_date, '%Y-%m-%d') maturityDate,
+    DATE_FORMAT(sbto.deal_time, '%Y-%m-%d %H:%i:%s') dealTime,
+    sbtoc.contract_file_url contractFileUrl
+    FROM scf_business_ticket_order sbto
+    JOIN scf_business_ticket_inquire sbti ON sbti.id = sbto.inquire_id
+    JOIN scf_business_ticket_quotation sbtq ON sbtq.id = sbto.quotation_id
+    left join scf_business_ticket_order_contract sbtoc on sbtoc.order_id = sbto.id and sbtoc.is_use = 1
+    <where>
+      (sbto.create_by = #{userId}
+      <if test="permissionType == 2 and permissionOrgIds != null and permissionOrgIds != ''">
+        or find_in_set(sbti.company_id,#{permissionOrgIds}) or find_in_set(sbtq.company_id,#{permissionOrgIds})
+      </if>
+      )
+      <if test="id != null and id != ''">
+        and sbto.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="dealStartDate != null and dealStartDate != ''">
+        AND sbto.deal_time <![CDATA[ >= ]]> #{dealStartDate,jdbcType=VARCHAR}
+      </if>
+      <if test="dealEndDate != null and dealEndDate != ''">
+        AND sbto.deal_time <![CDATA[ <= ]]> #{dealEndDate,jdbcType=VARCHAR}
+      </if>
+      <if test="inquireCompanyName != null and inquireCompanyName != ''">
+        AND sbti.company_name LIKE '%${inquireCompanyName}%'
+      </if>
+      <if test="quotationCompanyName != null and quotationCompanyName != ''">
+        AND sbtq.company_name LIKE '%${quotationCompanyName}%'
+      </if>
+      <choose>
+        <when test="queryType == 'success'">
+          and sbto.order_status = '99'
+        </when>
+        <when test="queryType == 'going'">
+          and sbto.order_status != '99' and sbto.order_status != '98'
+        </when>
+      </choose>
+    </where>
+    <choose>
+      <when test="queryType == 'success'">
+        order by sbto.deal_time desc,sbto.create_time desc
+      </when>
+      <when test="queryType == 'going'">
+        order by sbto.update_time desc,sbto.create_time desc
+      </when>
+      <otherwise>
+        order by sbto.create_time desc
+      </otherwise>
+    </choose>
+
+  </select>
+</mapper>

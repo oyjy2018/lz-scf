@@ -1,0 +1,26 @@
+server:
+  port: 21000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:20000/eureka
+#      #默认30s
+#    registry-fetch-interval-seconds: 2
+spring:
+  application:
+    name: scfcloud
+  #feign2.1.1版本需要设置此属性才可运行多个feign指定同一个服务名
+  main:
+    allow-bean-definition-overriding: true
+
+session:
+  redis:
+    keyPrefix: SHIRO-SESSION-MANAGER
+
+## 设置feign超时
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 20000

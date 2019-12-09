@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.zhjs.scf</groupId>
+    <artifactId>scf</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>parent</module>
+        <module>eureka-server</module>
+        <module>scfcloud</module>
+        <module>scfcloud-system</module>
+        <module>scfcloud-model</module>
+        <module>scfcloud-util</module>
+        <module>scfcloud-file</module>
+        <module>scfcloud-task</module>
+        <module>scfcloud-app</module>
+        <module>scfcloud-ticket</module>
+        <module>my-demo</module>
+    </modules>
+</project>

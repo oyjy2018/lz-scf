@@ -1,0 +1,25 @@
+server:
+  port: 20000
+  tomcat:
+    protocol-header: x-forwarded-proto
+    max-threads: 20
+  #  servlet:
+#    context-path: /eureka
+
+  use-forward-headers: true
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+  server:
+    # 关闭自我保护（关闭后服务失效后会从服务列表中被剔除）
+    enable-self-preservation: false
+    # 续期时间，即扫描失效服务的间隔时间
+    eviction-interval-timer-in-ms: 5000
+spring:
+  application:
+    name: eureka-server

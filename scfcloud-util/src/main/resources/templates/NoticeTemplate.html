@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"/>
+</head>
+<body>
+<div style="width: 100%;">
+    <div style="margin: 0 auto;max-width: 700px; font-size: 14px;">
+        <div style="text-align: center;margin: 40px;">
+            <img style="max-width: 300px;" th:src="${fileServiceUrl}+'file/downloadFile?fileUrl=/app/file/upload/logo/lzsk_logo_hb.png&suffix=.png'">
+        </div>
+        <p><b th:text="${firstH}"></b></p>
+        <p th:text="${content}"></p>
+        <a style="height: 30px;width: 80px;color: blue;" href="#" th:href="@{${url}}" th:text="${linkContent}"></a>
+        <p><a style="height: 30px;width: 80px;color: blue;" href="#" th:if="${secondUrl}" th:href="@{${secondUrl}}" th:text="${secondlinkContent}"></a></p>
+    </div>
+</div>
+</body>
+</html>

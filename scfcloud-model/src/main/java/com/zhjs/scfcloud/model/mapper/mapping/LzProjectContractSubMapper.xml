@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectContractSubMapper">
+  <sql id="Base_Column_List">
+    id, contract_no, sub_contract_no, contract_type, first_party_full_name, second_party_full_name, 
+    contract_money, pay_way, invoice_type, contract_begin_date, contract_end_date, delete_status, 
+    file_url, create_by, create_time, update_by, update_time
+  </sql>
+</mapper>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CompanyAuditMapper">
+  <sql id="Base_Column_List">
+    id, company_id, company_name, blic_url, credit_code, blic_end_date, province_name,
+    city_name, district_name, detail_addr, company_nature, company_nature_concrete, staff_size,
+    legal_person_cert_front_url, legal_person_cert_back_url, legal_person_name, legal_person_cert_no,
+    legal_person_cert_end_date, aupis_lep, porxy_person_cert_front_url, porxy_person_cert_back_url,
+    porxy_person_name, porxy_person_cert_no, porxy_person_cert_end_date, porxy_commission_url,
+    porxy_person_phone, porxy_person_email, user_id, system_id_list, status, audit_time,
+    remark, audit_user_id, update_by_id, update_time, create_by_id, create_time
+  </sql>
+  <!--  分页查询 公司审核列表 -->
+  <select id="selectCompanyAuditList" resultType="com.zhjs.scfcloud.model.vo.CompanyAuditListVO">
+      SELECT
+      sca.id AS id,
+      sca.company_name AS companyName,
+      sca.credit_code AS creditCode,
+      sca.legal_person_name AS legalPersonName,
+      sca.porxy_person_name AS porxyPersonName,
+      sca.porxy_person_phone AS porxyPersonPhone,
+      sca.system_id_list AS systemIdList,
+      sca.`status` AS STATUS,
+      sca.create_time AS createTime
+      FROM
+      `scf_company_audit` sca
+      WHERE
+      1 = 1
+      <if test="status != null">
+            <choose>
+              <when test="status == 0">
+                AND sca.`status` = 0
+              </when>
+              <otherwise>
+                AND sca.`status` != 0
+                order by sca.audit_time desc
+              </otherwise>
+            </choose>
+        </if>
+  </select>
+    
+    <insert id="initBusinessFlow">
+        <!--  复制业务类型 -->
+        INSERT INTO scf_cfg_business_type (company_id, business_name, remark, has_platform, status, update_by_id, create_by_id, update_time, create_time, copy_source_id)
+          SELECT #{companyId,jdbcType=BIGINT}, business_name, remark, has_platform, status, update_by_id, create_by_id,NOW(),NOW(),id
+        FROM scf_cfg_business_type WHERE company_id = 1 AND id IN(${flowIds});
+
+        <!--  复制字段分类 -->
+        INSERT INTO scf_cfg_business_attr_classify(company_id,business_type_id,classify_name,sort,update_time,update_by,create_time,create_by,status,copy_source_id)
+        SELECT scbt.company_id, scbt.id, scbac.classify_name, scbac.sort, NOW(), 1, NOW(), 1, scbac.status, scbac.id
+        FROM scf_cfg_business_attr_classify scbac
+        JOIN scf_cfg_business_type scbt ON scbt.copy_source_id = scbac.business_type_id AND scbt.company_id = #{companyId,jdbcType=BIGINT}
+        WHERE scbac.company_id = 1
+        AND scbac.business_type_id IN(${flowIds})
+        ;
+
+        <!--  复制字段配置  -->
+        INSERT INTO scf_cfg_business_attr (company_id,business_type_id,table_name, column_name, column_ch, has_system, column_type, has_closed_type, column_unit, column_group, has_plurality, has_read_only,
+            column_tip, column_err_msg,required, verify_formula, upload_limit, classify_id, pre_column_id, pre_column_value, junior_column_id, default_value_type, default_value, has_br,
+            has_create_need, has_create_visible, has_edit_visible, has_view_visible,
+            has_audit_visible, sort, remark, status,  create_by, update_by, create_time,update_time, copy_source_id)
+        SELECT scbt.company_id,scbt.id typeId,scba.table_name,
+            scba.column_name, scba.column_ch, scba.has_system, scba.column_type, scba.has_closed_type, scba.column_unit,
+            scba.column_group, scba.has_plurality, scba.has_read_only, scba.column_tip, scba.column_err_msg, scba.required, scba.verify_formula,
+            scba.upload_limit, scbac.id, scba.pre_column_id, scba.pre_column_value, scba.junior_column_id,
+            scba.default_value_type, scba.default_value, scba.has_br, scba.has_create_need,
+            scba.has_create_visible, scba.has_edit_visible, scba.has_view_visible,
+            scba.has_audit_visible, scba.sort, scba.remark, scba.status, scba.create_by, scba.update_by, NOW(), NOW(), scba.id
+          FROM scf_cfg_business_attr scba
+          JOIN scf_cfg_business_type scbt ON scbt.copy_source_id = scba.business_type_id AND scbt.company_id = #{companyId,jdbcType=BIGINT}
+          JOIN scf_cfg_business_attr_classify scbac ON scbac.copy_source_id = scba.classify_id AND scbac.company_id = #{companyId,jdbcType=BIGINT}
+        WHERE scba.company_id = 1
+        AND scba.business_type_id IN(${flowIds})
+        ;
+
+        <!--  复制封闭式字段值  -->
+        INSERT INTO scf_cfg_business_attr_val(company_id,business_type_id,business_attr_id,value_key,value_ch,superior_attr_key,sort,status,create_time,create_by,update_time,update_by,copy_source_id)
+        SELECT scba.company_id,scba.business_type_id,scba.id,scbav.value_key,scbav.value_ch,scbav.superior_attr_key,scbav.sort,scbav.status,NOW(),1,NOW(),1,scbav.id
+        FROM scf_cfg_business_attr_val scbav
+        JOIN scf_cfg_business_attr scba ON scba.copy_source_id = scbav.business_attr_id AND scba.company_id = #{companyId,jdbcType=BIGINT}
+        WHERE scbav.company_id = 1
+        AND scbav.business_type_id IN(${flowIds})
+        ;
+
+        <!--  修正新复制的字段配置的前置字段与前置字段值  -->
+        UPDATE scf_cfg_business_attr scba
+        LEFT JOIN scf_cfg_business_attr sourceScba ON sourceScba.copy_source_id = scba.pre_column_id AND sourceScba.company_id = #{companyId,jdbcType=BIGINT}
+        LEFT JOIN scf_cfg_business_attr_val scbav ON scbav.copy_source_id = scba.pre_column_value AND scbav.company_id = #{companyId,jdbcType=BIGINT}
+          SET scba.pre_column_id = sourceScba.id,
+              scba.pre_column_value = scbav.id
+        WHERE scba.company_id = #{companyId,jdbcType=BIGINT}
+
+        ;
+
+        <!--  复制业务文件配置  -->
+        INSERT INTO scf_cfg_business_file_cfg(company_id,business_type_id,file_code,file_name,once_upload_size,upload_limit,role_ids,user_ids,sort,status,update_by,create_by,copy_source_id)
+        SELECT scbt.company_id,scbt.id,scbfc.file_code,scbfc.file_name,scbfc.once_upload_size,scbfc.upload_limit,NULL,NULL,scbfc.sort,scbfc.status,1,1,scbfc.id
+        FROM scf_cfg_business_file_cfg scbfc
+        JOIN scf_cfg_business_type scbt ON scbt.copy_source_id = scbfc.business_type_id AND scbt.company_id = #{companyId,jdbcType=BIGINT}
+        WHERE scbfc.company_id = 1
+        AND scbfc.business_type_id IN(${flowIds})
+        ;
+
+        <!--  复制业务流程配置  -->
+        INSERT INTO scf_cfg_business_flow(company_id,business_type_id,flow_code,flow_name,explanation,flow_type,sort,update_time,update_by,create_time,create_by,status,copy_source_id)
+        SELECT scbt.company_id,scbt.id,scbf.flow_code,scbf.flow_name,scbf.explanation,scbf.flow_type,scbf.sort,NOW(),1,NOW(),1,scbf.status,scbf.id
+        FROM scf_cfg_business_flow scbf
+        JOIN scf_cfg_business_type scbt ON scbt.copy_source_id = scbf.business_type_id AND scbt.company_id = #{companyId,jdbcType=BIGINT}
+        WHERE scbf.company_id = 1
+        AND scbf.business_type_id IN(${flowIds})
+        ;
+
+        <!--  复制业务流程扭转配置  -->
+        INSERT INTO scf_cfg_business_work_flow(company_id,business_type_id,before_flow,after_flow,has_edit,create_time,create_by,status,copy_source_id)
+        SELECT scbt.company_id,scbt.id,scbwf.before_flow,scbwf.after_flow,scbwf.has_edit,NOW(),1,scbwf.status,scbwf.id
+        FROM scf_cfg_business_work_flow scbwf
+        JOIN scf_cfg_business_type scbt ON scbt.copy_source_id = scbwf.business_type_id AND scbt.company_id = #{companyId,jdbcType=BIGINT}
+        WHERE scbwf.company_id = 1
+        AND scbwf.business_type_id IN(${flowIds})
+        ;
+
+        <!--  复制流程权限配置  -->
+        INSERT INTO scf_cfg_business_flow_permit(company_id,business_type_id,work_flow_id,role_ids,user_ids,update_time,update_by,create_time,create_by,status,copy_source_id)
+        SELECT scbwf.company_id,scbwf.business_type_id,scbwf.id,NULL,NULL,NOW(),1,NOW(),1,scbfp.status,scbfp.id
+        FROM scf_cfg_business_flow_permit scbfp
+        JOIN scf_cfg_business_work_flow scbwf ON scbwf.copy_source_id = scbfp.work_flow_id AND scbwf.company_id = #{companyId,jdbcType=BIGINT}
+        WHERE scbfp.company_id = 1
+        AND scbfp.business_type_id IN(${flowIds})
+        ;
+
+        <!--  复制流程流程属性字段配置  -->
+        INSERT INTO scf_cfg_business_work_flow_attr(company_id,business_type_id,business_attr_id,work_flow_id,
+        required,default_value_type,default_value,sort,update_time,update_by,create_time,create_by,status,copy_source_id)
+        SELECT scbwf.company_id,scbwf.business_type_id,scba.id,scbwf.id,scbwfa.required,scbwfa.default_value_type,
+          scbwfa.default_value,scbwfa.sort,NOW(),1,NOW(),1,scbwfa.status,scbwfa.id
+        FROM scf_cfg_business_work_flow_attr scbwfa
+        JOIN scf_cfg_business_attr scba ON scba.copy_source_id = scbwfa.business_attr_id AND scba.company_id = #{companyId,jdbcType=BIGINT}
+        JOIN scf_cfg_business_work_flow scbwf ON scbwf.copy_source_id = scbwfa.work_flow_id AND scbwf.company_id = #{companyId,jdbcType=BIGINT}
+        WHERE scbwfa.company_id = 1
+        AND scbwfa.business_type_id IN(${flowIds})
+
+        ;
+
+        <!--  复制流程扭转文件配置  -->
+        INSERT INTO scf_cfg_business_work_flow_file(company_id,business_type_id,business_file_id,work_flow_id,required,sort,status,update_time,update_by,create_time,create_by,copy_source_id)
+        SELECT scbfc.company_id,scbfc.business_type_id,scbfc.id,scbwf.id,scbwff.required,scbwff.sort,scbwff.status,NOW(),1,NOW(),1,scbwff.id
+        FROM scf_cfg_business_work_flow_file scbwff
+        JOIN scf_cfg_business_file_cfg scbfc ON scbfc.copy_source_id = scbwff.business_file_id AND scbfc.company_id = #{companyId,jdbcType=BIGINT}
+        JOIN scf_cfg_business_work_flow scbwf ON scbwf.copy_source_id = scbwff.work_flow_id AND scbwf.company_id = #{companyId,jdbcType=BIGINT}
+        WHERE scbwff.company_id = 1
+        AND scbwff.business_type_id IN(${flowIds})
+        ;
+    </insert>
+</mapper>

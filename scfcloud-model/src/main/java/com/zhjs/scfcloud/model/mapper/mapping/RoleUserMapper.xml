@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.RoleUserMapper">
+    <!-- 查询用户在公司拥有的角色ID -->
+    <select id="findRoleIdList" resultType="java.lang.Long">
+      SELECT distinct scru.role_id FROM `scf_cfg_role` scr
+      LEFT JOIN scf_cfg_role_user scru ON scru.role_id = scr.id
+      WHERE scr.company_id = #{companyId} AND scru.user_id = #{userId}
+    </select>
+
+    <!-- 用户删除角色 -->
+    <delete id="deleteByUserIdAndCompanyId">
+        DELETE FROM `scf_cfg_role_user`
+        WHERE user_id = #{id} AND role_id in (SELECT scr.id FROM `scf_cfg_role` scr WHERE scr.company_id = #{companyId})
+    </delete>
+
+    <!-- 查询用户组成员 -->
+    <select id="selectRoleUsers" resultType="com.zhjs.scfcloud.model.vo.RoleUserVO">
+        SELECT
+            scru.id AS roleUserId,
+            scru.user_id AS userId,
+            su.user_name AS userName,
+            su.email AS userEmail
+        FROM
+            `scf_cfg_role_user` scru
+            LEFT JOIN scf_user su ON su.id = scru.user_id
+        WHERE
+            scru.role_id = #{roleId}
+    </select>
+</mapper>

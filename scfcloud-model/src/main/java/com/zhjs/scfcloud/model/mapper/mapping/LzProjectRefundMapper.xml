@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectRefundMapper">
+  <sql id="Base_Column_List">
+    id, contract_no, loan_no, refund_no, refund_date, refund_money, delete_status, create_by,
+    create_time, update_by, update_time
+  </sql>
+  <select id="getRefundList" resultType="com.zhjs.scfcloud.model.vo.lzProject.LzProjectRefundListVO">
+    select  id, contract_no, loan_no, refund_no, refund_date, refund_money from lz_project_refund  lpr
+    where lpr.loan_no = #{loanNo}
+    and lpr.delete_status != 1
+    order by lpr.refund_date asc
+  </select>
+</mapper>

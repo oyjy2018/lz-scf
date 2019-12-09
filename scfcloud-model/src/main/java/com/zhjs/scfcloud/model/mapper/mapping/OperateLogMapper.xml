@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.OperateLogMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.OperateLog">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="business_id" jdbcType="BIGINT" property="businessId" />
+    <result column="business_type_id" jdbcType="BIGINT" property="businessTypeId" />
+    <result column="operate_time" jdbcType="TIMESTAMP" property="operateTime" />
+    <result column="operat_type" jdbcType="VARCHAR" property="operatType" />
+    <result column="operat_object" jdbcType="VARCHAR" property="operatObject" />
+    <result column="operate_content" jdbcType="VARCHAR" property="operateContent" />
+    <result column="operate_user_id" jdbcType="BIGINT" property="operateUserId" />
+    <result column="operate_user_name" jdbcType="VARCHAR" property="operateUserName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_id, business_id, business_type_id, operate_time, operat_type, operat_object, 
+    operate_content, operate_user_id, operate_user_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scf_operate_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_operate_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhjs.scfcloud.model.entity.OperateLog">
+    insert into scf_operate_log (id, company_id, business_id, 
+      business_type_id, operate_time, operat_type, 
+      operat_object, operate_content, operate_user_id, 
+      operate_user_name)
+    values (#{id,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}, #{businessId,jdbcType=BIGINT}, 
+      #{businessTypeId,jdbcType=BIGINT}, #{operateTime,jdbcType=TIMESTAMP}, #{operatType,jdbcType=VARCHAR}, 
+      #{operatObject,jdbcType=VARCHAR}, #{operateContent,jdbcType=VARCHAR}, #{operateUserId,jdbcType=BIGINT}, 
+      #{operateUserName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhjs.scfcloud.model.entity.OperateLog">
+    insert into scf_operate_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id,
+      </if>
+      <if test="operateTime != null">
+        operate_time,
+      </if>
+      <if test="operatType != null">
+        operat_type,
+      </if>
+      <if test="operatObject != null">
+        operat_object,
+      </if>
+      <if test="operateContent != null">
+        operate_content,
+      </if>
+      <if test="operateUserId != null">
+        operate_user_id,
+      </if>
+      <if test="operateUserName != null">
+        operate_user_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="operateTime != null">
+        #{operateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operatType != null">
+        #{operatType,jdbcType=VARCHAR},
+      </if>
+      <if test="operatObject != null">
+        #{operatObject,jdbcType=VARCHAR},
+      </if>
+      <if test="operateContent != null">
+        #{operateContent,jdbcType=VARCHAR},
+      </if>
+      <if test="operateUserId != null">
+        #{operateUserId,jdbcType=BIGINT},
+      </if>
+      <if test="operateUserName != null">
+        #{operateUserName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.OperateLog">
+    update scf_operate_log
+    <set>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        business_id = #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="operateTime != null">
+        operate_time = #{operateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operatType != null">
+        operat_type = #{operatType,jdbcType=VARCHAR},
+      </if>
+      <if test="operatObject != null">
+        operat_object = #{operatObject,jdbcType=VARCHAR},
+      </if>
+      <if test="operateContent != null">
+        operate_content = #{operateContent,jdbcType=VARCHAR},
+      </if>
+      <if test="operateUserId != null">
+        operate_user_id = #{operateUserId,jdbcType=BIGINT},
+      </if>
+      <if test="operateUserName != null">
+        operate_user_name = #{operateUserName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.OperateLog">
+    update scf_operate_log
+    set company_id = #{companyId,jdbcType=BIGINT},
+      business_id = #{businessId,jdbcType=BIGINT},
+      business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      operate_time = #{operateTime,jdbcType=TIMESTAMP},
+      operat_type = #{operatType,jdbcType=VARCHAR},
+      operat_object = #{operatObject,jdbcType=VARCHAR},
+      operate_content = #{operateContent,jdbcType=VARCHAR},
+      operate_user_id = #{operateUserId,jdbcType=BIGINT},
+      operate_user_name = #{operateUserName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="getOperateLogVOList" resultType="com.zhjs.scfcloud.model.vo.OperateLogVO">
+    select
+      id,
+      operate_time operateTime,
+      operat_type operatType,
+      operat_object operatObject,
+      operate_content operateContent,
+      operate_user_name operateUserName
+    from scf_operate_log
+    where
+      company_id = #{companyId} and business_type_id = #{businessTypeId} and business_id = #{businessId}
+      <if test="operatObject != null and operatObject != ''">
+        and operat_object = #{operatObject}
+      </if>
+    order by operate_time desc
+  </select>
+</mapper>

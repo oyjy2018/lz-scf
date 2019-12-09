@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.zhjs.scfcloud.model</groupId>
+    <artifactId>scfcloud-model</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>scfcloud-model</name>
+    <description>Demo project for Spring Boot</description>
+
+    <parent>
+        <groupId>com.zhjs.parent</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+
+    <properties>
+        <start-class>com.zhjs.scfcloud.model.common.Result</start-class>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.zhjs.scfcloud.util</groupId>
+            <artifactId>scfcloud-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- swagger依赖 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mapstruct</groupId>
+                    <artifactId>mapstruct</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!-- transfer 接口使用工具包-->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-jdk8</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.3.2</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>nexus-releases</id>
+                    <name>maven-releases</name>
+                    <url>http://192.168.1.5:8081/repository/maven-releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>nexus-snapshots</id>
+                    <name>maven-snapshots</name>
+                    <url>http://192.168.1.5:8081/repository/maven-snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>sit</id>
+            <distributionManagement>
+                <repository>
+                    <id>nexus-releases-sit</id>
+                    <name>maven-releases-sit</name>
+                    <url>http://192.168.1.5:8081/repository/maven-releases-sit/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>nexus-snapshots-sit</id>
+                    <name>maven-snapshots-sit</name>
+                    <url>http://192.168.1.5:8081/repository/maven-snapshots-sit/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <distributionManagement>
+                <repository>
+                    <id>nexus-releases-uat</id>
+                    <name>maven-releases-uat</name>
+                    <url>http://192.168.1.5:8081/repository/maven-releases-uat/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>nexus-snapshots-uat</id>
+                    <name>maven-snapshots-uat</name>
+                    <url>http://192.168.1.5:8081/repository/maven-snapshots-uat/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <distributionManagement>
+                <repository>
+                    <id>nexus-releases-pro</id>
+                    <name>maven-releases-pro</name>
+                    <url>http://192.168.1.5:8081/repository/maven-releases-pro/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>nexus-snapshots-pro</id>
+                    <name>maven-snapshots-pro</name>
+                    <url>http://192.168.1.5:8081/repository/maven-snapshots-pro/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 将可执行jar包分离出来 -->
+                    <classifier>exec</classifier>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

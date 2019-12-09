@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessWorkFlowMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.BusinessWorkFlow">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="business_type_id" jdbcType="BIGINT" property="businessTypeId" />
+    <result column="before_flow" jdbcType="VARCHAR" property="beforeFlow" />
+    <result column="after_flow" jdbcType="VARCHAR" property="afterFlow" />
+    <result column="has_edit" jdbcType="INTEGER" property="hasEdit" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_id, business_type_id, before_flow, after_flow, has_edit, create_time,
+    create_by, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from scf_cfg_business_work_flow
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_cfg_business_work_flow
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlow" useGeneratedKeys="true" keyProperty="id">
+    insert into scf_cfg_business_work_flow (id, company_id, business_type_id,
+      before_flow, after_flow, has_edit,
+      create_time, create_by, status
+      )
+    values (#{id,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}, #{businessTypeId,jdbcType=BIGINT},
+      #{beforeFlow,jdbcType=VARCHAR}, #{afterFlow,jdbcType=VARCHAR}, #{hasEdit,jdbcType=INTEGER},
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="batchInsert" parameterType="java.util.List" >
+    insert into scf_cfg_business_work_flow (company_id, business_type_id,
+      before_flow, after_flow, has_edit,
+      create_time, create_by, status
+      )
+    values
+    <foreach collection="list" item="wf" separator=",">
+      (#{wf.companyId,jdbcType=BIGINT}, #{wf.businessTypeId,jdbcType=BIGINT},
+      #{wf.beforeFlow,jdbcType=VARCHAR}, #{wf.afterFlow,jdbcType=VARCHAR}, #{wf.hasEdit,jdbcType=INTEGER},
+      #{wf.createTime,jdbcType=TIMESTAMP}, #{wf.createBy,jdbcType=BIGINT}, #{wf.status,jdbcType=TINYINT}
+      )
+    </foreach>
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlow" useGeneratedKeys="true" keyProperty="id">
+    insert into scf_cfg_business_work_flow
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id,
+      </if>
+      <if test="beforeFlow != null">
+        before_flow,
+      </if>
+      <if test="afterFlow != null">
+        after_flow,
+      </if>
+      <if test="hasEdit != null">
+        has_edit,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="beforeFlow != null">
+        #{beforeFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="afterFlow != null">
+        #{afterFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="hasEdit != null">
+        #{hasEdit,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlow">
+    update scf_cfg_business_work_flow
+    <set>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="beforeFlow != null">
+        before_flow = #{beforeFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="afterFlow != null">
+        after_flow = #{afterFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="hasEdit != null">
+        has_edit = #{hasEdit,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlow">
+    update scf_cfg_business_work_flow
+    set company_id = #{companyId,jdbcType=BIGINT},
+      business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      before_flow = #{beforeFlow,jdbcType=VARCHAR},
+      after_flow = #{afterFlow,jdbcType=VARCHAR},
+      has_edit = #{hasEdit,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="getBusinessWorkFlowAndPermitList" resultType="com.zhjs.scfcloud.model.vo.business.BusinessWorkFlowExtendVO">
+    select bwf.id, bwf.company_id companyId, bwf.business_type_id businessTypeId,
+      bwf.before_flow beforeFlow,
+      (select flow_name from scf_cfg_business_flow where flow_code = bwf.before_flow and company_id = bwf.company_id) as beforeFlowName,
+      bwf.after_flow afterFlow,
+      (select flow_name from scf_cfg_business_flow where flow_code = bwf.after_flow and company_id = bwf.company_id) as afterFlowName,
+      (select sort from scf_cfg_business_flow where flow_code = bwf.after_flow and company_id = bwf.company_id) as afterFlowSort,
+      bwf.has_edit hasEdit,
+      bfp.role_ids roleIds, bfp.user_ids userIds
+      from scf_cfg_business_work_flow bwf
+      left join scf_cfg_business_flow_permit bfp on bfp.work_flow_id = bwf.id and bfp.status = 1
+      where bwf.status = 1
+      order by afterFlowSort
+  </select>
+</mapper>

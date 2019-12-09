@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhjs.scfcloud.model.mapper.DepartmentUserMapper">
+
+    <!--  部门删除用户  -->
+    <delete id="deleteDepartmentUserByUserIdAndCompanyId">
+        DELETE FROM
+            `scf_cfg_department_user`
+        WHERE
+            user_id = #{id}
+        AND
+            dept_id in (SELECT id FROM `scf_cfg_department` WHERE company_id = #{companyId})
+    </delete>
+
+    <!--  查询用户加入的部门  -->
+    <select id="findDeptIdList" resultType="java.lang.Long">
+        SELECT scdu.dept_id FROM `scf_cfg_department` scd
+        LEFT JOIN scf_cfg_department_user scdu ON scdu.dept_id = scd.id
+        WHERE scd.company_id = #{companyId} AND scdu.user_id = #{userId}
+    </select>
+</mapper>

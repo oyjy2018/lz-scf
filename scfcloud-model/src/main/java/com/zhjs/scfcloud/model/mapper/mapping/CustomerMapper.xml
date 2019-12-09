@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CustomerMapper">
+
+    <update id="updateByIdCardSelective" parameterType="com.zhjs.scfcloud.model.entity.Customer">
+        update scf_customer
+        <set>
+            <if test="customerName != null">
+                customer_name = #{customerName,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null">
+                gender = #{gender,jdbcType=VARCHAR},
+            </if>
+            <if test="age != null">
+                age = #{age,jdbcType=INTEGER},
+            </if>
+            <if test="mobile != null">
+                mobile = #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="maritalStatus != null">
+                marital_status = #{maritalStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="spouseName != null">
+                spouse_name = #{spouseName,jdbcType=VARCHAR},
+            </if>
+            <if test="spouseIdCard != null">
+                spouse_id_card = #{spouseIdCard,jdbcType=VARCHAR},
+            </if>
+            <if test="spouseMobile != null">
+                spouse_mobile = #{spouseMobile,jdbcType=VARCHAR},
+            </if>
+            <if test="familyAddressProvinceCode != null">
+                family_address_province_code = #{familyAddressProvinceCode,jdbcType=VARCHAR},
+            </if>
+            <if test="familyAddressProvince != null">
+                family_address_province = #{familyAddressProvince,jdbcType=VARCHAR},
+            </if>
+            <if test="familyAddressCityCode != null">
+                family_address_city_code = #{familyAddressCityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="familyAddressCity != null">
+                family_address_city = #{familyAddressCity,jdbcType=VARCHAR},
+            </if>
+            <if test="familyAddressRegionCode != null">
+                family_address_region_code = #{familyAddressRegionCode,jdbcType=VARCHAR},
+            </if>
+            <if test="familyAddressRegion != null">
+                family_address_region = #{familyAddressRegion,jdbcType=VARCHAR},
+            </if>
+            <if test="familyAddress != null">
+                family_address = #{familyAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="housingOwnership != null">
+                housing_ownership = #{housingOwnership,jdbcType=VARCHAR},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy,jdbcType=BIGINT},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy,jdbcType=BIGINT},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id_card = #{idCard,jdbcType=VARCHAR}
+    </update>
+</mapper>

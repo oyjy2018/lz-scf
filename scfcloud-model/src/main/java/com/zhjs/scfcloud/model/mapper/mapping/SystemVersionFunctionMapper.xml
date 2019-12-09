@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhjs.scfcloud.model.mapper.SystemVersionFunctionMapper">
+
+    <!--  系统功能及菜单的返回Map  -->
+    <resultMap id="systemFunctionMap" type="com.zhjs.scfcloud.model.vo.MenuFunctionTreeVO">
+        <id column="id" property="id"/>
+        <result column="menu_name" jdbcType="VARCHAR" property="name" />
+        <collection property="funcs" ofType="com.zhjs.scfcloud.model.vo.MenuFunctionTreeVO" column="id" select="findSystemFunctionByVersionId">
+        </collection>
+    </resultMap>
+
+    <!-- 查询系统菜单 -->
+    <select id="selectMenuList" resultType="com.zhjs.scfcloud.model.vo.MenuVO">
+        SELECT
+            sm.id AS menuId,
+            sm.parent_id AS parentId,
+            sm.system_id AS systemId,
+            sm.menu_name AS menuName,
+            sm.`level` AS `level`
+        FROM
+            scf_menu sm
+        WHERE
+            sm.parent_id = #{parentId}
+        AND
+            sm.system_id in
+            <foreach collection="versionIds" item="item" index="index" open="("  close=")" separator=",">
+                #{item}
+            </foreach>
+        ORDER BY sm.sort ASC
+    </select>
+
+    <!-- 查询菜单功能 -->
+    <select id="selectFunctionList" resultType="com.zhjs.scfcloud.model.vo.MenuFunctionTreeVO">
+        SELECT
+            sf.id AS functionId,
+            sf.system_id AS systemId,
+            sf.func_code AS functionCode,
+            sf.func_name AS functionName
+        FROM
+            scf_cfg_system_function sf
+            LEFT JOIN scf_cfg_system_version_function svf ON svf.function_id = sf.id
+        WHERE
+            sf.menu_id = #{menuId}
+        AND
+	        svf.version_id IN
+            <foreach collection="versionIds" item="item" index="index" open="("  close=")" separator=",">
+                #{item}
+            </foreach>
+    </select>
+</mapper>

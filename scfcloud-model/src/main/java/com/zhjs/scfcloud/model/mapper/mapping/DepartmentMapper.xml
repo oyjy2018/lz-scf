@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhjs.scfcloud.model.mapper.DepartmentMapper">
+    <!--  公司部门树  -->
+    <resultMap id="DeptTreeMap" type="com.zhjs.scfcloud.model.vo.DeptTreeVOO">
+        <id column="id" property="id"/>
+        <result column="dept_name" jdbcType="VARCHAR" property="deptName" />
+        <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+        <result column="company_id" jdbcType="BIGINT" property="companyId" />
+        <collection property="childs" ofType="com.zhjs.scfcloud.model.vo.DeptTreeVOO" column="id" select="selectByParentId">
+        </collection>
+    </resultMap>
+
+    <select id="selectTree" parameterType="java.lang.Long" resultMap="DeptTreeMap">
+        SELECT d.id, d.dept_name, d.parent_id, d.company_id FROM `scf_cfg_department` d
+        WHERE d.company_id = #{companyId} AND d.parent_id = 0
+    </select>
+
+    <select id="selectTreeList" resultMap="DeptTreeMap">
+        SELECT d.id, d.dept_name, d.parent_id, d.company_id FROM `scf_cfg_department` d
+        WHERE d.company_id IN
+        <foreach collection="companyIds" item="item" index="index" open="("  close=")" separator=",">
+            #{item}
+        </foreach>
+        AND d.parent_id = 0
+    </select>
+
+    <select id="selectByParentId" parameterType="java.lang.Long" resultMap="DeptTreeMap">
+        SELECT d.id, d.dept_name, d.parent_id, d.company_id FROM `scf_cfg_department` d WHERE d.parent_id = #{id}
+    </select>
+
+    <select id="selectByDeptId" parameterType="java.lang.Long" resultMap="DeptTreeMap">
+        SELECT d.id, d.dept_name, d.parent_id, d.company_id
+        FROM `scf_cfg_department` d
+        WHERE d.parent_id = #{id}
+    </select>
+
+    <select id="selectByCompanyId" parameterType="java.lang.Long" resultType="map">
+        SELECT d.id, d.dept_name as deptName, d.parent_id as parentId, d.company_id as companyId, d.dept_level as deptLevel
+        FROM `scf_cfg_department` d
+        WHERE d.company_id = #{companyId}
+    </select>
+    <select id="selectDepartmentUserByCompanyId" parameterType="java.lang.Long" resultType="map">
+        SELECT scd.id as deptId, su.id as userId, su.user_name as userName, su.email FROM `scf_cfg_department` scd
+        LEFT JOIN scf_cfg_department_user scdu ON scdu.dept_id = scd.id
+        LEFT JOIN scf_user su ON su.id = scdu.user_id
+        WHERE scd.company_id = #{companyId}
+    </select>
+
+    <!--  查询用户加入的部门  -->
+    <select id="findDepartmentListByUserIdAndCompanyId" resultType="com.zhjs.scfcloud.model.entity.Department">
+        SELECT scd.id, scd.dept_name, scd.remark FROM `scf_cfg_department` scd
+        LEFT JOIN scf_cfg_department_user scdu ON scd.id = scdu.dept_id
+        WHERE scd.company_id = #{companyId} AND scdu.user_id = #{userId}
+    </select>
+
+    <!-- 查询部门成员   -->
+    <select id="findUserListByDeptId" resultType="com.zhjs.scfcloud.model.vo.DepaetmentUserVO">
+        SELECT
+            su.id AS userId,
+            su.user_name AS userName,
+            su.email AS userEmail
+        FROM `scf_user` su
+        LEFT JOIN scf_cfg_department_user scdu ON scdu.user_id = su.id
+        WHERE
+            scdu.dept_id = #{deptId}
+        AND
+            scdu.user_id IN
+        <foreach collection="userIds" item="item" index="index" open="("  close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+
+</mapper>

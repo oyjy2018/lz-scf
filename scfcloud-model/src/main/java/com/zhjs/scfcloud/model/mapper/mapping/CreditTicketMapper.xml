@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CreditTicketMapper">
+  <sql id="Base_Column_List">
+    id, company_id, credit_use_id, ticket_start, ticket_end, ticket_no, ticket_status, 
+    ticket_money, is_transfer, trade_contract_no, ticket_give_company, ticket_get_company, 
+    acceptor_company, acceptor_account, acceptor_bank, acceptor_bank_no, acceptor_bank_province_code, 
+    acceptor_bank_city_code, acceptor_bank_branch, ticket_front_img_url, ticket_back_img_url, 
+    create_by, create_time, update_by, update_time, status
+  </sql>
+  <select id="getTicketWebList" resultType="com.zhjs.scfcloud.model.vo.credit.CreditTicketListWebVO">
+    select
+    sct.id,sct.credit_use_id creditUseId,scu.credit_id creditId,
+    sct.ticket_start ticketStart,sct.ticket_end ticketEnd,sct.ticket_no ticketNo,
+    sct.ticket_status ticketStatus,sct.ticket_money ticketMoney,
+    sct.ticket_give_company ticketGiveCompany,sct.ticket_get_company ticketGetCompany,
+    sct.acceptor_company acceptorCompany
+    from scf_credit_ticket sct
+    left join scf_credit_use scu on scu.id = sct.credit_use_id
+    where ((scu.company_id = #{companyId} and scu.create_by = #{userId})
+    <if test="permissionType == 2 and permissionOrgIds != null and permissionOrgIds != ''">
+      or is_mixed(scu.company_id,#{permissionOrgIds})
+    </if>
+    )
+    <if test="creditUseId != null and creditUseId != ''">
+      and sct.credit_use_id = #{creditUseId}
+    </if>
+    <if test="ticketGiveCompany != null and ticketGiveCompany != ''">
+      and sct.ticket_give_company like concat('%',#{ticketGiveCompany},'%')
+    </if>
+    <if test="acceptorCompany != null and acceptorCompany != ''">
+      and sct.acceptor_company like concat('%',#{acceptorCompany},'%')
+    </if>
+    <if test="ticketNo != null and ticketNo != ''">
+      and sct.ticket_no = #{ticketNo}
+    </if>
+    <if test="ticketStartBegin != null and ticketStartBegin != ''">
+      and sct.ticket_start >= #{ticketStartBegin}
+    </if>
+    <if test="ticketStartEnd != null and ticketStartEnd != ''">
+      and #{ticketStartEnd} >= sct.ticket_start
+    </if>
+    <if test="ticketEndBegin != null and ticketEndBegin != ''">
+      and sct.ticket_end >= #{ticketEndBegin}
+    </if>
+    <if test="ticketEndEnd != null and ticketEndEnd != ''">
+      and #{ticketEndEnd} >= sct.ticket_end
+    </if>
+  </select>
+
+  <select id="getTicketDetail" resultType="com.zhjs.scfcloud.model.vo.credit.CreditTicketDetailWebVO">
+      select
+      scu.id creditUseId, scu.credit_id creditId,
+      sct.ticket_start ticketStart, sct.ticket_end ticketEnd,sct.ticket_no ticketNo,
+      sct.ticket_money ticketMoney, sct.is_transfer isTransfer,sct.trade_contract_no tradeContractNo,
+      sct.ticket_give_company ticketGiveCompany,sct.ticket_get_company ticketGetCompany,
+      sct.acceptor_company acceptorCompany, sct.acceptor_account acceptorAccount,
+      sct.acceptor_bank acceptorBank, sct.acceptor_bank_no acceptorBankNo,
+      sct.acceptor_bank_province_code acceptorBankProvinceCode, sct.acceptor_bank_city_code acceptorBankCityCode,
+      sct.acceptor_bank_branch acceptorBankBranch,sct.ticket_front_img_url ticketFrontImgUrl,sct.ticket_back_img_url ticketBackImgUrl
+    from scf_credit_ticket sct
+    left join scf_credit_use scu on sct.credit_use_id = scu.id
+    where sct.id = #{id}
+    limit 1
+  </select>
+</mapper>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessTicketOrderEndorseMapper">
+  <sql id="Base_Column_List">
+    id, order_id, bill_no, bill_end_date, bill_amt, endorser_name, endorser_account, 
+    endorsee_name, endorsee_account, endorse_date, create_by, create_time
+  </sql>
+</mapper>

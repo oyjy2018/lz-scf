@@ -1,0 +1,23 @@
+
+spring:
+  application:
+    name: scfcloud-config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: F:/config/dev
+     #  git:
+     #    uri: http://192.168.1.5/lzscf/config.git
+     #    search-paths: dev-test
+     #    username: dailongting
+     #    password: a15180906162
+     #    basedir: /spring-config/temp
+     #    force-pull: true
+     #label: master
+server:
+  port: 19000
+  tomcat:
+    max-threads: 20

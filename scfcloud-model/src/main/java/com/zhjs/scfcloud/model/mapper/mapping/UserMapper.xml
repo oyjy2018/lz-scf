@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.UserMapper">
+
+  <!--  查询成员管理列表信息  -->
+  <select id="querySelective" resultType="com.zhjs.scfcloud.model.vo.UserListVO">
+    SELECT su.id, su.user_name,sccu.id as companyUserId, sccu.status,sccu.create_time, su.email, sc.company_name,
+    (select GROUP_CONCAT(scr.role_name) from scf_cfg_role_user scru,scf_cfg_role scr
+    where scru.role_id = scr.id and scru.user_id = su.id and scr.company_id = sccu.company_id) role_name,
+    (select GROUP_CONCAT(scd.dept_name) from scf_cfg_department_user scdu, scf_cfg_department scd
+    where scdu.user_id = sccu.user_id and scdu.dept_id = scd.id) dept_name
+    FROM `scf_cfg_company_user` sccu
+    LEFT JOIN scf_user su ON su.id = sccu.user_id
+    LEFT JOIN scf_company sc ON sc.id = sccu.company_id
+    LEFT JOIN scf_cfg_department_user scdu ON scdu.user_id = su.id
+    <where>
+      AND sccu.is_delete = 0
+      <if test="companyId!=null and companyId!=''">
+        AND sccu.company_id = #{companyId}
+      </if>
+      <if test="deptIds!=null and deptIds.size() > 0">
+        AND scdu.dept_id IN
+        <foreach collection="deptIds" item="item" index="index" open="("  close=")" separator=",">
+          #{item}
+        </foreach>
+      </if>
+      <if test="userIDs!=null and userIDs.size() > 0">
+        AND sccu.`user_id` IN
+        <foreach collection="userIDs" item="item" index="index" open="("  close=")" separator=",">
+            #{item}
+        </foreach>
+      </if>
+      <if test="status.size() > 0">
+        AND sccu.`status` IN
+        <foreach collection="status" item="item" index="index" open="("  close=")" separator=",">
+          #{item}
+        </foreach>
+      </if>
+      <if test="userName!=null and userName!=''">
+        AND su.user_name LIKE '%' #{userName} '%'
+      </if>
+    </where>
+  </select>
+
+  <select id="findByCompanyId" resultType="com.zhjs.scfcloud.model.vo.RoleUserVO">
+        SELECT su.id,su.id as user_id,su.user_name,su.email FROM `scf_cfg_company_user` sccu
+        LEFT JOIN scf_user su on su.id = sccu.user_id
+        WHERE sccu.company_id = #{companyId} AND sccu.`status` = 1
+  </select>
+</mapper>

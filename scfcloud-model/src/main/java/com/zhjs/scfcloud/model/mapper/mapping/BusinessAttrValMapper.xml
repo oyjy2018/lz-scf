@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessAttrValMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.BusinessAttrVal">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="business_type_id" jdbcType="BIGINT" property="businessTypeId" />
+    <result column="business_attr_id" jdbcType="BIGINT" property="businessAttrId" />
+    <result column="value_key" jdbcType="VARCHAR" property="valueKey" />
+    <result column="value_ch" jdbcType="VARCHAR" property="valueCh" />
+    <result column="superior_attr_key" jdbcType="VARCHAR" property="superiorAttrKey" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, business_type_id, business_attr_id, value_key, value_ch, superior_attr_key, sort, 
+    create_time, create_by, update_time, update_by, company_id, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scf_cfg_business_attr_val
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_cfg_business_attr_val
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" useGeneratedKeys="true" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessAttrVal" >
+    insert into scf_cfg_business_attr_val (business_type_id, business_attr_id, value_key, 
+      value_ch, superior_attr_key, sort, 
+      create_time, create_by, update_time, 
+      update_by, company_id, status
+      )
+    values (#{businessTypeId,jdbcType=BIGINT}, #{businessAttrId,jdbcType=BIGINT}, #{valueKey,jdbcType=VARCHAR}, 
+      #{valueCh,jdbcType=VARCHAR}, #{superiorAttrKey,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessAttrVal" useGeneratedKeys="true">
+    insert into scf_cfg_business_attr_val
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="businessTypeId != null">
+        business_type_id,
+      </if>
+      <if test="businessAttrId != null">
+        business_attr_id,
+      </if>
+      <if test="valueKey != null">
+        value_key,
+      </if>
+      <if test="valueCh != null">
+        value_ch,
+      </if>
+      <if test="superiorAttrKey != null">
+        superior_attr_key,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="businessTypeId != null">
+        #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="businessAttrId != null">
+        #{businessAttrId,jdbcType=BIGINT},
+      </if>
+      <if test="valueKey != null">
+        #{valueKey,jdbcType=VARCHAR},
+      </if>
+      <if test="valueCh != null">
+        #{valueCh,jdbcType=VARCHAR},
+      </if>
+      <if test="superiorAttrKey != null">
+        #{superiorAttrKey,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.BusinessAttrVal">
+    update scf_cfg_business_attr_val
+    <set>
+      <if test="businessTypeId != null">
+        business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="businessAttrId != null">
+        business_attr_id = #{businessAttrId,jdbcType=BIGINT},
+      </if>
+      <if test="valueKey != null">
+        value_key = #{valueKey,jdbcType=VARCHAR},
+      </if>
+      <if test="valueCh != null">
+        value_ch = #{valueCh,jdbcType=VARCHAR},
+      </if>
+      <if test="superiorAttrKey != null">
+        superior_attr_key = #{superiorAttrKey,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.BusinessAttrVal">
+    update scf_cfg_business_attr_val
+    set business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      business_attr_id = #{businessAttrId,jdbcType=BIGINT},
+      value_key = #{valueKey,jdbcType=VARCHAR},
+      value_ch = #{valueCh,jdbcType=VARCHAR},
+      superior_attr_key = #{superiorAttrKey,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      company_id = #{companyId,jdbcType=BIGINT},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessFileCfgMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.BusinessFileCfg">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="business_type_id" jdbcType="BIGINT" property="businessTypeId" />
+    <result column="file_code" jdbcType="VARCHAR" property="fileCode" />
+    <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+    <result column="once_upload_size" jdbcType="INTEGER" property="onceUploadSize" />
+    <result column="upload_limit" jdbcType="INTEGER" property="uploadLimit" />
+    <result column="role_ids" jdbcType="VARCHAR" property="roleIds" />
+    <result column="user_ids" jdbcType="VARCHAR" property="userIds" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_id, business_type_id, file_code, file_name, once_upload_size, upload_limit, 
+    role_ids, user_ids, sort, status, update_by, create_by
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scf_cfg_business_file_cfg
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_cfg_business_file_cfg
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessFileCfg" useGeneratedKeys="true">
+    insert into scf_cfg_business_file_cfg (company_id, business_type_id, file_code, 
+      file_name, once_upload_size, upload_limit, 
+      role_ids, user_ids, sort, 
+      status, update_by, create_by
+      )
+    values (#{companyId,jdbcType=BIGINT}, #{businessTypeId,jdbcType=BIGINT}, #{fileCode,jdbcType=VARCHAR}, 
+      #{fileName,jdbcType=VARCHAR}, #{onceUploadSize,jdbcType=INTEGER}, #{uploadLimit,jdbcType=INTEGER}, 
+      #{roleIds,jdbcType=VARCHAR}, #{userIds,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{updateBy,jdbcType=BIGINT}, #{createBy,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessFileCfg" useGeneratedKeys="true">
+    insert into scf_cfg_business_file_cfg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id,
+      </if>
+      <if test="fileCode != null">
+        file_code,
+      </if>
+      <if test="fileName != null">
+        file_name,
+      </if>
+      <if test="onceUploadSize != null">
+        once_upload_size,
+      </if>
+      <if test="uploadLimit != null">
+        upload_limit,
+      </if>
+      <if test="roleIds != null">
+        role_ids,
+      </if>
+      <if test="userIds != null">
+        user_ids,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="fileCode != null">
+        #{fileCode,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="onceUploadSize != null">
+        #{onceUploadSize,jdbcType=INTEGER},
+      </if>
+      <if test="uploadLimit != null">
+        #{uploadLimit,jdbcType=INTEGER},
+      </if>
+      <if test="roleIds != null">
+        #{roleIds,jdbcType=VARCHAR},
+      </if>
+      <if test="userIds != null">
+        #{userIds,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.BusinessFileCfg">
+    update scf_cfg_business_file_cfg
+    <set>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="fileCode != null">
+        file_code = #{fileCode,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null">
+        file_name = #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="onceUploadSize != null">
+        once_upload_size = #{onceUploadSize,jdbcType=INTEGER},
+      </if>
+      <if test="uploadLimit != null">
+        upload_limit = #{uploadLimit,jdbcType=INTEGER},
+      </if>
+      <if test="roleIds != null">
+        role_ids = #{roleIds,jdbcType=VARCHAR},
+      </if>
+      <if test="userIds != null">
+        user_ids = #{userIds,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.BusinessFileCfg">
+    update scf_cfg_business_file_cfg
+    set company_id = #{companyId,jdbcType=BIGINT},
+      business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      file_code = #{fileCode,jdbcType=VARCHAR},
+      file_name = #{fileName,jdbcType=VARCHAR},
+      once_upload_size = #{onceUploadSize,jdbcType=INTEGER},
+      upload_limit = #{uploadLimit,jdbcType=INTEGER},
+      role_ids = #{roleIds,jdbcType=VARCHAR},
+      user_ids = #{userIds,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      create_by = #{createBy,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

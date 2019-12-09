@@ -1,0 +1,40 @@
+server:
+  port: 23000
+  tomcat:
+    max-threads: 50
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:20000/eureka
+
+spring:
+  application:
+    name: scfcloud-file
+
+  ## 时间格式化
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 25MB
+
+upload-folder: /usr/local/upload/
+
+session:
+  redis:
+    keyPrefix: SHIRO-SESSION-MANAGER
+
+mybatis-plus:
+  mapper-locations: classpath*:com/zhjs/scfcloud/model/mapper/mapping/*.xml
+  type-aliases-package: classpath*:com/zhjs/scfcloud/model/entity
+#  type-enums-package: classpath*:com/zhjs/scfcloud/model/enums
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: 0
+      capital-mode: true
+      table-underline: true
+      

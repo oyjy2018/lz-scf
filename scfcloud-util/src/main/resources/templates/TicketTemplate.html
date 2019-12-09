@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <title th:text="${title}" /> -->
+  <title>dsafds</title>
+</head>
+
+<body>
+<div style="width: 100%;">
+  <div style="margin: 0 auto;max-width: 700px; font-size: 14px;">
+    <div style="text-align: left;margin: 40px;"><img style="max-width: 300px;" th:src="${fileServiceUrl}+'file/downloadFile?fileUrl=/app/file/upload/logo/lzsk_logo_hb.png&suffix=.png'">
+    </div>
+    <h2 style="text-align: left" th:text="${companyName}"></h2>
+    <p><b th:text="${firstContent}"></b></p>
+    <p th:if="${billNo}" th:text="'票据号码：'+${billNo}"></p>
+    <p th:if="${accepterName}" th:text="'票据承兑方：' + ${accepterName}"></p>
+    <p th:if="${inquireCompanyName}" th:text="'询价方：' + ${inquireCompanyName}"></p>
+    <p th:if="${quotationCompanyName}" th:text="'报价方：' + ${quotationCompanyName}"></p>
+    <p th:if="${quotationTime}" th:text="'报价时间：' + ${quotationTime}"></p>
+    <p th:if="${accepterTime}" th:text="'接受报价：' + ${accepterTime}"></p>
+    <p th:if="${rejectTime}" th:text="'退回报价：' + ${rejectTime}"></p>
+    <p th:if="${revokeTime}" th:text="'撤回报价：' + ${revokeTime}"></p>
+    <p th:if="${deadline}" th:text="'截止时间：' + ${deadline}"></p>
+    <p th:if="${billAmt}" th:text="'票面金额：￥'+${#numbers.formatDecimal(billAmt,0,'COMMA',2,'POINT')}+'元'"></p>
+    <p th:if="${amount}"><span th:text="'报价金额：￥'"></span><span th:text="${#numbers.formatDecimal(amount,0,'COMMA',2,'POINT')}+'元'" style="color:red;"></span></p>
+    <p><b th:if="${secondContent}" th:text="${secondContent}"></b></p>
+    <p><a style="height: 30px;width: 80px;color: blue;" href="#" th:if="${firstUrl}" th:href="@{${firstUrl}}" th:text="${firstUrlContent}"></a></p>
+    <p><a style="height: 30px;width: 80px;color: blue;" href="#" th:if="${secondUrl}" th:href="@{${secondUrl}}" th:text="${secondUrlContent}"></a></p>
+  </div>
+</div>
+</body>
+
+</html>

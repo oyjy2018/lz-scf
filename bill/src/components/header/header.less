@@ -1,0 +1,66 @@
+.header-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 910;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(255,255,255,.95);
+  &-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1280px;
+    height: 80px;
+    &-logo {
+      width: 150px;
+      margin-right: 290px;
+    }
+    &-menu {
+      flex: 1;
+      margin-top: 16px;
+      a {
+        display: inline-block;
+        line-height: 63px;
+        color: #555555;
+        font-size: 16px;
+        margin-right: 40px;
+        border-bottom: 1px solid transparent;
+      }
+      .active {
+        font-weight: bold;
+        border-bottom: 1px solid #E60012;
+      }
+    }
+    .login {
+      margin-top: 16px;
+      margin-right: 16px;
+      width: 54px;
+      height: 24px;
+      border: 1px solid #2C8EF3;
+      text-align: center;
+      line-height: 24px;
+      font-size: 16px;
+    }
+    .reg {
+      margin-top: 17px;
+      margin-right: 8px;
+      width: 54px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+      font-size: 16px;
+    }
+  }
+}
+.min-height {
+  box-shadow:0px 1px 5px 0px rgba(34,0,0,0.56);
+}
+.min-height .header-page-center {
+  height: 60px;
+}
+.min-height .header-page-center-menu a {
+  line-height: 43px;
+}
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectBudgetMapper">
+  <sql id="Base_Column_List">
+    id, contract_no, project_budget_no, budget_create_date, materials_cost_rate, labor_cost_rate,
+    executive_salary_rate, project_cost_rate, consult_coast_rate, comprehensive_taxes_rate,
+    platform_service_rate, commerce_service_rate, finance_service_rate, skill_service_rate,
+    delete_status, create_by, create_time, update_by, update_time
+  </sql>
+
+  <select id="findCostDetails" parameterType="java.lang.String" resultType="com.zhjs.scfcloud.model.vo.lzProject.LzProjectCostDetailsVO" >
+    SET @@global.sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+
+    SELECT lpfg.contract_no contractNo, lpfg.fee_type feeType, lpfg.guideposts_min guidepostsMin, lpfg.guideposts_max guidepostsMax, lpc.contract_money contractMoney,
+      CASE lpfg.fee_type
+        WHEN '材料费' THEN lpb.materials_cost_rate
+        WHEN '人工费' THEN lpb.labor_cost_rate
+        WHEN '项目管理人员薪酬' THEN lpb.executive_salary_rate
+        WHEN '项目费用' THEN lpb.project_cost_rate
+        WHEN '咨询服务费' THEN lpb.consult_coast_rate
+        WHEN '综合税费' THEN lpb.comprehensive_taxes_rate
+        WHEN '平台服务费' THEN lpb.platform_service_rate
+        WHEN '商务服务费' THEN lpb.commerce_service_rate
+        WHEN '金融服务费' THEN lpb.finance_service_rate
+        WHEN '技术服务费' THEN lpb.skill_service_rate
+      END budgetRate,
+      lpff.freeze_money freezeMoney,
+      SUM(IFNULL(lpp.actual_pay_money, 0)) useMoney
+    FROM lz_project_fee_guideposts lpfg
+    LEFT JOIN lz_project_budget lpb ON lpb.contract_no = lpfg.contract_no
+    LEFT JOIN lz_project_fee_freeze lpff ON lpff.contract_no = lpfg.contract_no AND lpff.fee_type = lpfg.fee_type
+    LEFT JOIN lz_project_contract lpc ON lpc.contract_no = lpb.contract_no AND lpc.contract_type = '项目主合同'
+    LEFT JOIN lz_project_pay lpp ON lpp.contract_no = lpfg.contract_no AND lpp.pay_type = lpfg.fee_type
+    WHERE lpfg.contract_no = #{contractNo}
+    GROUP BY lpfg.contract_no,lpfg.fee_type
+    ORDER BY lpfg.id
+  </select>
+</mapper>

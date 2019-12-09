@@ -1,0 +1,5 @@
+"1"	"autoUpdateInquireStatusJob"	"自动更新已过询价截止的询价单的状态"	"com.zhjs.scfcloud.task.job.AutoUpdateInquireStatusJob"	"0 0/1 * * * ? *"	"0"	"0"	"2019-7-16 19:50:25"	"1"	"2019-10-11 02:02:03"	"1"
+"2"	"autoUpdateInquireSurplusValidDaysJob"	"自动修改询价单中票据的剩余天数"	"com.zhjs.scfcloud.task.job.AutoUpdateInquireSurplusValidDaysJob"	"0 20 0 * * ? *"	"0"	"0"	"2019-7-17 16:41:17"	"1"	"2019-10-11 02:02:05"	"1"
+"3"	"autoRevokeOrderPayJob"	"自动撤销支付过期的订单在京东智票平台的支付订单"	"com.zhjs.scfcloud.task.job.AutoRevokeOrderPayJob"	"0 0/1 * * * ? *"	"0"	"0"	"2019-7-19 16:20:08"	"1"	"2019-10-11 02:02:08"	"1"
+"4"	"autoJdEcdsVerifyJob"	"查询是否授权京东查询ECDS银行账户"	"com.zhjs.scfcloud.task.job.AutoJdEcdsVerifyJob"	"0 36 11 * * ?"	"0"	"0"	"2019-7-19 16:20:08"	"1"	"2019-10-11 03:38:53"	"1"
+"5"	"autoJdBanksStatusUpdateJob"	"查询银行卡是否过期-并更新状态"	"com.zhjs.scfcloud.task.job.AutoJdBanksStatusUpdateJob"	"0 58 11 * * ?"	"1"	"0"	"2019-10-10 13:54:31"	"1"	"2019-10-11 03:55:49"	"1"

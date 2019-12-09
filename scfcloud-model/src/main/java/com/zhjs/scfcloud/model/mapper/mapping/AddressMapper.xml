@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhjs.scfcloud.model.mapper.AddressMapper">
+
+    <resultMap id="AddressListMap" type="com.zhjs.scfcloud.model.vo.AddressListVO">
+        <id column="id" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <collection property="children" ofType="com.zhjs.scfcloud.model.vo.AddressListVO" column="id" select="selectByParentId">
+        </collection>
+    </resultMap>
+
+    <!--  根据等级获取地址列表数据  -->
+    <select id="findlist" parameterType="java.lang.Integer" resultMap="AddressListMap">
+        SELECT sa.id, sa.`name` FROM `scf_address` sa WHERE sa.level_type = #{levelType}
+    </select>
+    <!--  根据 parent_id 获取下级地址列表 -->
+    <select id="selectByParentId" parameterType="java.lang.String" resultMap="AddressListMap">
+         SELECT sa.id, sa.`name` FROM `scf_address` sa WHERE sa.parent_id = #{id}
+    </select>
+
+</mapper>

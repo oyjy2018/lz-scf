@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectMarginsPayMapper">
+  <sql id="Base_Column_List">
+    id, contract_no, margins_no, pay_date, pay_money, margins_type, margins_status, delete_status,
+    create_by, create_time, update_by, update_time
+  </sql>
+
+  <select id="findMarginsPayList" parameterType="java.lang.String" resultType="com.zhjs.scfcloud.model.vo.lzProject.LzProjectMarginsPayVO">
+    SELECT *
+    FROM lz_project_margins_pay lpmp
+    WHERE lpmp.delete_status = 0
+    AND lpmp.contract_no = #{contractNo}
+  </select>
+</mapper>

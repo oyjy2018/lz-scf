@@ -1,0 +1,490 @@
+@import '~iview/src/styles/index.less';
+
+// Color
+@primary-color          : #2C8EF3;
+@info-color             : #2C8EF3;
+@success-color          : #19be6b;
+@processing-color       : @primary-color;
+@warning-color          : #ff9900;
+@error-color            : #f67373;
+@normal-color           : #e6ebf1;
+@link-color             : #2C8EF3;
+@link-hover-color       : tint(@link-color, 20%);
+@link-active-color      : shade(@link-color, 5%);
+@selected-color         : fade(@primary-color, 90%);
+@tooltip-color          : #fff;
+@subsidiary-color       : #aaaaaa;
+@rate-star-color        : #f5a623;
+
+// Base
+// @body-background        : #fff;
+// @component-background   : #fff;
+@font-family            : "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB",Arial,sans-serif;
+// @code-family            : Consolas,Menlo,Courier,monospace;
+@title-color            : #17233d;
+@text-color             : #666;
+// @font-size-base         : 14px;
+// @font-size-small        : 12px;
+// @font-size-large        : 16px;
+// @line-height-base       : 1.5;
+// @line-height-computed   : floor((@font-size-base * @line-height-base));
+// @border-radius-base     : 6px;
+// @border-radius-small    : 4px;
+// @cursor-disabled        : not-allowed;
+
+// Border color
+@border-color-base      : #dcdee2;  // outside
+@border-color-split     : #e8eaec;  // inside
+@border-width-base      : 1px;            // width of the border for a component
+@border-style-base      : solid;          // style of a components border
+
+// Background color
+@background-color-base        : #f3f3f3;  // base
+// @background-color-select-hover: @input-disabled-bg;
+// @tooltip-bg                   : rgba(70, 76, 91, .9);
+// @head-bg                      : #f9fafc;
+// @table-thead-bg               : #f8f8f9;
+// @table-td-stripe-bg           : #f8f8f9;
+// @table-td-hover-bg            : #ebf7ff;
+// @table-td-highlight-bg        : #ebf7ff;
+@menu-dark-title              : #18224D;
+// @menu-dark-active-bg          : #363e4f;
+// @menu-dark-subsidiary-color   : rgba(255,255,255,.7);
+// @menu-dark-group-title-color  : rgba(255,255,255,.36);
+// @date-picker-cell-hover-bg    : #e1f0fe;
+
+// // Shadow
+// @shadow-color           : rgba(0, 0, 0, .2);
+// @shadow-base            : @shadow-down;
+// @shadow-card            : 0 1px 1px 0 rgba(0,0,0,.1);
+// @shadow-up              : 0 -1px 6px @shadow-color;
+// @shadow-down            : 0 1px 6px @shadow-color;
+// @shadow-left            : -1px 0 6px @shadow-color;
+// @shadow-right           : 1px 0 6px @shadow-color;
+
+// // Button
+// @btn-font-weight        : normal;
+// @btn-padding-base       : 5px 15px 6px;
+// @btn-padding-large      : 6px 15px 6px 15px;
+// @btn-padding-small      : 1px 7px 2px;
+// @btn-padding-base-icon  : 5px 15px 6px;
+// @btn-padding-large-icon : 6px 15px 6px 15px;
+// @btn-padding-small-icon : 1px 7px 2px;
+// @btn-font-size          : 12px;
+// @btn-font-size-large    : 14px;
+// @btn-border-radius      : 4px;
+// @btn-border-radius-small: 3px;
+// @btn-group-border       : shade(@primary-color, 5%);
+
+// @btn-disable-color      : #c5c8ce;
+// @btn-disable-bg         : @background-color-base;
+// @btn-disable-border     : @border-color-base;
+
+// @btn-default-color      : @text-color;
+// @btn-default-bg         : #fff;
+// @btn-default-border     : @border-color-base;
+
+// @btn-primary-color      : #fff;
+// @btn-primary-bg         : @primary-color;
+
+// @btn-ghost-color        : @text-color;
+// @btn-ghost-bg           : #fff;
+// @btn-ghost-border       : @border-color-base;
+
+// @btn-circle-size        : 32px;
+// @btn-circle-size-large  : 36px;
+// @btn-circle-size-small  : 24px;
+
+// // Layout and Grid
+// @grid-columns                : 24;
+// @grid-gutter-width           : 0;
+@layout-body-background      : #f3f3f3;
+@layout-header-background    : #0F1632;
+// @layout-header-height        : 64px;
+// @layout-header-padding       : 0 50px;
+// @layout-footer-padding       : 24px 50px;
+// @layout-footer-background    : @layout-body-background;
+// @layout-sider-background     : @layout-header-background;
+// @layout-trigger-height       : 48px;
+// @layout-trigger-color        : #fff;
+// @layout-zero-trigger-width   : 36px;
+// @layout-zero-trigger-height  : 42px;
+
+// // Legend
+// @legend-color           : #999;
+
+// // Input
+// @input-height-base           : 32px;
+// @input-height-large          : 36px;
+// @input-height-small          : 24px;
+
+// @input-padding-horizontal    : 7px;
+// @input-padding-vertical-base : 4px;
+// @input-padding-vertical-small: 1px;
+// @input-padding-vertical-large: 6px;
+
+@input-placeholder-color     : #ddd;
+// @input-color                 : @text-color;
+// @input-border-color          : @border-color-base;
+// @input-bg                    : #fff;
+// @input-group-bg              : #f8f8f9;
+
+// @input-hover-border-color    : @primary-color;
+// @input-focus-border-color    : @primary-color;
+// @input-disabled-bg           : #f3f3f3;
+
+// // Tag
+// @tag-font-size          : 12px;
+
+// // Media queries breakpoints
+// // Extra small screen / phone
+// @screen-xs              : 480px;
+// @screen-xs-min          : @screen-xs;
+// @screen-xs-max          : (@screen-xs-min - 1);
+
+// // Small screen / tablet
+// @screen-sm              : 576px;
+// @screen-sm-min          : @screen-sm;
+// @screen-sm-max          : (@screen-sm-min - 1);
+
+// // Medium screen / desktop
+// @screen-md              : 768px;
+// @screen-md-min          : @screen-md;
+// @screen-md-max          : (@screen-md-min - 1);
+
+// // Large screen / wide desktop
+// @screen-lg              : 992px;
+// @screen-lg-min          : @screen-lg;
+// @screen-lg-max          : (@screen-lg-min - 1);
+
+// // Extra large screen / full hd
+// @screen-xl              : 1200px;
+// @screen-xl-min          : @screen-xl;
+// @screen-xl-max          : (@screen-xl-min - 1);
+
+// // Extra extra large screen / large descktop
+// @screen-xxl             : 1600px;
+// @screen-xxl-min         : @screen-xxl;
+// @screen-xxl-max         : (@screen-xxl-min - 1);
+
+// // Z-index
+// @zindex-spin            : 8;
+// @zindex-affix           : 10;
+// @zindex-back-top        : 10;
+// @zindex-select          : 900;
+// @zindex-modal           : 1000;
+// @zindex-drawer          : 1000;
+// @zindex-message         : 1010;
+// @zindex-notification    : 1010;
+// @zindex-tooltip         : 1060;
+// @zindex-transfer        : 1060;
+// @zindex-loading-bar     : 2000;
+// @zindex-spin-fullscreen : 2010;
+
+// // Animation
+// @animation-time         : .3s;
+// @transition-time        : .2s;
+// @ease-in-out            : ease-in-out;
+
+// // Slider
+// @slider-color              : tint(@primary-color, 20%);
+// @slider-height             : 4px;
+// @slider-margin             : 16px 0;
+// @slider-button-wrap-size   : 18px;
+// @slider-button-wrap-offset : -4px;
+// @slider-disabled-color     : #ccc;
+
+// // Avatar
+// @avatar-size-base: 32px;
+// @avatar-size-lg: 40px;
+// @avatar-size-sm: 24px;
+// @avatar-font-size-base: 18px;
+// @avatar-font-size-lg: 24px;
+// @avatar-font-size-sm: 14px;
+// @avatar-bg: #ccc;
+// @avatar-color: #fff;
+// @avatar-border-radius: @border-radius-small;
+
+// // Anchor
+// @anchor-border-width: 2px;
+
+body{
+  font-size: @font-size-base;
+}
+
+/* table-list页面 */
+.list-table{
+  .search-con-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 24px;
+    .checkbox {
+      padding: 0 15px;
+    }
+    .ivu-select, .search-btn, .search-input {
+      margin-right: 10px;
+    }
+  }
+  .buttons{
+    margin-bottom: 16px;
+    button{
+      margin-right: 10px;
+    }
+  }
+  .pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 40px;
+    margin-top: 24px;
+    overflow: hidden;
+  }
+  .table-icon-setting{
+    cursor:pointer;
+    color: #aaa;
+  }
+  .table-icon-setting:hover{
+    color: @primary-color !important;
+  }
+  .ivu-table-wrapper {
+    overflow: inherit;
+  }
+  .poptip-item {
+    line-height: 28px;
+    font-size: 14px;
+  }
+  .poptip-item:hover {
+    color: #fff;
+    background:@primary-color;
+  }
+  .ivu-poptip-body{
+    padding: 8px 0;
+  }
+}
+
+.upload-items{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+  .upload-list{
+    display: inline-block;
+    width: 98px;
+    height: 98px;
+    text-align: center;
+    line-height: 98px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    margin-right: 10px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .upload-list-cover{
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.6);
+  }
+  .upload-list:hover .upload-list-cover{
+      display: block;
+  }
+  .upload-list-cover i{
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      margin: 0 2px;
+  }
+  .upload-add{
+    width: 98px;height:98px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    span {
+      padding: 0 10px;
+      line-height: 16px;
+    }
+  }
+}
+
+/* table页面 */
+
+.demo-spin-icon-load{
+  animation: ani-demo-spin 1s linear infinite;
+}
+.apply {
+  .pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 40px;
+    margin-top: 24px;
+    overflow: hidden;
+  }
+}
+.container {
+  width: 100%;
+}
+.title-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 50px;
+  background: #fff;
+  &-text {
+    font-size:16px;
+    color:#555555;
+    // width: 100%;
+    .first-span {
+      padding-left: 10px;
+      border-left: 3px solid @primary-color;
+    }
+  }
+  .nav-text {
+    font-size:14px;
+    color:#8791A0;
+    &-active {
+      font-size:16px;
+      color:@primary-color;     
+    }
+  }
+}
+.form-steps {
+  margin-top: 3px;
+  background: #fff;
+  padding: 20px;
+  &-title {
+    display: flex;
+    flex-direction: row;
+    height:30px;
+    cursor: pointer;
+    &-num {
+      margin-right: 10px;
+      text-align: center;
+      span {
+        display: inline-block;
+        width:30px;
+        height:30px;
+        line-height: 30px;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 50%;
+        color: #fff;
+        background: #DDDDDD;
+        border: 1px solid #ddd;
+      }
+      .span-active {
+        border: 1px solid @primary-color;
+        color: #fff;
+        background:@primary-color;
+      }
+      i {
+        color: #ddd;
+      }
+      .i-active {
+        color: @primary-color;
+      }
+    }
+    &-text {
+      font-size: 14px;
+    }
+  }
+  &-context {
+    margin-left: 14px;
+    border-left: 2px solid #D8D8D8;
+  }
+}
+.file-view-down {
+  display: flex; 
+  flex-direction: row; 
+  height: 32px;
+  cursor: pointer;
+  img {
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+  }
+  &-content {
+    display: flex; 
+    justify-content: space-between; 
+    flex-direction: column;
+    span {
+      line-height: 18px;
+    }
+    &:hover {
+      span, i {
+        color: @primary-color
+      }
+    }
+  }
+}
+
+.my-loading-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%; 
+  background-color: #555555;
+  opacity: 0.4;
+  filter:alpha(opacity=40); 
+  z-index: 200000000;
+}
+
+@keyframes spinner-line-fade-more {
+  0%, 100% {
+    opacity: 0; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-quick {
+  0%, 39%, 100% {
+    opacity: 0.25; /* minimum opacity */
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-default {
+  0%, 100% {
+    opacity: 0.22; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+/* 这里是text-area-bottom与iview input 插件的联合效果，误删 start */
+.text-area-bottom-content:hover .text-area-bottom-div {
+  border-color: #56a5f5;
+}
+.text-area-bottom-content:hover .ivu-input {
+  border-color: #56a5f5;
+}
+
+.text-area-bottom-content .ivu-input {
+  resize: none;
+}
+
+.ivu-input:focus{
+  outline:none;
+
+  border: 1px solid #dcdee2;
+  box-shadow: 0 0 0 2px transparent;
+}
+
+/* 这里是text-area-bottom与iview input 插件的联合效果，误删 end */

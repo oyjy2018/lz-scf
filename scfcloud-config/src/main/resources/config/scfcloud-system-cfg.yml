@@ -1,0 +1,64 @@
+server:
+  port: 22000
+spring:
+  application:
+    name: scfcloud-system
+  ## 时间格式化
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  ## 配置邮箱
+  ##邮箱服务器地址
+  ##QQ smtp.qq.com
+  ##sina smtp.sina.cn
+  ##aliyun smtp.aliyun.com
+  ##163 smtp.163.com
+  mail:
+    host: smtp.qq.com
+    username: lingzhufin@zhihuikg.com
+    password: Kg123456
+    default-encoding: UTF-8
+## 如果mapper.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:20000/eureka
+mybatis-plus:
+  mapper-locations: classpath*:com/zhjs/scfcloud/model/mapper/mapping/*.xml
+#  type-aliases-package: classpath*:com.zhjs.scfcloud.model.entity
+  type-enums-package: classpath*:com/zhjs/scfcloud/model/enums
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: 0
+      capital-mode: true
+      table-underline: true
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+
+# 日志配置
+# 日志级别从低到高分为TRACE < DEBUG < INFO < WARN < ERROR < FATAL，如果设置为WARN，则低于WARN的信息都不会输出
+# 开发环境
+logging:
+  level:
+    root: INFO
+    com.zhjs.scfcloud: debug
+  # 日记路径
+  path: logs/scfcloud-system.log
+
+##前端受邀注册地址（用于邀请邮件中）
+frontConfirmUrl: http://120.79.31.91/risk/signin/person
+
+## 设置feign超时
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+
+## 导入授信错误信息
+creditRecord:
+  errorTemplate: /app/file/creditRecord/errorTemplate.xls
+  temporaryTemplatePath: /app/file/creditRecord/

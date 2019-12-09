@@ -1,0 +1,201 @@
+- | [] | [20190717 11:25:30.937] | [INFO] | [PC-20190528OEHK] | [main] | [c.z.s.s.ScfcloudSystemApplication] | --> No active profile set, falling back to default profiles: default|
+- | [] | [20190717 11:25:32.219] | [INFO] | [PC-20190528OEHK] | [main] | [o.a.coyote.http11.Http11NioProtocol] | --> Initializing ProtocolHandler ["http-nio-22000"]|
+- | [] | [20190717 11:25:32.224] | [INFO] | [PC-20190528OEHK] | [main] | [o.a.catalina.core.StandardService] | --> Starting service [Tomcat]|
+- | [] | [20190717 11:25:32.225] | [INFO] | [PC-20190528OEHK] | [main] | [o.a.catalina.core.StandardEngine] | --> Starting Servlet engine: [Apache Tomcat/9.0.17]|
+- | [] | [20190717 11:25:32.323] | [INFO] | [PC-20190528OEHK] | [main] | [o.a.c.c.C.[Tomcat].[localhost].[/]] | --> Initializing Spring embedded WebApplicationContext|
+- | [] | [20190717 11:25:32.640] | [INFO] | [PC-20190528OEHK] | [main] | [c.a.d.s.b.a.DruidDataSourceAutoConfigure] | --> Init DruidDataSource|
+- | [] | [20190717 11:25:32.924] | [INFO] | [PC-20190528OEHK] | [main] | [c.alibaba.druid.pool.DruidDataSource] | --> {dataSource-1} inited|
+- | [] | [20190717 11:25:34.558] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.PropertySourcedRequestMappingHandlerMapping] | --> Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]|
+- | [] | [20190717 11:25:34.575] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.c.sources.URLConfigurationSource] | --> To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.|
+- | [] | [20190717 11:25:34.578] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.c.sources.URLConfigurationSource] | --> To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.|
+- | [] | [20190717 11:25:35.316] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Initializing Eureka in region us-east-1|
+- | [] | [20190717 11:25:35.442] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.d.p.DiscoveryJerseyProvider] | --> Using JSON encoding codec LegacyJacksonJson|
+- | [] | [20190717 11:25:35.443] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.d.p.DiscoveryJerseyProvider] | --> Using JSON decoding codec LegacyJacksonJson|
+- | [] | [20190717 11:25:35.514] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.d.p.DiscoveryJerseyProvider] | --> Using XML encoding codec XStreamXml|
+- | [] | [20190717 11:25:35.514] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.d.p.DiscoveryJerseyProvider] | --> Using XML decoding codec XStreamXml|
+- | [] | [20190717 11:25:35.654] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 11:25:35.681] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Disable delta property : false|
+- | [] | [20190717 11:25:35.682] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Single vip registry refresh property : null|
+- | [] | [20190717 11:25:35.682] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Force full registry fetch : false|
+- | [] | [20190717 11:25:35.682] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Application is null : false|
+- | [] | [20190717 11:25:35.682] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Registered Applications size is zero : true|
+- | [] | [20190717 11:25:35.682] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Application version is -1: true|
+- | [] | [20190717 11:25:35.682] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Getting all instance registry info from the eureka server|
+- | [] | [20190717 11:25:35.751] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> The response status is 200|
+- | [] | [20190717 11:25:35.753] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Starting heartbeat executor: renew interval is: 30|
+- | [] | [20190717 11:25:35.755] | [INFO] | [PC-20190528OEHK] | [main] | [c.n.discovery.InstanceInfoReplicator] | --> InstanceInfoReplicator onDemand update allowed rate per min is 4|
+- | [] | [20190717 11:25:35.757] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Discovery Client initialized at timestamp 1563333935756 with initial instances count: 3|
+- | [] | [20190717 11:25:35.759] | [INFO] | [PC-20190528OEHK] | [main] | [c.netflix.discovery.DiscoveryClient] | --> Saw local status change event StatusChangeEvent [timestamp=1563333935759, current=UP, previous=STARTING]|
+- | [] | [20190717 11:25:35.760] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.p.DocumentationPluginsBootstrapper] | --> Context refreshed|
+- | [] | [20190717 11:25:35.760] | [INFO] | [PC-20190528OEHK] | [DiscoveryClient-InstanceInfoReplicator-0] | [c.netflix.discovery.DiscoveryClient] | --> DiscoveryClient_SCFCLOUD-SYSTEM/PC-20190528OEHK:scfcloud-system:22000: registering service...|
+- | [] | [20190717 11:25:35.772] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.p.DocumentationPluginsBootstrapper] | --> Found 1 custom documentation plugin(s)|
+- | [] | [20190717 11:25:35.786] | [INFO] | [PC-20190528OEHK] | [DiscoveryClient-InstanceInfoReplicator-0] | [c.netflix.discovery.DiscoveryClient] | --> DiscoveryClient_SCFCLOUD-SYSTEM/PC-20190528OEHK:scfcloud-system:22000 - registration status: 204|
+- | [] | [20190717 11:25:35.796] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.s.ApiListingReferenceScanner] | --> Scanning for api listing references|
+- | [] | [20190717 11:25:35.877] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_1|
+- | [] | [20190717 11:25:35.890] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_2|
+- | [] | [20190717 11:25:35.893] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_1|
+- | [] | [20190717 11:25:35.928] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_2|
+- | [] | [20190717 11:25:35.990] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: auditCommitUsingPOST_1|
+- | [] | [20190717 11:25:35.994] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: saveDraftUsingPOST_1|
+- | [] | [20190717 11:25:35.996] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: saveFileUsingPOST_1|
+- | [] | [20190717 11:25:36.035] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_3|
+- | [] | [20190717 11:25:36.036] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_1|
+- | [] | [20190717 11:25:36.041] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_3|
+- | [] | [20190717 11:25:36.046] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: isExistUsingPOST_1|
+- | [] | [20190717 11:25:36.047] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_4|
+- | [] | [20190717 11:25:36.050] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_2|
+- | [] | [20190717 11:25:36.052] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_1|
+- | [] | [20190717 11:25:36.053] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_4|
+- | [] | [20190717 11:25:36.058] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteByIdUsingPOST_1|
+- | [] | [20190717 11:25:36.064] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_5|
+- | [] | [20190717 11:25:36.065] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_3|
+- | [] | [20190717 11:25:36.066] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_2|
+- | [] | [20190717 11:25:36.067] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_5|
+- | [] | [20190717 11:25:36.068] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: isExistUsingPOST_2|
+- | [] | [20190717 11:25:36.070] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_6|
+- | [] | [20190717 11:25:36.071] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_6|
+- | [] | [20190717 11:25:36.072] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_7|
+- | [] | [20190717 11:25:36.073] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_4|
+- | [] | [20190717 11:25:36.074] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_3|
+- | [] | [20190717 11:25:36.075] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_7|
+- | [] | [20190717 11:25:36.076] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: isExistKeyUsingPOST_1|
+- | [] | [20190717 11:25:36.080] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_8|
+- | [] | [20190717 11:25:36.083] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_5|
+- | [] | [20190717 11:25:36.087] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_4|
+- | [] | [20190717 11:25:36.099] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: isExistUsingPOST_3|
+- | [] | [20190717 11:25:36.105] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_9|
+- | [] | [20190717 11:25:36.106] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_6|
+- | [] | [20190717 11:25:36.107] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_5|
+- | [] | [20190717 11:25:36.108] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_8|
+- | [] | [20190717 11:25:36.111] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: isExistUsingPOST_4|
+- | [] | [20190717 11:25:36.112] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: addUsingPOST_10|
+- | [] | [20190717 11:25:36.113] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteUsingPOST_7|
+- | [] | [20190717 11:25:36.114] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: editUsingPOST_6|
+- | [] | [20190717 11:25:36.115] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findListUsingPOST_9|
+- | [] | [20190717 11:25:36.116] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: selectListUsingPOST_1|
+- | [] | [20190717 11:25:36.131] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: deleteByIdUsingPOST_2|
+- | [] | [20190717 11:25:36.148] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findUserDataPermissionListUsingPOST_1|
+- | [] | [20190717 11:25:36.152] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: findUserlistUsingPOST_1|
+- | [] | [20190717 11:25:36.190] | [INFO] | [PC-20190528OEHK] | [main] | [s.d.s.w.r.o.CachingOperationNameGenerator] | --> Generating unique operation named: phoneCheckUsingPOST_1|
+- | [] | [20190717 11:25:36.231] | [INFO] | [PC-20190528OEHK] | [main] | [o.a.coyote.http11.Http11NioProtocol] | --> Starting ProtocolHandler ["http-nio-22000"]|
+- | [] | [20190717 11:25:36.252] | [INFO] | [PC-20190528OEHK] | [main] | [c.z.s.s.ScfcloudSystemApplication] | --> Started ScfcloudSystemApplication in 6.302 seconds (JVM running for 6.736)|
+- | [] | [20190717 11:30:35.694] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 11:35:35.707] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 11:40:35.719] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 11:45:35.731] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 11:50:35.743] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 11:55:35.754] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:00:35.766] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:05:35.778] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:10:35.790] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:15:35.802] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:20:35.814] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:25:35.826] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:30:35.838] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:35:35.850] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:40:35.862] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:45:35.874] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:50:35.886] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 12:55:35.898] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:00:35.910] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:05:35.922] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:10:35.934] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:15:35.946] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:20:35.958] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:25:35.970] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:30:35.982] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:35:35.994] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:40:36.006] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:44:39.975] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-1] | [o.a.c.c.C.[Tomcat].[localhost].[/]] | --> Initializing Spring DispatcherServlet 'dispatcherServlet'|
+- | [] | [20190717 13:44:40.018] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-1] | [c.z.s.s.controller.UserController] | --> 根据邮箱查询用户:dto:"lzskcloud@qq.com"|
+- | [] | [20190717 13:44:40.144] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-2] | [c.z.s.s.controller.UserController] | --> 获取用户详细信息:dto:{"userId":1}|
+- | [] | [20190717 13:44:40.253] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-3] | [c.z.s.s.controller.UserController] | --> 密码输入是否正确{"createTime":"2019-06-06T05:07:14","email":"lzskcloud@qq.com","gender":1,"id":1,"idCard":"1111111111111111","isDel":0,"lastCompanyId":1,"password":"123456","permissionOrgIds":"1,23,11","permissionType":2,"phone":"13367966485","status":1,"updateTime":"2019-07-01T15:25:07","userName":"admin"} |
+- | [] | [20190717 13:44:40.484] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-4] | [c.z.s.s.controller.CompanyController] | --> subject:是否弹出邀请成员引导(只有一个成员时弹出),companyId:1|
+- | [] | [20190717 13:45:36.018] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:50:36.030] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 13:55:36.041] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:00:36.053] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:05:36.065] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:10:36.077] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:15:36.088] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:20:36.100] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:25:36.112] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:30:36.124] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:35:36.136] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:40:36.148] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:45:36.160] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:50:36.172] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 14:55:36.183] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:00:36.195] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:03:59.728] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-6] | [c.z.s.s.controller.UserController] | --> 根据邮箱查询用户:dto:"lzskcloud@qq.com"|
+- | [] | [20190717 15:03:59.737] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-7] | [c.z.s.s.controller.UserController] | --> 获取用户详细信息:dto:{"userId":1}|
+- | [] | [20190717 15:03:59.768] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-8] | [c.z.s.s.controller.UserController] | --> 密码输入是否正确{"createTime":"2019-06-06T05:07:14","email":"lzskcloud@qq.com","gender":1,"id":1,"idCard":"1111111111111111","isDel":0,"lastCompanyId":1,"password":"123456","permissionOrgIds":"1,23,11","permissionType":2,"phone":"13367966485","status":1,"updateTime":"2019-07-01T15:25:07","userName":"admin"} |
+- | [] | [20190717 15:03:59.918] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-9] | [c.z.s.s.controller.CompanyController] | --> subject:是否弹出邀请成员引导(只有一个成员时弹出),companyId:1|
+- | [] | [20190717 15:05:36.206] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:10:36.217] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:15:36.228] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:20:36.239] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:21:43.172] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-1] | [c.z.s.s.controller.CompanyController] | --> FindCompanyListDTO(companyName=, status=[], loggedUserId=1)|
+- | [] | [20190717 15:24:26.398] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-3] | [c.z.s.s.controller.CompanyController] | --> FindCompanyListDTO(companyName=, status=[], loggedUserId=1)|
+- | [] | [20190717 15:24:45.678] | [INFO] | [PC-20190528OEHK] | [http-nio-22000-exec-5] | [c.z.s.s.controller.CompanyController] | --> subject:是否弹出邀请成员引导(只有一个成员时弹出),companyId:1|
+- | [] | [20190717 15:25:36.250] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:30:36.262] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:35:36.274] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:40:36.285] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:45:36.296] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:50:36.307] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 15:55:36.318] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:00:36.329] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:05:36.341] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:10:36.352] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:15:36.363] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:20:36.375] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:25:36.386] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:30:36.397] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:35:36.408] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:40:36.419] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:45:36.430] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:50:36.441] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 16:55:36.452] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:00:36.463] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:05:36.475] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:10:36.487] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:15:36.499] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:20:36.511] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:25:36.523] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:30:36.534] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:35:36.545] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:40:36.556] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:45:36.567] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:50:36.578] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 17:55:36.589] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:00:36.600] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:05:36.611] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:10:36.622] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:15:36.633] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:20:36.644] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:25:36.655] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:30:36.666] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:35:36.677] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:40:36.688] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:45:36.699] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:50:36.710] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 18:55:36.721] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:00:36.732] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:05:36.744] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:10:36.755] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:15:36.767] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:20:36.779] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:25:36.790] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:30:36.801] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:35:36.813] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:40:36.825] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:45:36.836] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:50:36.847] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 19:55:36.858] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 20:00:36.869] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 20:05:36.880] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 20:10:36.892] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 20:15:36.904] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 20:20:36.915] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|
+- | [] | [20190717 20:25:36.926] | [INFO] | [PC-20190528OEHK] | [AsyncResolver-bootstrap-executor-0] | [c.n.d.s.r.aws.ConfigClusterResolver] | --> Resolving eureka endpoints via configuration|

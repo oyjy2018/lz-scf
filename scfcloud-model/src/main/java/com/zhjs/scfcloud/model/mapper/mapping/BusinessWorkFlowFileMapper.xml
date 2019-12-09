@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessWorkFlowFileMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.BusinessWorkFlowFile">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="business_type_id" jdbcType="BIGINT" property="businessTypeId" />
+    <result column="business_file_id" jdbcType="BIGINT" property="businessFileId" />
+    <result column="work_flow_id" jdbcType="BIGINT" property="workFlowId" />
+    <result column="required" jdbcType="INTEGER" property="required" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_id, business_type_id, business_file_id, work_flow_id, required, sort, 
+    status, update_time, update_by, create_time, create_by
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scf_cfg_business_work_flow_file
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_cfg_business_work_flow_file
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlowFile" useGeneratedKeys="true">
+    insert into scf_cfg_business_work_flow_file (company_id, business_type_id, business_file_id, 
+      work_flow_id, required, sort, 
+      status, update_time, update_by, 
+      create_time, create_by)
+    values (#{companyId,jdbcType=BIGINT}, #{businessTypeId,jdbcType=BIGINT}, #{businessFileId,jdbcType=BIGINT}, 
+      #{workFlowId,jdbcType=BIGINT}, #{required,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT})
+  </insert>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="java.util.List" useGeneratedKeys="true">
+    insert into scf_cfg_business_work_flow_file (company_id, business_type_id, business_file_id,
+      work_flow_id, required, sort,
+      status, update_time, update_by,
+      create_time, create_by)
+    values
+    <foreach collection="list" item="wff" separator=",">
+      (#{wff.companyId,jdbcType=BIGINT}, #{wff.businessTypeId,jdbcType=BIGINT}, #{wff.businessFileId,jdbcType=BIGINT},
+      #{wff.workFlowId,jdbcType=BIGINT}, #{wff.required,jdbcType=INTEGER}, #{wff.sort,jdbcType=INTEGER},
+      #{wff.status,jdbcType=INTEGER}, #{wff.updateTime,jdbcType=TIMESTAMP}, #{wff.updateBy,jdbcType=BIGINT},
+      #{wff.createTime,jdbcType=TIMESTAMP}, #{wff.createBy,jdbcType=BIGINT})
+    </foreach>
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlowFile" useGeneratedKeys="true">
+    insert into scf_cfg_business_work_flow_file
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id,
+      </if>
+      <if test="businessFileId != null">
+        business_file_id,
+      </if>
+      <if test="workFlowId != null">
+        work_flow_id,
+      </if>
+      <if test="required != null">
+        required,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="businessFileId != null">
+        #{businessFileId,jdbcType=BIGINT},
+      </if>
+      <if test="workFlowId != null">
+        #{workFlowId,jdbcType=BIGINT},
+      </if>
+      <if test="required != null">
+        #{required,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlowFile">
+    update scf_cfg_business_work_flow_file
+    <set>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="businessFileId != null">
+        business_file_id = #{businessFileId,jdbcType=BIGINT},
+      </if>
+      <if test="workFlowId != null">
+        work_flow_id = #{workFlowId,jdbcType=BIGINT},
+      </if>
+      <if test="required != null">
+        required = #{required,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlowFile">
+    update scf_cfg_business_work_flow_file
+    set company_id = #{companyId,jdbcType=BIGINT},
+      business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      business_file_id = #{businessFileId,jdbcType=BIGINT},
+      work_flow_id = #{workFlowId,jdbcType=BIGINT},
+      required = #{required,jdbcType=INTEGER},
+      sort = #{sort,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="findWorkFlowFileCfg" resultType="com.zhjs.scfcloud.model.vo.business.BusinessWorkFlowFileVO">
+    SELECT
+      scbwff.id workFlowFileId,
+      scbwff.company_id companyId,
+      scbwff.business_type_id businessTypeId,
+      scbwff.business_file_id businessFileId,
+      scbwff.work_flow_id workFlowId,
+      scbfc.file_code fileCode,
+      scbfc.file_name fileName,
+      scbfc.once_upload_size onceUploadSize,
+      scbfc.upload_limit uploadLimit,
+      scbfc.role_ids roleIds,
+      scbfc.user_ids userIds,
+      scbwff.required,
+      scbwff.sort,
+      scbwff.status
+    FROM scf_cfg_business_work_flow_file scbwff
+    LEFT JOIN scf_cfg_business_file_cfg scbfc ON scbfc.id = scbwff.business_file_id
+  </select>
+
+  <update id="batchUpdateFile" parameterType="java.util.List">
+    <foreach collection="list" item="wff" >
+      UPDATE scf_cfg_business_work_flow_file scbwff
+        SET scbwff.required = #{wff.required,jdbcType=INTEGER},
+            scbwff.sort = #{wff.sort,jdbcType=INTEGER}
+      WHERE scbwff.id = #{wff.workFlowFileId,jdbcType=BIGINT};
+    </foreach>
+  </update>
+</mapper>

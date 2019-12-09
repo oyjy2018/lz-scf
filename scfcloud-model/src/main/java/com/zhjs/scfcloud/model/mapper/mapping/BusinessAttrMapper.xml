@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessAttrMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.BusinessAttr">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="business_type_id" jdbcType="BIGINT" property="businessTypeId" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="table_name" jdbcType="VARCHAR" property="tableName" />
+    <result column="column_name" jdbcType="VARCHAR" property="columnName" />
+    <result column="column_ch" jdbcType="VARCHAR" property="columnCh" />
+    <result column="has_system" jdbcType="INTEGER" property="hasSystem" />
+    <result column="column_type" jdbcType="VARCHAR" property="columnType" />
+    <result column="has_closed_type" jdbcType="INTEGER" property="hasClosedType" />
+    <result column="column_unit" jdbcType="VARCHAR" property="columnUnit" />
+    <result column="column_group" jdbcType="VARCHAR" property="columnGroup" />
+    <result column="has_plurality" jdbcType="INTEGER" property="hasPlurality" />
+    <result column="column_tip" jdbcType="VARCHAR" property="columnTip" />
+    <result column="required" jdbcType="INTEGER" property="required" />
+    <result column="verify_formula" jdbcType="VARCHAR" property="verifyFormula" />
+    <result column="upload_limit" jdbcType="INTEGER" property="uploadLimit" />
+    <result column="classify_id" jdbcType="BIGINT" property="classifyId" />
+    <result column="pre_column_id" jdbcType="BIGINT" property="preColumnId" />
+    <result column="pre_column_value" jdbcType="VARCHAR" property="preColumnValue" />
+    <result column="junior_column_id" jdbcType="BIGINT" property="juniorColumnId" />
+    <result column="default_value_type" jdbcType="VARCHAR" property="defaultValueType" />
+    <result column="default_value" jdbcType="VARCHAR" property="defaultValue" />
+    <result column="has_br" jdbcType="INTEGER" property="hasBr" />
+    <result column="has_create_need" jdbcType="INTEGER" property="hasCreateNeed" />
+    <result column="has_create_visible" jdbcType="INTEGER" property="hasCreateVisible" />
+    <result column="has_edit_visible" jdbcType="INTEGER" property="hasEditVisible" />
+    <result column="has_view_visible" jdbcType="INTEGER" property="hasViewVisible" />
+    <result column="has_audit_visible" jdbcType="INTEGER" property="hasAuditVisible" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, business_type_id, company_id, table_name, column_name, column_ch, has_system, 
+    column_type, has_closed_type, column_unit, column_group, has_plurality, column_tip, required, verify_formula,
+    upload_limit, classify_id, pre_column_id, pre_column_value, junior_column_id, default_value_type, 
+    default_value, has_br, has_create_need, has_create_visible, has_edit_visible, has_view_visible, 
+    has_audit_visible, sort, remark, status, create_time, create_by, update_time, update_by
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scf_cfg_business_attr
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_cfg_business_attr
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessAttr" useGeneratedKeys="true">
+    insert into scf_cfg_business_attr (business_type_id, company_id, table_name, 
+      column_name, column_ch, has_system, 
+      column_type, has_closed_type, column_unit, column_group,
+      has_plurality, column_tip, required, 
+      verify_formula, upload_limit, classify_id, 
+      pre_column_id, pre_column_value, junior_column_id, 
+      default_value_type, default_value, has_br, 
+      has_create_need, has_create_visible, has_edit_visible, 
+      has_view_visible, has_audit_visible, sort, 
+      remark, status, create_time, 
+      create_by, update_time, update_by
+      )
+    values (#{businessTypeId,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}, #{tableName,jdbcType=VARCHAR}, 
+      #{columnName,jdbcType=VARCHAR}, #{columnCh,jdbcType=VARCHAR}, #{hasSystem,jdbcType=INTEGER}, 
+      #{columnType,jdbcType=VARCHAR}, #{hasClosedType,jdbcType=INTEGER}, #{columnUnit,jdbcType=VARCHAR}, #{columnGroup,jdbcType=VARCHAR},
+      #{hasPlurality,jdbcType=INTEGER}, #{columnTip,jdbcType=VARCHAR}, #{required,jdbcType=INTEGER}, 
+      #{verifyFormula,jdbcType=VARCHAR}, #{uploadLimit,jdbcType=INTEGER}, #{classifyId,jdbcType=BIGINT}, 
+      #{preColumnId,jdbcType=BIGINT}, #{preColumnValue,jdbcType=VARCHAR}, #{juniorColumnId,jdbcType=BIGINT}, 
+      #{defaultValueType,jdbcType=VARCHAR}, #{defaultValue,jdbcType=VARCHAR}, #{hasBr,jdbcType=INTEGER}, 
+      #{hasCreateNeed,jdbcType=INTEGER}, #{hasCreateVisible,jdbcType=INTEGER}, #{hasEditVisible,jdbcType=INTEGER}, 
+      #{hasViewVisible,jdbcType=INTEGER}, #{hasAuditVisible,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.BusinessAttr" useGeneratedKeys="true">
+    insert into scf_cfg_business_attr
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="businessTypeId != null">
+        business_type_id,
+      </if>
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="tableName != null">
+        table_name,
+      </if>
+      <if test="columnName != null">
+        column_name,
+      </if>
+      <if test="columnCh != null">
+        column_ch,
+      </if>
+      <if test="hasSystem != null">
+        has_system,
+      </if>
+      <if test="columnType != null">
+        column_type,
+      </if>
+      <if test="hasClosedType != null">
+        has_closed_type,
+      </if>
+      <if test="columnUnit != null">
+        column_unit,
+      </if>
+      <if test="columnGroup != null">
+        column_group,
+      </if>
+      <if test="hasPlurality != null">
+        has_plurality,
+      </if>
+      <if test="columnTip != null">
+        column_tip,
+      </if>
+      <if test="required != null">
+        required,
+      </if>
+      <if test="verifyFormula != null">
+        verify_formula,
+      </if>
+      <if test="uploadLimit != null">
+        upload_limit,
+      </if>
+      <if test="classifyId != null">
+        classify_id,
+      </if>
+      <if test="preColumnId != null">
+        pre_column_id,
+      </if>
+      <if test="preColumnValue != null">
+        pre_column_value,
+      </if>
+      <if test="juniorColumnId != null">
+        junior_column_id,
+      </if>
+      <if test="defaultValueType != null">
+        default_value_type,
+      </if>
+      <if test="defaultValue != null">
+        default_value,
+      </if>
+      <if test="hasBr != null">
+        has_br,
+      </if>
+      <if test="hasCreateNeed != null">
+        has_create_need,
+      </if>
+      <if test="hasCreateVisible != null">
+        has_create_visible,
+      </if>
+      <if test="hasEditVisible != null">
+        has_edit_visible,
+      </if>
+      <if test="hasViewVisible != null">
+        has_view_visible,
+      </if>
+      <if test="hasAuditVisible != null">
+        has_audit_visible,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="businessTypeId != null">
+        #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="tableName != null">
+        #{tableName,jdbcType=VARCHAR},
+      </if>
+      <if test="columnName != null">
+        #{columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="columnCh != null">
+        #{columnCh,jdbcType=VARCHAR},
+      </if>
+      <if test="hasSystem != null">
+        #{hasSystem,jdbcType=INTEGER},
+      </if>
+      <if test="columnType != null">
+        #{columnType,jdbcType=VARCHAR},
+      </if>
+      <if test="hasClosedType != null">
+        #{hasClosedType,jdbcType=INTEGER},
+      </if>
+      <if test="columnUnit != null">
+        #{columnUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="columnGroup != null">
+        #{columnGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="hasPlurality != null">
+        #{hasPlurality,jdbcType=INTEGER},
+      </if>
+      <if test="columnTip != null">
+        #{columnTip,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null">
+        #{required,jdbcType=INTEGER},
+      </if>
+      <if test="verifyFormula != null">
+        #{verifyFormula,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadLimit != null">
+        #{uploadLimit,jdbcType=INTEGER},
+      </if>
+      <if test="classifyId != null">
+        #{classifyId,jdbcType=BIGINT},
+      </if>
+      <if test="preColumnId != null">
+        #{preColumnId,jdbcType=BIGINT},
+      </if>
+      <if test="preColumnValue != null">
+        #{preColumnValue,jdbcType=VARCHAR},
+      </if>
+      <if test="juniorColumnId != null">
+        #{juniorColumnId,jdbcType=BIGINT},
+      </if>
+      <if test="defaultValueType != null">
+        #{defaultValueType,jdbcType=VARCHAR},
+      </if>
+      <if test="defaultValue != null">
+        #{defaultValue,jdbcType=VARCHAR},
+      </if>
+      <if test="hasBr != null">
+        #{hasBr,jdbcType=INTEGER},
+      </if>
+      <if test="hasCreateNeed != null">
+        #{hasCreateNeed,jdbcType=INTEGER},
+      </if>
+      <if test="hasCreateVisible != null">
+        #{hasCreateVisible,jdbcType=INTEGER},
+      </if>
+      <if test="hasEditVisible != null">
+        #{hasEditVisible,jdbcType=INTEGER},
+      </if>
+      <if test="hasViewVisible != null">
+        #{hasViewVisible,jdbcType=INTEGER},
+      </if>
+      <if test="hasAuditVisible != null">
+        #{hasAuditVisible,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.BusinessAttr">
+    update scf_cfg_business_attr
+    <set>
+      <if test="businessTypeId != null">
+        business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="tableName != null">
+        table_name = #{tableName,jdbcType=VARCHAR},
+      </if>
+      <if test="columnName != null">
+        column_name = #{columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="columnCh != null">
+        column_ch = #{columnCh,jdbcType=VARCHAR},
+      </if>
+      <if test="hasSystem != null">
+        has_system = #{hasSystem,jdbcType=INTEGER},
+      </if>
+      <if test="columnType != null">
+        column_type = #{columnType,jdbcType=VARCHAR},
+      </if>
+      <if test="hasClosedType != null">
+        has_closed_type = #{hasClosedType,jdbcType=INTEGER},
+      </if>
+      <if test="columnUnit != null">
+        column_unit = #{columnUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="columnGroup != null">
+        column_group = #{columnGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="hasPlurality != null">
+        has_plurality = #{hasPlurality,jdbcType=INTEGER},
+      </if>
+      <if test="columnTip != null">
+        column_tip = #{columnTip,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null">
+        required = #{required,jdbcType=INTEGER},
+      </if>
+      <if test="verifyFormula != null">
+        verify_formula = #{verifyFormula,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadLimit != null">
+        upload_limit = #{uploadLimit,jdbcType=INTEGER},
+      </if>
+      <if test="classifyId != null">
+        classify_id = #{classifyId,jdbcType=BIGINT},
+      </if>
+      <if test="preColumnId != null">
+        pre_column_id = #{preColumnId,jdbcType=BIGINT},
+      </if>
+      <if test="preColumnValue != null">
+        pre_column_value = #{preColumnValue,jdbcType=VARCHAR},
+      </if>
+      <if test="juniorColumnId != null">
+        junior_column_id = #{juniorColumnId,jdbcType=BIGINT},
+      </if>
+      <if test="defaultValueType != null">
+        default_value_type = #{defaultValueType,jdbcType=VARCHAR},
+      </if>
+      <if test="defaultValue != null">
+        default_value = #{defaultValue,jdbcType=VARCHAR},
+      </if>
+      <if test="hasBr != null">
+        has_br = #{hasBr,jdbcType=INTEGER},
+      </if>
+      <if test="hasCreateNeed != null">
+        has_create_need = #{hasCreateNeed,jdbcType=INTEGER},
+      </if>
+      <if test="hasCreateVisible != null">
+        has_create_visible = #{hasCreateVisible,jdbcType=INTEGER},
+      </if>
+      <if test="hasEditVisible != null">
+        has_edit_visible = #{hasEditVisible,jdbcType=INTEGER},
+      </if>
+      <if test="hasViewVisible != null">
+        has_view_visible = #{hasViewVisible,jdbcType=INTEGER},
+      </if>
+      <if test="hasAuditVisible != null">
+        has_audit_visible = #{hasAuditVisible,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.BusinessAttr">
+    update scf_cfg_business_attr
+    set business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      company_id = #{companyId,jdbcType=BIGINT},
+      table_name = #{tableName,jdbcType=VARCHAR},
+      column_name = #{columnName,jdbcType=VARCHAR},
+      column_ch = #{columnCh,jdbcType=VARCHAR},
+      has_system = #{hasSystem,jdbcType=INTEGER},
+      column_type = #{columnType,jdbcType=VARCHAR},
+      has_closed_type = #{hasClosedType,jdbcType=INTEGER},
+      column_unit = #{columnUnit,jdbcType=VARCHAR},
+      column_group = #{columnGroup,jdbcType=VARCHAR},
+      has_plurality = #{hasPlurality,jdbcType=INTEGER},
+      column_tip = #{columnTip,jdbcType=VARCHAR},
+      required = #{required,jdbcType=INTEGER},
+      verify_formula = #{verifyFormula,jdbcType=VARCHAR},
+      upload_limit = #{uploadLimit,jdbcType=INTEGER},
+      classify_id = #{classifyId,jdbcType=BIGINT},
+      pre_column_id = #{preColumnId,jdbcType=BIGINT},
+      pre_column_value = #{preColumnValue,jdbcType=VARCHAR},
+      junior_column_id = #{juniorColumnId,jdbcType=BIGINT},
+      default_value_type = #{defaultValueType,jdbcType=VARCHAR},
+      default_value = #{defaultValue,jdbcType=VARCHAR},
+      has_br = #{hasBr,jdbcType=INTEGER},
+      has_create_need = #{hasCreateNeed,jdbcType=INTEGER},
+      has_create_visible = #{hasCreateVisible,jdbcType=INTEGER},
+      has_edit_visible = #{hasEditVisible,jdbcType=INTEGER},
+      has_view_visible = #{hasViewVisible,jdbcType=INTEGER},
+      has_audit_visible = #{hasAuditVisible,jdbcType=INTEGER},
+      sort = #{sort,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="findBusinessAttrCfg" resultType="com.zhjs.scfcloud.model.vo.business.BusinessAttrCfgVO">
+    SELECT
+      scba.id businessAttrId,
+      scba.business_type_id businessTypeId,
+      scba.company_id companyId,
+      CONCAT(scba.table_name,'_',scba.column_name) columnName,
+      scba.column_ch columnCh,
+      scba.column_type columnType,
+      scba.has_closed_type hasClosedType,
+      scba.column_unit columnUnit,
+      scba.column_group columnGroup,
+      scba.has_plurality hasPlurality,
+      scba.has_read_only hasReadOnly,
+      scba.column_tip columnTip,
+      scba.column_err_msg columnErrMsg,
+      scba.required,
+      scba.verify_formula verifyFormula,
+      scba.upload_limit uploadLimit,
+      scbac.classify_name classifyName,
+      scba.pre_column_id preColumnId,
+      scba.pre_column_value preColumnValue,
+      scba.junior_column_id juniorColumnId,
+      scba.default_value_type defaultValueType,
+      scba.default_value defaultValue,
+      scba.has_br hasBr,
+      scba.has_create_need hasCreateNeed,
+      scba.has_create_visible hasCreateVisible,
+      scba.has_edit_visible hasEditVisible,
+      scba.has_view_visible hasViewVisible,
+      scba.has_audit_visible hasAuditVisible,
+      scba.status,
+      scba.sort,
+      scba.remark
+    FROM scf_cfg_business_attr scba
+    LEFT JOIN scf_cfg_business_attr_classify scbac ON scba.classify_id = scbac.id
+    ORDER BY scbac.sort,scba.sort
+  </select>
+
+  <insert id="insertColumnByTableName" parameterType="java.util.Map"  useGeneratedKeys="true" keyProperty="id" >
+    insert into ${tableName}
+    (
+    <foreach collection="columnList" item="c">
+      ${c.columnName},
+    </foreach>
+    update_by,create_time,create_by)
+    values
+    (
+    <foreach collection="columnList" item="c">
+        #{c.columnVal},
+    </foreach>
+    #{userId,jdbcType=BIGINT},now(),#{userId,jdbcType=BIGINT})
+  </insert>
+
+  <update id="updateColumnByTableName" parameterType="java.util.Map">
+    update ${tableName}
+      <set>
+        <foreach collection="columnList" item="c">
+            ${c.columnName} = #{c.columnVal},
+        </foreach>
+        update_by = #{userId,jdbcType=BIGINT}
+      </set>
+    where id = #{primaryId,jdbcType=BIGINT}
+  </update>
+</mapper>

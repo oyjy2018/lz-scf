@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectInsuranceMapper">
+  <sql id="Base_Column_List">
+    id, contract_no, insurance_no, insurance_type, insurance_expire_date, groups_count, 
+    per_capita_coverage, total_coverage, delete_status, create_by, create_time, update_by, 
+    update_time
+  </sql>
+  <select id="getList" resultType="com.zhjs.scfcloud.model.vo.lzProject.LzProjectInsuranceListVO">
+    select id, insurance_no, insurance_type, insurance_expire_date, groups_count,
+    per_capita_coverage, total_coverage
+    from lz_project_insurance lpi
+    where lpi.contract_no = #{contractNo}
+    and lpi.delete_status != 1
+    order by lpi.insurance_expire_date
+  </select>
+</mapper>

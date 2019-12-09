@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhjs.scfcloud.model.mapper.RoleMapper">
+
+    <!-- 查询用户指定公司下的角色 -->
+    <select id="findUserRolesByCompanyId" resultType="com.zhjs.scfcloud.model.entity.Role">
+        select scr.*
+        from scf_cfg_role scr
+        join scf_cfg_role_user scru on scr.id = scru.role_id
+        where scr.`status` = 1 and scru.user_id = #{userId} and scr.company_id = #{companyId}
+    </select>
+
+    <!--  查询用户在公司里拥有的角色  -->
+    <select id="findRoleListByCompanyIdAndUserId" resultType="com.zhjs.scfcloud.model.entity.Role">
+        SELECT scr.id, scr.role_name, scr.remark FROM `scf_cfg_role` scr
+        LEFT JOIN scf_cfg_role_user scru ON scr.id = scru.role_id
+        WHERE scr.company_id = #{companyId} AND scru.user_id = #{userId}
+    </select>
+
+    <!--  通过公司id和角色名查询角色  -->
+    <select id="getRoleByCompanyIdAndRoleName" resultType="com.zhjs.scfcloud.model.entity.Role">
+        SELECT scr.id, scr.role_name FROM `scf_cfg_role` scr
+        WHERE scr.company_id = #{companyId}  AND scr.role_name = #{roleName} limit 1
+    </select>
+
+
+</mapper>

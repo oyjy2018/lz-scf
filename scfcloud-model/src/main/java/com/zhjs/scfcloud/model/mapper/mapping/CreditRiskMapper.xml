@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.CreditRiskMapper">
+  <sql id="Base_Column_List">
+    id, company_id, credit_apply_id, risk_credit1, risk_credit2, risk_credit3, risk_credit4, 
+    risk_credit5, risk_credit6, risk_credit7, risk_credit8, risk_credit9, risk_credit10, 
+    risk_credit11, risk_credit12, risk_credit13, risk_credit14, risk_credit15, risk_credit16, 
+    risk_credit17, risk_credit18, risk_credit19, risk_credit20, update_time, update_by, 
+    create_time, create_by
+  </sql>
+</mapper>

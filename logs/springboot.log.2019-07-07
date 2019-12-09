@@ -1,0 +1,553 @@
+2019-07-07 00:04:21,956  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:09:21,965  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:14:21,972  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:19:21,979  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:24:21,986  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:29:21,993  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:34:22,000  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:39:22,007  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:44:22,015  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:49:22,022  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:54:22,030  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 00:59:22,037  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:04:09,429  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:09:09,436  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:14:09,444  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:19:09,451  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:24:09,458  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:29:09,466  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:34:09,473  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:39:09,480  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:44:09,487  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:49:09,494  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:54:09,501  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 01:59:09,508  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:04:09,515  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:09:09,522  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:14:09,529  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:19:09,536  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:24:09,543  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:29:09,550  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:34:09,557  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:39:09,564  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:44:09,571  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:49:09,578  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:54:09,585  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 02:59:09,592  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:04:09,599  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:09:09,606  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:14:09,613  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:19:09,621  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:24:09,629  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:29:09,637  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:34:09,644  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:39:09,652  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:44:09,659  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:49:09,666  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:54:09,673  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 03:59:09,680  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:04:09,687  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:09:09,694  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:14:09,701  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:19:09,708  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:24:09,715  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:29:09,722  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:34:09,729  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:39:09,736  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:44:09,743  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:49:09,751  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:54:09,759  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 04:59:09,766  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:04:09,773  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:09:09,780  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:14:09,787  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:19:09,794  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:24:09,802  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:29:09,809  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:34:09,816  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:39:09,824  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:44:09,832  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:49:09,839  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:54:09,847  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 05:59:09,855  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:04:09,862  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:09:09,869  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:14:09,876  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:19:09,883  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:24:09,890  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:29:09,897  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:34:09,904  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:39:09,911  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:44:09,918  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:49:09,925  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:54:09,932  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 06:59:09,939  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:04:09,946  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:09:09,954  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:14:09,961  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:19:09,968  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:24:09,975  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:29:09,982  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:34:09,989  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:39:09,997  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:44:10,005  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:49:10,012  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:54:10,019  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 07:59:10,027  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:04:10,034  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:09:10,042  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:14:10,050  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:19:10,058  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:24:10,065  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:29:10,072  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:34:10,079  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:39:10,086  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:44:10,093  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:49:10,100  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:54:10,107  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 08:59:10,114  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:04:10,121  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:09:10,128  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:14:10,135  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:19:10,142  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:24:10,149  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:29:10,156  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:34:10,163  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:39:10,170  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:44:10,177  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:49:10,184  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:54:10,192  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 09:59:10,200  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:04:10,208  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:09:10,216  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:14:10,224  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:19:10,231  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:24:10,239  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:29:10,246  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:34:10,253  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:39:10,260  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:44:10,267  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:49:10,274  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:54:10,281  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 10:59:10,288  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:04:10,295  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:09:10,302  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:14:10,309  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:19:10,316  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:24:10,323  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:29:10,330  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:34:10,338  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:39:10,345  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:44:10,352  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:49:10,359  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:54:10,366  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 11:59:10,373  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:04:10,381  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:09:10,388  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:14:10,395  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:19:10,402  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:24:10,410  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:29:10,417  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:34:10,424  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:39:10,431  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:44:10,438  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:49:10,446  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:54:10,454  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 12:59:10,462  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:04:10,470  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:09:10,477  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:14:10,485  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:19:10,492  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:24:10,500  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:29:10,507  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:34:10,514  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:39:10,521  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:44:10,528  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:49:10,535  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:54:10,542  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 13:59:10,549  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:04:10,556  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:09:10,563  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:14:10,570  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:19:10,577  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:24:10,584  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:29:10,592  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:34:10,599  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:39:10,607  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:44:10,614  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:49:10,621  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:54:10,628  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 14:59:10,635  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:04:10,642  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:09:10,650  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:14:10,657  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:19:10,665  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:24:10,672  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:29:10,680  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:34:10,687  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:39:10,694  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:44:10,701  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:49:10,708  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:54:10,715  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 15:59:10,722  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:04:10,729  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:09:10,736  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:14:10,743  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:19:10,750  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:24:10,757  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:29:10,764  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:34:10,771  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:39:10,778  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:44:10,785  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:49:10,792  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:54:10,800  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 16:59:10,808  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:04:10,816  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:09:10,824  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:14:10,831  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:19:10,839  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:24:10,846  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:29:10,853  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:34:10,860  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:39:10,868  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:44:10,875  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:49:10,883  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:54:10,890  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 17:59:10,897  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:04:10,905  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:09:10,912  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:14:10,919  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:19:10,926  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:24:10,933  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:29:10,941  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:34:10,948  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:39:10,956  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:44:10,963  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:49:10,970  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:54:10,977  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 18:59:10,984  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:04:10,991  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:09:10,999  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:14:11,007  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:19:11,014  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:24:11,021  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:29:11,029  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:34:11,036  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:39:11,043  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:44:11,050  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:49:11,057  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:54:11,064  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 19:59:11,071  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:04:11,078  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:09:11,085  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:14:11,092  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:19:11,099  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:24:11,106  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:29:11,113  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:34:11,121  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:39:11,128  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:44:11,135  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:49:11,142  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:54:11,149  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 20:59:11,158  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:04:11,165  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:09:11,172  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:14:11,179  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:19:11,186  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:24:11,193  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:29:11,200  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:34:11,207  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:39:11,214  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:44:11,221  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:49:11,229  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:54:11,236  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 21:59:11,243  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 22:04:11,250  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 22:09:11,257  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 22:14:11,264  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 22:19:11,271  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 22:24:11,278  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 22:29:11,285  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 22:34:11,292  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 22:39:11,299  INFO ConfigClusterResolver:43 - Resolving eureka endpoints via configuration
+2019-07-07 22:42:35,112  INFO PollingServerListUpdater:53 - Shutting down the Executor Pool for PollingServerListUpdater
+2019-07-07 22:42:35,112  INFO EurekaServiceRegistry:65 - Unregistering application SCFCLOUD with eureka with status DOWN
+2019-07-07 22:42:35,113  WARN DiscoveryClient:1303 - Saw local status change event StatusChangeEvent [timestamp=1562510555113, current=DOWN, previous=UP]
+2019-07-07 22:42:35,113  INFO DiscoveryClient:826 - DiscoveryClient_SCFCLOUD/PC-20190528OEHK:scfcloud:21000: registering service...
+2019-07-07 22:42:35,117  INFO ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-07 22:42:36,253  INFO ShutdownEnabledTimer:67 - Shutdown hook removed for: NFLoadBalancer-PingTimer-scfcloud-system
+2019-07-07 22:42:36,253  INFO ShutdownEnabledTimer:72 - Exception caught (might be ok if at shutdown)
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(ApplicationShutdownHooks.java:82)
+	at java.lang.Runtime.removeShutdownHook(Runtime.java:239)
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70)
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632)
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883)
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:337)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:271)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1055)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1062)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:975)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1055)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1062)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945)
+2019-07-07 22:42:36,256  INFO DiscoveryClient:888 - Shutting down DiscoveryClient ...
+2019-07-07 22:42:37,131 ERROR RedirectingEurekaHttpClient:91 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:20000/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 30 more
+2019-07-07 22:42:37,131  WARN RetryableEurekaHttpClient:130 - Request execution failed with message: java.net.ConnectException: Connection refused: connect
+2019-07-07 22:42:39,144 ERROR RedirectingEurekaHttpClient:83 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:20000/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 31 more
+2019-07-07 22:42:39,145  WARN RetryableEurekaHttpClient:130 - Request execution failed with message: java.net.ConnectException: Connection refused: connect
+2019-07-07 22:42:39,145  WARN DiscoveryClient:831 - DiscoveryClient_SCFCLOUD/PC-20190528OEHK:scfcloud:21000 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-07-07 22:42:39,145  WARN InstanceInfoReplicator:125 - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-07-07 22:42:39,147  INFO DiscoveryClient:922 - Unregistering ...
+2019-07-07 22:42:41,149 ERROR RedirectingEurekaHttpClient:83 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:20000/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.delete(WebResource.java:591)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.cancel(AbstractJerseyEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:923)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:901)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:156)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:240)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:233)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:403)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:142)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1055)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1062)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 42 more
+2019-07-07 22:42:41,149  WARN RetryableEurekaHttpClient:130 - Request execution failed with message: java.net.ConnectException: Connection refused: connect
+2019-07-07 22:42:41,150 ERROR DiscoveryClient:926 - DiscoveryClient_SCFCLOUD/PC-20190528OEHK:scfcloud:21000 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:923)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:901)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:156)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:240)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:233)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:403)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:142)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1055)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1062)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945)
+2019-07-07 22:42:41,154  INFO DiscoveryClient:911 - Completed shut down of DiscoveryClient

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.LzProjectFileMapper">
+  <sql id="Base_Column_List">
+    id, contract_no, file_classify, new_file_name, original_file_name, file_url, file_size, 
+    file_type, suffix, upload_time, upload_person, delete_status, create_by, create_time, 
+    update_by, update_time
+  </sql>
+</mapper>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.BusinessWorkFlowAttrMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.BusinessWorkFlowAttr">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="business_type_id" jdbcType="BIGINT" property="businessTypeId" />
+    <result column="business_attr_id" jdbcType="BIGINT" property="businessAttrId" />
+    <result column="work_flow_id" jdbcType="BIGINT" property="workFlowId" />
+    <result column="required" jdbcType="INTEGER" property="required" />
+    <result column="default_value_type" jdbcType="VARCHAR" property="defaultValueType" />
+    <result column="default_value" jdbcType="VARCHAR" property="defaultValue" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_id, business_type_id, business_attr_id, work_flow_id, required, default_value_type, 
+    default_value, sort, update_time, update_by, create_time, create_by, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scf_cfg_business_work_flow_attr
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from scf_cfg_business_work_flow_attr
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlowAttr" useGeneratedKeys="true" keyProperty="id">
+    insert into scf_cfg_business_work_flow_attr (id, company_id, business_type_id, 
+      business_attr_id, work_flow_id, required, 
+      default_value_type, default_value, sort, 
+      update_time, update_by, create_time, 
+      create_by, status)
+    values (#{id,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}, #{businessTypeId,jdbcType=BIGINT}, 
+      #{businessAttrId,jdbcType=BIGINT}, #{workFlowId,jdbcType=BIGINT}, #{required,jdbcType=INTEGER}, 
+      #{defaultValueType,jdbcType=VARCHAR}, #{defaultValue,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{status,jdbcType=TINYINT})
+  </insert>
+  <insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+    insert into scf_cfg_business_work_flow_attr (company_id, business_type_id,
+      business_attr_id, work_flow_id, required,
+      default_value_type, default_value, sort,
+      update_time, update_by, create_time,
+      create_by, status)
+    values
+    <foreach collection="list" item="wfa" separator=",">
+      (#{wfa.companyId,jdbcType=BIGINT}, #{wfa.businessTypeId,jdbcType=BIGINT},
+      #{wfa.businessAttrId,jdbcType=BIGINT}, #{wfa.workFlowId,jdbcType=BIGINT}, #{wfa.required,jdbcType=INTEGER},
+      #{wfa.defaultValueType,jdbcType=VARCHAR}, #{wfa.defaultValue,jdbcType=VARCHAR}, #{wfa.sort,jdbcType=INTEGER},
+      #{wfa.updateTime,jdbcType=TIMESTAMP}, #{wfa.updateBy,jdbcType=BIGINT}, #{wfa.createTime,jdbcType=TIMESTAMP},
+      #{wfa.createBy,jdbcType=BIGINT}, #{wfa.status,jdbcType=TINYINT})
+    </foreach>
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlowAttr" useGeneratedKeys="true" keyProperty="id">
+    insert into scf_cfg_business_work_flow_attr
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id,
+      </if>
+      <if test="businessAttrId != null">
+        business_attr_id,
+      </if>
+      <if test="workFlowId != null">
+        work_flow_id,
+      </if>
+      <if test="required != null">
+        required,
+      </if>
+      <if test="defaultValueType != null">
+        default_value_type,
+      </if>
+      <if test="defaultValue != null">
+        default_value,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="businessAttrId != null">
+        #{businessAttrId,jdbcType=BIGINT},
+      </if>
+      <if test="workFlowId != null">
+        #{workFlowId,jdbcType=BIGINT},
+      </if>
+      <if test="required != null">
+        #{required,jdbcType=INTEGER},
+      </if>
+      <if test="defaultValueType != null">
+        #{defaultValueType,jdbcType=VARCHAR},
+      </if>
+      <if test="defaultValue != null">
+        #{defaultValue,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlowAttr">
+    update scf_cfg_business_work_flow_attr
+    <set>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeId != null">
+        business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="businessAttrId != null">
+        business_attr_id = #{businessAttrId,jdbcType=BIGINT},
+      </if>
+      <if test="workFlowId != null">
+        work_flow_id = #{workFlowId,jdbcType=BIGINT},
+      </if>
+      <if test="required != null">
+        required = #{required,jdbcType=INTEGER},
+      </if>
+      <if test="defaultValueType != null">
+        default_value_type = #{defaultValueType,jdbcType=VARCHAR},
+      </if>
+      <if test="defaultValue != null">
+        default_value = #{defaultValue,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.BusinessWorkFlowAttr">
+    update scf_cfg_business_work_flow_attr
+    set company_id = #{companyId,jdbcType=BIGINT},
+      business_type_id = #{businessTypeId,jdbcType=BIGINT},
+      business_attr_id = #{businessAttrId,jdbcType=BIGINT},
+      work_flow_id = #{workFlowId,jdbcType=BIGINT},
+      required = #{required,jdbcType=INTEGER},
+      default_value_type = #{defaultValueType,jdbcType=VARCHAR},
+      default_value = #{defaultValue,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="getBusinessWorkFlowAttrExtendList" resultType="com.zhjs.scfcloud.model.vo.business.BusinessWorkFlowAttrExtendVO">
+    SELECT
+      wfa.work_flow_id workFlowId,
+      scba.id businessAttrId,
+      scba.business_type_id businessTypeId,
+      scba.company_id companyId,
+      CONCAT(scba.table_name,'_',scba.column_name) columnName,
+      scba.column_ch columnCh,
+      scba.column_type columnType,
+      scba.has_closed_type hasClosedType,
+      scba.column_unit columnUnit,
+      scba.column_group columnGroup,
+      scba.has_plurality hasPlurality,
+      scba.has_read_only hasReadOnly,
+      scba.column_tip columnTip,
+      scba.column_err_msg columnErrMsg,
+      wfa.required,
+      scba.verify_formula verifyFormula,
+      scba.upload_limit uploadLimit,
+      scba.pre_column_id preColumnId,
+      scba.pre_column_value preColumnValue,
+      scba.junior_column_id juniorColumnId,
+      wfa.default_value_type defaultValueType,
+      wfa.default_value defaultValue,
+      scba.has_br hasBr,
+      scba.has_create_need hasCreateNeed,
+      scba.has_create_visible hasCreateVisible,
+      scba.has_edit_visible hasEditVisible,
+      scba.has_view_visible hasViewVisible,
+      scba.has_audit_visible hasAuditVisible,
+      scba.status,
+      wfa.sort,
+      scba.remark,
+      scbac.classify_name classifyName
+    from scf_cfg_business_work_flow_attr wfa
+    LEFT JOIN scf_cfg_business_attr scba on scba.id = wfa.business_attr_id
+    LEFT JOIN scf_cfg_business_attr_classify scbac on scba.classify_id = scbac.id
+    where wfa.status = 1 and scba.status = 1
+    ORDER BY wfa.sort
+  </select>
+
+  <update id="batchUpdateAttr" parameterType="java.util.List">
+    <foreach collection="list" item="wfa" >
+      UPDATE scf_cfg_business_work_flow_attr scbwfa
+        set scbwfa.required = #{wfa.required,jdbcType=INTEGER},
+            scbwfa.default_value_type = #{wfa.defaultValueType,jdbcType=VARCHAR},
+            scbwfa.default_value = #{wfa.defaultValue,jdbcType=VARCHAR},
+            scbwfa.sort = #{wfa.sort,jdbcType=INTEGER}
+      WHERE scbwfa.id = #{wfa.workFlowAttrId,jdbcType=BIGINT};
+    </foreach>
+  </update>
+</mapper>

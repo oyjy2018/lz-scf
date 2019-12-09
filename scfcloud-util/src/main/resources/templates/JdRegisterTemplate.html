@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"/>
+</head>
+<body>
+<div style="width: 100%;">
+    <div style="margin: 0 auto;max-width: 700px; font-size: 14px;">
+        <h2 style="text-align: center; color: rgb(232, 65, 51)" th:text="${subject}"></h2>
+        <p><b th:text="${companyInfo}"></b></p>
+        <p th:text="${reason}"></p>
+    </div>
+</div>
+</body>
+</html>

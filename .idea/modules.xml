@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/my-demo/demo.iml" filepath="$PROJECT_DIR$/my-demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent/parent.iml" filepath="$PROJECT_DIR$/parent/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scf.iml" filepath="$PROJECT_DIR$/scf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scfcloud/scfcloud.iml" filepath="$PROJECT_DIR$/scfcloud/scfcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scfcloud-app/scfcloud-app.iml" filepath="$PROJECT_DIR$/scfcloud-app/scfcloud-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scfcloud-file/scfcloud-file.iml" filepath="$PROJECT_DIR$/scfcloud-file/scfcloud-file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scfcloud-model/scfcloud-model.iml" filepath="$PROJECT_DIR$/scfcloud-model/scfcloud-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scfcloud-system/scfcloud-system.iml" filepath="$PROJECT_DIR$/scfcloud-system/scfcloud-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scfcloud-task/scfcloud-task.iml" filepath="$PROJECT_DIR$/scfcloud-task/scfcloud-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scfcloud-ticket/scfcloud-ticket.iml" filepath="$PROJECT_DIR$/scfcloud-ticket/scfcloud-ticket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scfcloud-util/scfcloud-util.iml" filepath="$PROJECT_DIR$/scfcloud-util/scfcloud-util.iml" />
+    </modules>
+  </component>
+</project>

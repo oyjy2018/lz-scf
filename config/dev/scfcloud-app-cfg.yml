@@ -1,0 +1,26 @@
+server:
+  port: 26000
+  tomcat:
+    max-threads: 20
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:20000/eureka
+spring:
+  application:
+    name: scfcloud
+#feign2.1.1�汾��Ҫ���ô����Բſ����ж��feignָ��ͬһ��������
+  main:
+    allow-bean-definition-overriding: true
+
+session:
+  redis:
+    keyPrefix: SHIRO-SESSION-MANAGER-APP
+
+## 设置feign超时
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000

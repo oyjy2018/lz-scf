@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhjs.scfcloud.model.mapper.ESignAccountMapper">
+  <resultMap id="BaseResultMap" type="com.zhjs.scfcloud.model.entity.ESignAccount">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="scf_account_type" jdbcType="INTEGER" property="scfAccountType" />
+    <result column="scf_account_id" jdbcType="BIGINT" property="scfAccountId" />
+    <result column="e_sign_account_id" jdbcType="VARCHAR" property="eSignAccountId" />
+    <result column="is_del" jdbcType="TINYINT" property="isDel" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zhjs.scfcloud.model.entity.ESignAccount">
+    <result column="seal_data" jdbcType="LONGVARCHAR" property="sealData" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, scf_account_type, scf_account_id, e_sign_account_id, is_del, update_by, update_time, 
+    create_by, create_time
+  </sql>
+  <sql id="Blob_Column_List">
+    seal_data
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from scf_e_sign_account
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from scf_e_sign_account
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.ESignAccount" useGeneratedKeys="true">
+    insert into scf_e_sign_account (scf_account_type, scf_account_id, e_sign_account_id, 
+      is_del, update_by, update_time, 
+      create_by, create_time, seal_data
+      )
+    values (#{scfAccountType,jdbcType=INTEGER}, #{scfAccountId,jdbcType=BIGINT}, #{eSignAccountId,jdbcType=VARCHAR}, 
+      #{isDel,jdbcType=TINYINT}, #{updateBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{sealData,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.zhjs.scfcloud.model.entity.ESignAccount" useGeneratedKeys="true">
+    insert into scf_e_sign_account
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="scfAccountType != null">
+        scf_account_type,
+      </if>
+      <if test="scfAccountId != null">
+        scf_account_id,
+      </if>
+      <if test="eSignAccountId != null">
+        e_sign_account_id,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="sealData != null">
+        seal_data,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="scfAccountType != null">
+        #{scfAccountType,jdbcType=INTEGER},
+      </if>
+      <if test="scfAccountId != null">
+        #{scfAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="eSignAccountId != null">
+        #{eSignAccountId,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=TINYINT},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sealData != null">
+        #{sealData,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhjs.scfcloud.model.entity.ESignAccount">
+    update scf_e_sign_account
+    <set>
+      <if test="scfAccountType != null">
+        scf_account_type = #{scfAccountType,jdbcType=INTEGER},
+      </if>
+      <if test="scfAccountId != null">
+        scf_account_id = #{scfAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="eSignAccountId != null">
+        e_sign_account_id = #{eSignAccountId,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=TINYINT},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sealData != null">
+        seal_data = #{sealData,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zhjs.scfcloud.model.entity.ESignAccount">
+    update scf_e_sign_account
+    set scf_account_type = #{scfAccountType,jdbcType=INTEGER},
+      scf_account_id = #{scfAccountId,jdbcType=BIGINT},
+      e_sign_account_id = #{eSignAccountId,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=TINYINT},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      seal_data = #{sealData,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhjs.scfcloud.model.entity.ESignAccount">
+    update scf_e_sign_account
+    set scf_account_type = #{scfAccountType,jdbcType=INTEGER},
+      scf_account_id = #{scfAccountId,jdbcType=BIGINT},
+      e_sign_account_id = #{eSignAccountId,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=TINYINT},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
