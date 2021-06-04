@@ -38,7 +38,7 @@
         <mapstruct.version>1.2.0.Final</mapstruct.version>
         <spring-log4j.version>1.3.8.RELEASE</spring-log4j.version>
         <spring-boot-starter-data-redis.version>2.1.5.RELEASE</spring-boot-starter-data-redis.version>
-        <httpclient.vsersion>4.5.4</httpclient.vsersion>
+        <httpclient.vsersion>4.5.13</httpclient.vsersion>
         <mybatis-generator-core.version>1.3.7</mybatis-generator-core.version>
         <eprd_sdk.version>1.4.5</eprd_sdk.version>
         <cbp-sdk.version>1.0.1</cbp-sdk.version>
